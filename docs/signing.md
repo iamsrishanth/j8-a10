@@ -8,6 +8,18 @@ This repository contains **no key material**, and never should.
 
 ## 1. Generate the key set
 
+Two helper scripts automate everything below:
+
+```bash
+# generate a key set (once)
+OUT=~/secure/j8os-keys ./scripts/make-keys.sh
+
+# sign a built target-files package and emit a release OTA
+KEYS=~/secure/j8os-keys ./scripts/sign-ota.sh
+```
+
+The long form, if you prefer to do it by hand:
+
 ```bash
 mkdir -p ~/secure/j8os-keys && cd ~/secure/j8os-keys
 export SUBJECT='/C=IN/ST=State/L=City/O=Your Org/OU=Android/CN=Your Name/emailAddress=you@example.com'
@@ -49,6 +61,9 @@ sign_target_files_apks -o -d "$KEYS" \
 ota_from_target_files -k "$KEYS/releasekey" --block --backup=true \
   signed-target_files.zip signed-ota.zip
 ```
+
+Or simply: `KEYS=~/secure/j8os-keys ./scripts/sign-ota.sh`, which also checks
+that the OTA certificate matches your release key before declaring success.
 
 `--backup=true` keeps `system/bin/backuptool.sh` usable for addon.d scripts.
 Do not pass `--no_prereq` or strip the OTA assertions — `TARGET_OTA_ASSERT_DEVICE :=

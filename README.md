@@ -100,20 +100,19 @@ print: [docs/build.md](docs/build.md).
 
 ## Quick start (install)
 
-Installing requires an unlocked bootloader and TWRP. The build must first
-produce `boot.img`, `system.img` and `vendor.img`.
+Installing requires an unlocked bootloader and TWRP.
 
 ```bash
-adb -s <serial> reboot recovery          # into TWRP
-# Wipe -> Format Data -> yes              (required: different signing keys)
-adb -s <serial> push boot.img   /sdcard/
-adb -s <serial> push system.img /sdcard/
-adb -s <serial> push vendor.img /sdcard/
-# In TWRP: Install -> Install Image -> pick each .img -> select partition
+adb -s <serial> reboot recovery     # into TWRP
+# TWRP: Wipe -> Format Data -> yes  (required: different signing keys)
+# TWRP: Advanced -> ADB Sideload, then:
+adb -s <serial> sideload lineage-17.1-*-UNOFFICIAL-j8y18lte.zip
 ```
 
-Full sequence, including the `dd` fallback, the Odin path, the data-wipe
-implications and the rollback reality: [docs/install.md](docs/install.md).
+The OTA writes `system`, `vendor` and `boot` only — it does not contain a
+recovery image, so **TWRP survives**. Raw-image and `dd` installs are
+documented as alternatives, along with the data-wipe implications and the
+rollback reality: [docs/install.md](docs/install.md).
 
 > **This device's power button is broken.** Every step in this repository is
 > designed so that it can be driven over ADB/TWRP without touching the power
