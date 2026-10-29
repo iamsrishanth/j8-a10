@@ -1,0 +1,26 @@
+From: j8-a10 <noreply@example.com>
+Subject: [PATCH 2/2] sepolicy: add missing trailing newline to property_contexts
+
+The sepolicy build concatenates every policy directory's property_contexts
+through cpp. Without a final newline in this file, its last rule is glued to
+the first line of the next file, producing a line like:
+
+  vendor.sys.qseecomd.enable  u:object_r:vendor_default_prop:s0# Aux camera blacklist prop readable to everything
+
+and vendor_property_contexts fails its self-check with:
+
+  Type 'camera blacklist prop readable to everything' is not valid
+
+Add the missing newline.
+---
+diff --git a/sepolicy/property_contexts b/sepolicy/property_contexts
+index 3696efe..6b5ae91 100644
+--- a/sepolicy/property_contexts
++++ b/sepolicy/property_contexts
+@@ -22,4 +22,4 @@ vendor.sys.qseecomd.                   u:object_r:vendor_qseecomd_prop:s0
+ vendor.tzdaemon                        u:object_r:vendor_tzdaemon_prop:s0
+ vendor.tzts_daemon                     u:object_r:vendor_tztsdaemon_prop:s0
+ vendor.wlbtd.                          u:object_r:vendor_wlbtd_prop:s0
+-vendor.sys.qseecomd.enable             u:object_r:vendor_default_prop:s0
+\ No newline at end of file
++vendor.sys.qseecomd.enable             u:object_r:vendor_default_prop:s0

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Extra dependencies for j8y18lte on LineageOS 17.1.
+
+  Copy to .repo/local_manifests/roomservice.xml.
+
+  - hardware/samsung        : Samsung device hardware glue used by the tree
+  - device/samsung_slsi/sepolicy : Samsung Exynos/Knox-era sepolicy types that
+    the j8y18lte device tree references (TEE/mobicore paths in particular)
+
+  These are also listed in the device tree's lineage.dependencies, but adding
+  them here makes the dependency explicit and pins the fetch to one place.
+-->
+<manifest>
+  <project path="hardware/samsung"
+           remote="github"
+           name="LineageOS/android_hardware_samsung" />
+
+  <project path="device/samsung_slsi/sepolicy"
+           remote="github"
+           name="LineageOS/android_device_samsung_slsi_sepolicy" />
+</manifest>

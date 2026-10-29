@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  j8y18lte device/kernel/vendor pins for LineageOS 17.1 (Android 10).
+
+  Copy this file to .repo/local_manifests/j8y18lte.xml inside the source tree
+  BEFORE the first `repo sync`.
+
+  Every revision is a full commit hash on purpose: a branch tip moves and
+  would make builds non-reproducible. See docs/sources.md for the mapping
+  between these hashes and the components.
+
+  vendor/samsung/j8y18lte is ~236 MB of Samsung/Qualcomm blobs and is fetched
+  from the public mirror; it is not vendored in this repository.
+-->
+<manifest>
+  <remote name="goldfish07" fetch="https://github.com/goldfish07" />
+
+  <project name="android_device_samsung_j8y18lte"
+           path="device/samsung/j8y18lte"
+           remote="goldfish07"
+           revision="1b4f25eff98554feac5c0ab945c70be6589c3693" />
+
+  <project name="android_kernel_samsung_j8y18lte"
+           path="kernel/samsung/j8y18lte"
+           remote="goldfish07"
+           revision="3a7e80328b108097e984c028c0fd1f9e65678e31" />
+
+  <project name="android_vendor_samsung_j8y18lte"
+           path="vendor/samsung/j8y18lte"
+           remote="goldfish07"
+           revision="ca797aa33d3e786613cc86440f1b00b32bbf7d43" />
+</manifest>

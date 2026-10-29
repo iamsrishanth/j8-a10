@@ -1,0 +1,358 @@
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=10
+LINEAGE_VERSION=17.1-20261025-UNOFFICIAL-j8y18lte
+TARGET_PRODUCT=lineage_j8y18lte
+TARGET_BUILD_VARIANT=userdebug
+TARGET_BUILD_TYPE=release
+TARGET_ARCH=arm
+TARGET_ARCH_VARIANT=armv8-a
+TARGET_CPU_VARIANT=cortex-a53
+HOST_ARCH=x86_64
+HOST_2ND_ARCH=x86
+HOST_OS=linux
+HOST_OS_EXTRA=Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-Ubuntu-22.04.5-LTS
+HOST_CROSS_OS=windows
+HOST_CROSS_ARCH=x86
+HOST_CROSS_2ND_ARCH=x86_64
+HOST_BUILD_TYPE=release
+BUILD_ID=QQ3A.200805.001
+OUT_DIR=out
+PRODUCT_SOONG_NAMESPACES=device/samsung/j8y18lte vendor/samsung/j8y18lte hardware/qcom-caf/msm8996
+============================================
+ninja: no work to do.
+ninja: no work to do.
+No need to regenerate ninja file
+No need to regenerate ninja file
+No need to regenerate ninja file
+Starting ninja...
+[  5% 1/18] build out/target/product/j8y18lte/obj/KERNEL_OBJ/.additional_config
+[ 11% 2/18] Building Kernel Config
+make: Entering directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make[1]: Entering directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+  GEN     ./Makefile
+drivers/soc/qcom/Kconfig:1046:warning: ignoring type redefinition of 'TIMA_LOG' from 'tristate' to 'boolean'
+drivers/battery_v2/Kconfig:784:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:85:warning: ignoring type redefinition of 'SAMSUNG_BATTERY_ENG_TEST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:703:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/input/touchscreen/Kconfig:14:warning: config symbol defined without type
+arch/arm64/configs/j8y18lte_defconfig:571:warning: override: USB_G_ANDROID changes choice state
+arch/arm64/configs/j8y18lte_defconfig:752:warning: override: reassigning to symbol DEVMEM
+arch/arm64/configs/j8y18lte_defconfig:753:warning: override: reassigning to symbol DEVKMEM
+arch/arm64/configs/j8y18lte_defconfig:756:warning: override: reassigning to symbol MSM_BOOT_STATS
+arch/arm64/configs/j8y18lte_defconfig:828:warning: override: reassigning to symbol USER_RESET_DEBUG
+arch/arm64/configs/j8y18lte_defconfig:853:warning: override: reassigning to symbol PINCTRL_MSM8952
+arch/arm64/configs/j8y18lte_defconfig:854:warning: override: reassigning to symbol PINCTRL_MSM8937
+arch/arm64/configs/j8y18lte_defconfig:855:warning: override: reassigning to symbol PINCTRL_MSMCOBALT
+arch/arm64/configs/j8y18lte_defconfig:948:warning: override: reassigning to symbol SEC_ABC
+arch/arm64/configs/j8y18lte_defconfig:989:warning: override: reassigning to symbol DUAL_ROLE_USB_INTF
+arch/arm64/configs/j8y18lte_defconfig:1034:warning: override: reassigning to symbol NET_CORE
+arch/arm64/configs/j8y18lte_defconfig:1035:warning: override: reassigning to symbol NET_SCH_PRIO
+arch/arm64/configs/j8y18lte_defconfig:1036:warning: override: reassigning to symbol NET_SCHED
+arch/arm64/configs/j8y18lte_defconfig:1037:warning: override: reassigning to symbol NET_CLS_BASIC
+arch/arm64/configs/j8y18lte_defconfig:1038:warning: override: reassigning to symbol NET_CLS
+arch/arm64/configs/j8y18lte_defconfig:1039:warning: override: reassigning to symbol NET_CLS_ACT
+arch/arm64/configs/j8y18lte_defconfig:1040:warning: override: reassigning to symbol NET_ACT_MIRRED
+arch/arm64/configs/j8y18lte_defconfig:1041:warning: override: reassigning to symbol NET_EMATCH
+arch/arm64/configs/j8y18lte_defconfig:1042:warning: override: reassigning to symbol NET_SCH_INGRESS
+arch/arm64/configs/j8y18lte_defconfig:1052:warning: override: reassigning to symbol ZRAM
+arch/arm64/configs/j8y18lte_defconfig:1071:warning: override: reassigning to symbol EXT4_FS_SECURITY
+arch/arm64/configs/j8y18lte_defconfig:1072:warning: override: reassigning to symbol AUDIT
+arch/arm64/configs/j8y18lte_defconfig:1074:warning: override: reassigning to symbol SECURITY
+arch/arm64/configs/j8y18lte_defconfig:1075:warning: override: reassigning to symbol LSM_MMAP_MIN_ADDR
+arch/arm64/configs/j8y18lte_defconfig:1076:warning: override: reassigning to symbol SECURITY_NETWORK
+arch/arm64/configs/j8y18lte_defconfig:1077:warning: override: reassigning to symbol SECURITY_SELINUX
+arch/arm64/configs/j8y18lte_defconfig:1080:warning: symbol value 'y' invalid for SECURITY_SELINUX_CHECKREQPROT_VALUE
+arch/arm64/configs/j8y18lte_defconfig:1082:warning: override: reassigning to symbol NF_CONNTRACK_SECMARK
+arch/arm64/configs/j8y18lte_defconfig:1083:warning: override: reassigning to symbol NETFILTER_XT_TARGET_CONNSECMARK
+arch/arm64/configs/j8y18lte_defconfig:1085:warning: override: reassigning to symbol IP_NF_SECURITY
+KCONFIG_SELINUX((null))
+KCONFIG_LOG_SELINUX((null))
+KCONFIG_TIMA((null))
+KCONFIG_DMVERITY((null))
+KCONFIG_VARIANT((null))
+KCONFIG_DEBUG((null))
+KCONFIG_KASLR((null))
+KCONFIG_SELINUX((null))
+KCONFIG_LOG_SELINUX((null))
+KCONFIG_TIMA((null))
+KCONFIG_VARIANT((null))
+KCONFIG_DEBUG((null))
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+make: Leaving directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make: Entering directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make[1]: Entering directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+  GEN     ./Makefile
+scripts/kconfig/conf  --savedefconfig=defconfig Kconfig
+drivers/soc/qcom/Kconfig:1046:warning: ignoring type redefinition of 'TIMA_LOG' from 'tristate' to 'boolean'
+drivers/battery_v2/Kconfig:784:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:85:warning: ignoring type redefinition of 'SAMSUNG_BATTERY_ENG_TEST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:703:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/input/touchscreen/Kconfig:14:warning: config symbol defined without type
+make[1]: Leaving directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+make: Leaving directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+[ 16% 3/18] Building Kernel Image (Image.gz-dtb)
+make: Entering directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make[1]: Entering directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+drivers/soc/qcom/Kconfig:1046:warning: ignoring type redefinition of 'TIMA_LOG' from 'tristate' to 'boolean'
+drivers/battery_v2/Kconfig:784:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:85:warning: ignoring type redefinition of 'SAMSUNG_BATTERY_ENG_TEST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:703:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/input/touchscreen/Kconfig:14:warning: config symbol defined without type
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  Using /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte as source for kernel
+  CHK     include/generated/utsrelease.h
+  CALL    /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/checksyscalls.sh
+make[2]: 'include/generated/vdso-offsets.h' is up to date.
+  CHK     include/generated/compile.h
+  GZIP    kernel/config_data.gz
+  CHK     kernel/config_data.h
+expr: syntax error: unexpected argument ‘29’
+expr: syntax error: unexpected argument ‘28’
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/boot/Makefile:46: warning: overriding recipe for target 'arch/arm64/boot/Image-dtb'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/boot/Makefile:33: warning: ignoring old recipe for target 'arch/arm64/boot/Image-dtb'
+  DTC     arch/arm64/boot/dts/samsung/sdm450/sdm450-sec-j8y18lte_swa_ins-r02.dtb
+  DTC     arch/arm64/boot/dts/samsung/sdm450/sdm450-sec-j8y18lte_swa_ins-r01.dtb
+  DTC     arch/arm64/boot/dts/samsung/sdm450/sdm450-sec-j8y18lte_swa_ins-r00.dtb
+  DTC     arch/arm64/boot/dts/samsung/sdm450/sdm450-sec-j8y18lte_swa_ins-r03.dtb
+  CAT     arch/arm64/boot/Image.gz-dtb
+make[1]: Leaving directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+make: Leaving directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+Building DTBs
+make: Entering directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make[1]: Entering directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  Using /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte as source for kernel
+  CALL    /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/checksyscalls.sh
+make[2]: 'include/generated/vdso-offsets.h' is up to date.
+make[1]: Leaving directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+make: Leaving directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+Building Kernel Modules
+make: Entering directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make[1]: Entering directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+expr: syntax error: unexpected argument ‘29’
+expr: syntax error: unexpected argument ‘28’
+  Using /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte as source for kernel
+  CALL    /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/checksyscalls.sh
+make[2]: 'include/generated/vdso-offsets.h' is up to date.
+expr: syntax error: unexpected argument ‘29’
+expr: syntax error: unexpected argument ‘28’
+  Building modules, stage 2.
+  MODPOST 11 modules
+make[1]: Leaving directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+make: Leaving directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+Installing Kernel Modules
+make: Entering directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make[1]: Entering directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:147: warning: overriding recipe for target 'vdso_prepare'
+/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/arch/arm64/Makefile:137: warning: ignoring old recipe for target 'vdso_prepare'
+  INSTALL block/test-iosched.ko
+  INSTALL crypto/ansi_cprng.ko
+  INSTALL drivers/char/rdbg.ko
+  INSTALL drivers/input/evbug.ko
+  INSTALL drivers/mmc/card/mmc_block_test.ko
+  INSTALL drivers/mmc/card/mmc_test.ko
+  INSTALL drivers/net/wireless/ath/wil6210/wil6210.ko
+  INSTALL drivers/spi/spidev.ko
+  INSTALL net/bridge/br_netfilter.ko
+  INSTALL net/ipv4/tcp_htcp.ko
+  INSTALL net/ipv4/tcp_westwood.ko
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+Can't locate Getopt/Std.pm in @INC (you may need to install the Getopt::Std module) (@INC contains: /home/builder/android/lineage-17.1/prebuilts/tools-lineage/common/perl-base /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+BEGIN failed--compilation aborted at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/scripts/sign-file line 13.
+  DEPMOD  3.18.140-g3a7e8032-dirty
+make[1]: Leaving directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'
+make: Leaving directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+depmod: WARNING: could not open modules.order at /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/depmod_vendor_intermediates/lib/modules/0.0: No such file or directory
+depmod: WARNING: could not open modules.builtin at /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/depmod_vendor_intermediates/lib/modules/0.0: No such file or directory
+[ 22% 4/18] target Prebuilt: robolectric_android-all-stub (out/target/product/j8y18lte/kernel)
+[ 27% 5/18] Target boot image: out/target/product/j8y18lte/boot.img
+[ 33% 6/18] ----- Making uncompressed recovery ramdisk ------
+[ 38% 7/18] ----- Making compressed recovery ramdisk ------
+[ 44% 8/18] ----- Making recovery image ------
+[ 50% 9/18] Target build info: out/target/product/j8y18lte/system/build.prop
+[ 55% 10/18] build out/target/product/j8y18lte/system/etc/recovery-resource.dat
+[ 61% 11/18] build out/target/product/j8y18lte/obj/NOTICE.xml
+[ 66% 12/18] build out/target/product/j8y18lte/obj/NOTICE.xml.gz
+[ 72% 13/18] build out/target/product/j8y18lte/system/etc/NOTICE.xml.gz
+[ 77% 14/18] Verifying framework VINTF manifest.
+[ 83% 15/18] Target vendor fs image: out/target/product/j8y18lte/vendor.img
+[ 88% 16/18] Package target files: out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip
+FAILED: out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip
+/bin/bash -c "(if [ -d out/target/product/j8y18lte/system/vendor ] && [ ! -h out/target/product/j8y18lte/system/vendor ]; then echo 'Non-symlink out/target/product/j8y18lte/system/vendor detected!' 1>&2; echo 'You cannot install files to out/target/product/j8y18lte/system/vendor while building a separate vendor.img!' 1>&2; exit 1; fi ) && (ln -sf /vendor out/target/product/j8y18lte/system/vendor ) && (rm -rf out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip.list out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder ) && (mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/ out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder ) && (mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY ) && (if [ -d \"out/target/product/j8y18lte/recovery/root\" -a \"\$(ls -A  out/target/product/j8y18lte/recovery/root)\" ]; then mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/RAMDISK && prebuilts/build-tools/linux-x86/bin/acp -rd out/target/product/j8y18lte/recovery/root/* out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/RAMDISK; fi ) && (if [ -d \"out/target/product/j8y18lte/install\" -a \"\$(ls -A  out/target/product/j8y18lte/install)\" ]; then mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/INSTALL && prebuilts/build-tools/linux-x86/bin/acp -rd out/target/product/j8y18lte/install/* out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/INSTALL; fi ) && (cp out/target/product/j8y18lte/kernel out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/kernel ) && (echo \"console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive buildvariant=userdebug\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/cmdline ) && (echo \"0x80000000\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/base ) && (echo \"2048\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/pagesize ) && (echo \"0x02000000\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/ramdisk_offset ) && (mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT ) && (mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/ROOT ) && (if [ -d \"out/target/product/j8y18lte/root\" -a \"\$(ls -A  out/target/product/j8y18lte/root)\" ]; then mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/ROOT && prebuilts/build-tools/linux-x86/bin/acp -rd out/target/product/j8y18lte/root/* out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/ROOT; fi ) && (if [ -d \"out/target/product/j8y18lte/ramdisk\" -a \"\$(ls -A  out/target/product/j8y18lte/ramdisk)\" ]; then mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/RAMDISK && prebuilts/build-tools/linux-x86/bin/acp -rd out/target/product/j8y18lte/ramdisk/* out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/RAMDISK; fi ) && (cp out/target/product/j8y18lte/kernel out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/kernel ) && (echo \"console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive buildvariant=userdebug\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/cmdline ) && (echo \"0x80000000\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/base ) && (echo \"2048\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/pagesize ) && (echo \"0x02000000\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/ramdisk_offset ) && (if [ -d \"out/target/product/j8y18lte/system\" -a \"\$(ls -A  out/target/product/j8y18lte/system)\" ]; then mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/SYSTEM && prebuilts/build-tools/linux-x86/bin/acp -rd out/target/product/j8y18lte/system/* out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/SYSTEM; fi ) && (if [ -d \"out/target/product/j8y18lte/data\" -a \"\$(ls -A  out/target/product/j8y18lte/data)\" ]; then mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/DATA && prebuilts/build-tools/linux-x86/bin/acp -rd out/target/product/j8y18lte/data/* out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/DATA; fi ) && (if [ -d \"out/target/product/j8y18lte/vendor\" -a \"\$(ls -A  out/target/product/j8y18lte/vendor)\" ]; then mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/VENDOR && prebuilts/build-tools/linux-x86/bin/acp -rd out/target/product/j8y18lte/vendor/* out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/VENDOR; fi ) && (mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/OTA ) && (cp out/target/product/j8y18lte/android-info.txt out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/OTA/ ) && (mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/OTA/bin ) && (cp  out/target/product/j8y18lte/obj/EXECUTABLES/updater_intermediates/updater out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/OTA/bin/ ) && (mkdir -p out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META ) && (cp out/target/product/j8y18lte/obj/PACKAGING/apkcerts_intermediates/lineage_j8y18lte-apkcerts-eng.builder.txt out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/apkcerts.txt ) && (cp out/soong/apexkeys.txt out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/apexkeys.txt ) && (echo \"\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/otakeys.txt ) && (cp out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/file_contexts.bin ) && (echo \"recovery_api_version=3\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"fstab_version=2\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"blocksize=131072\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"boot_size=33554432\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"recovery_size=33554432\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"recovery_mount_options=ext4=max_batch_time=0,commit=1,data=ordered,barrier=1,errors=panic,nodelalloc\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"tool_extensions=device/samsung/j8y18lte/../common\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"default_system_dev_certificate=build/make/target/product/security/testkey\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"extra_recovery_keys=vendor/lineage/build/target/product/security/lineage\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo 'mkbootimg_args=--ramdisk_offset 0x02000000 --tags_offset 0x01e00000' >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo 'mkbootimg_version_args=--os_version 10 --os_patch_level 2023-02-05' >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"use_set_metadata=1\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"multistage_support=1\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"blockimgdiff_versions=3,4\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"system_size=3397386240\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"userdata_size=57415790592\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"cache_fs_type=ext4\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"cache_size=314572800\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"vendor_fs_type=ext4\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"vendor_size=503316480\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"ext_mkuserimg=mkuserimg_mke2fs\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"fs_type=ext4\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"extfs_sparse_flag=-s\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"squashfs_sparse_flag=-s\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"selinux_fc=out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"root_dir=out/target/product/j8y18lte/root\" >>  out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (PATH=out/host/linux-x86/bin/:\$PATH MKBOOTIMG=out/host/linux-x86/bin/mkbootimg 	    build/make/tools/releasetools/make_recovery_patch out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder ) && (echo \"ota_override_device=j8y18lte\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"lpmake=lpmake\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && (echo \"super_metadata_device=\" >> out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/misc_info.txt ) && ((cd out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/SYSTEM; find . -type d | sed 's,\$,/,'; find . \\! -type d) | cut -c 3- | sort | sed 's,^,system/,' | out/host/linux-x86/bin/fs_config -C -D out/target/product/j8y18lte/system -S out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin -R \"system/\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/filesystem_config.txt ) && ((cd out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/VENDOR; find . -type d | sed 's,\$,/,'; find . \\! -type d) | cut -c 3- | sort | sed 's,^,vendor/,' | out/host/linux-x86/bin/fs_config -C -D out/target/product/j8y18lte/system -S out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin -R \"vendor/\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/vendor_filesystem_config.txt ) && ((cd out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/ROOT; find . -type d | sed 's,\$,/,'; find . \\! -type d) | cut -c 3- | sort | sed 's,^,,' | out/host/linux-x86/bin/fs_config -C -D out/target/product/j8y18lte/system -S out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin -R \"\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/root_filesystem_config.txt ) && ((cd out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/RAMDISK; find . -type d | sed 's,\$,/,'; find . \\! -type d) | cut -c 3- | sort | sed 's,^,,' | out/host/linux-x86/bin/fs_config -C -D out/target/product/j8y18lte/system -S out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin -R \"\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/boot_filesystem_config.txt ) && ((cd out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/RAMDISK; find . -type d | sed 's,\$,/,'; find . \\! -type d) | cut -c 3- | sort | sed 's,^,,' | out/host/linux-x86/bin/fs_config -C -D out/target/product/j8y18lte/system -S out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin -R \"\" > out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/recovery_filesystem_config.txt ) && (cp out/target/product/j8y18lte/obj/ETC/verified_assembled_system_matrix.xml_intermediates/verified_assembled_system_matrix.xml out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/system_matrix.xml ) && (cp out/target/product/j8y18lte/verified_assembled_framework_manifest.xml out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/system_manifest.xml ) && (cp out/target/product/j8y18lte/verified_assembled_vendor_manifest.xml out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/vendor_manifest.xml ) && (cp out/target/product/j8y18lte/obj/ETC/device_compatibility_matrix.xml_intermediates/compatibility_matrix.xml out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/vendor_matrix.xml ) && (PATH=out/host/linux-x86/bin/:\$PATH MKBOOTIMG=out/host/linux-x86/bin/mkbootimg 	    build/make/tools/releasetools/add_img_to_target_files -a -r -v -p out/host/linux-x86 out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder ) && (find out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META | sort >out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip.list ) && (find out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder -path out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META -prune -o -print | sort >>out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip.list ) && (out/soong/host/linux-x86/bin/soong_zip -d -o out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip -C out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder -l out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip.list )"
+2026-10-26 00:51:47 - common.py - WARNING : Failed to read PRODUCT/build.prop
+2026-10-26 00:51:47 - common.py - WARNING : Failed to read PRODUCT/etc/build.prop
+2026-10-26 00:51:47 - common.py - WARNING : Failed to read PRODUCT_SERVICES/build.prop
+2026-10-26 00:51:47 - common.py - WARNING : Failed to read PRODUCT_SERVICES/etc/build.prop
+2026-10-26 00:51:47 - common.py - WARNING : Failed to read ODM/build.prop
+2026-10-26 00:51:47 - common.py - WARNING : Failed to read ODM/etc/build.prop
+2026-10-26 00:51:54 - common.py - WARNING : Failed to read PRODUCT/build.prop
+2026-10-26 00:51:54 - common.py - WARNING : Failed to read PRODUCT/etc/build.prop
+2026-10-26 00:51:54 - common.py - WARNING : Failed to read PRODUCT_SERVICES/build.prop
+2026-10-26 00:51:54 - common.py - WARNING : Failed to read PRODUCT_SERVICES/etc/build.prop
+2026-10-26 00:51:54 - common.py - WARNING : Failed to read ODM/build.prop
+2026-10-26 00:51:54 - common.py - WARNING : Failed to read ODM/etc/build.prop
+2026-10-26 00:51:54 - add_img_to_target_files - INFO    : 
+
+++++ boot  ++++
+
+
+2026-10-26 00:51:54 - common.py - INFO    : building image from target_files BOOT...
+2026-10-26 00:51:54 - common.py - INFO    :   Running: "mkbootfs -f /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/boot_filesystem_config.txt /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/RAMDISK"
+2026-10-26 00:51:54 - common.py - INFO    :   Running: "minigzip"
+2026-10-26 00:51:54 - common.py - INFO    :   Running: "out/host/linux-x86/bin/mkbootimg --kernel /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/BOOT/kernel --cmdline console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive buildvariant=userdebug --base 0x80000000 --pagesize 2048 --ramdisk_offset 0x02000000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --os_version 10 --os_patch_level 2023-02-05 --ramdisk /home/builder/android/lineage-17.1/out/soong/.temp/tmpFl2l04 --output /home/builder/android/lineage-17.1/out/soong/.temp/tmpwBvwx_"
+2026-10-26 00:51:54 - common.py - INFO    : 
+2026-10-26 00:51:55 - add_img_to_target_files - INFO    : 
+
+++++ recovery  ++++
+
+
+2026-10-26 00:51:55 - common.py - INFO    : building image from target_files RECOVERY...
+2026-10-26 00:51:55 - common.py - INFO    :   Running: "mkbootfs -f /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/recovery_filesystem_config.txt /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/RAMDISK"
+2026-10-26 00:51:55 - common.py - INFO    :   Running: "minigzip"
+2026-10-26 00:51:55 - common.py - INFO    :   Running: "out/host/linux-x86/bin/mkbootimg --kernel /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/kernel --cmdline console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive buildvariant=userdebug --base 0x80000000 --pagesize 2048 --ramdisk_offset 0x02000000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --os_version 10 --os_patch_level 2023-02-05 --ramdisk /home/builder/android/lineage-17.1/out/soong/.temp/tmpSs2Ufr --output /home/builder/android/lineage-17.1/out/soong/.temp/tmpQjQqPj"
+2026-10-26 00:51:55 - common.py - INFO    : 
+2026-10-26 00:51:55 - add_img_to_target_files - INFO    : 
+
+++++ recovery (two-step image)  ++++
+
+
+2026-10-26 00:51:55 - common.py - INFO    : building image from target_files RECOVERY...
+2026-10-26 00:51:55 - common.py - INFO    :   Running: "mkbootfs -f /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/recovery_filesystem_config.txt /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/RAMDISK"
+2026-10-26 00:51:55 - common.py - INFO    :   Running: "minigzip"
+2026-10-26 00:51:56 - common.py - INFO    :   Running: "out/host/linux-x86/bin/mkbootimg --kernel /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/RECOVERY/kernel --cmdline console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive buildvariant=userdebug --base 0x80000000 --pagesize 2048 --ramdisk_offset 0x02000000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --os_version 10 --os_patch_level 2023-02-05 --ramdisk /home/builder/android/lineage-17.1/out/soong/.temp/tmp4bgmeG --output /home/builder/android/lineage-17.1/out/soong/.temp/tmpLAc82X"
+2026-10-26 00:51:56 - common.py - INFO    : 
+2026-10-26 00:51:56 - add_img_to_target_files - INFO    : 
+
+++++ system  ++++
+
+
+2026-10-26 00:51:56 - add_img_to_target_files - INFO    : Building new recovery patch
+2026-10-26 00:51:56 - common.py - INFO    :   Running: "imgdiff -b /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/SYSTEM/etc/recovery-resource.dat /home/builder/android/lineage-17.1/out/soong/.temp/tmpdtU1de /home/builder/android/lineage-17.1/out/soong/.temp/tmpb_hExa /home/builder/android/lineage-17.1/out/soong/.temp/tmp9pmauZ"
+2026-10-26 00:52:02 - common.py - INFO    : putting script in bin/install-recovery.sh
+2026-10-26 00:52:02 - add_img_to_target_files - INFO    : creating system.img...
+2026-10-26 00:52:04 - common.py - INFO    :   Running: "mkuserimg_mke2fs -s /home/builder/android/lineage-17.1/out/soong/.temp/tmpyl0pGw /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.img ext4 / 3397386240 -j 0 -T 1230768000 -C /home/builder/android/lineage-17.1/out/soong/.temp/merged_fs_confighxOT1D.txt -B /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.map -L / -M 0 -U 4729639d-b5f2-5cc1-a120-9ac5f788683c -S fd77d4fd-bb91-5ef5-9533-d5d806da85a3 --inode_size 256 /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/file_contexts.bin"
+2026-10-26 00:52:07 - common.py - INFO    : 00:52:04 mkuserimg_mke2fs.py INFO: Env: {'E2FSPROGS_FAKE_TIME': '1230768000', 'MKE2FS_CONFIG': '/home/builder/android/lineage-17.1/out/soong/.temp/tmpibt4nr'}
+00:52:04 mkuserimg_mke2fs.py INFO: Running: mke2fs -O ^has_journal -L / -I 256 -M / -m 0 -U 4729639d-b5f2-5cc1-a120-9ac5f788683c -E android_sparse,hash_seed=fd77d4fd-bb91-5ef5-9533-d5d806da85a3 -t ext4 -b 4096 /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.img 829440
+00:52:04 mkuserimg_mke2fs.py INFO: Env: {'E2FSPROGS_FAKE_TIME': '1230768000'}
+00:52:04 mkuserimg_mke2fs.py INFO: Running: e2fsdroid -T 1230768000 -C /home/builder/android/lineage-17.1/out/soong/.temp/merged_fs_confighxOT1D.txt -B /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.map -S /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/file_contexts.bin -f /home/builder/android/lineage-17.1/out/soong/.temp/tmpyl0pGw -a / /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.img
+00:52:07 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: set_selinux_xattr: No such file or directory searching for label "/config/.keep"
+set_selinux_xattr: Inappropriate ioctl for device searching for label "/omr"
+e2fsdroid: File too large while configuring the file system
+loaded 3654 fs_config entries
+
+mke2fs 1.44.4 (18-Aug-2018)
+Creating filesystem with 829440 4k blocks and 207584 inodes
+Filesystem UUID: 4729639d-b5f2-5cc1-a120-9ac5f788683c
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200
+
+Allocating group tables:  0/26     done                            
+Writing inode tables:  0/26     done                            
+Writing superblocks and filesystem accounting information:  0/26     done
+
+
+set_selinux_xattr: No such file or directory searching for label "/config/.keep"
+set_selinux_xattr: Inappropriate ioctl for device searching for label "/omr"
+e2fsdroid: File too large while configuring the file system
+loaded 3654 fs_config entries
+2026-10-26 00:52:07 - add_img_to_target_files - ERROR   : 
+   ERROR:
+Traceback (most recent call last):
+  File "build/make/tools/releasetools/add_img_to_target_files", line 963, in <module>
+    main(sys.argv[1:])
+  File "build/make/tools/releasetools/add_img_to_target_files", line 957, in main
+    AddImagesToTargetFiles(args[0])
+  File "build/make/tools/releasetools/add_img_to_target_files", line 823, in AddImagesToTargetFiles
+    output_zip, recovery_img=recovery_image, boot_img=boot_image)
+  File "build/make/tools/releasetools/add_img_to_target_files", line 176, in AddSystem
+    block_list=block_list)
+  File "build/make/tools/releasetools/add_img_to_target_files", line 333, in CreateImage
+    os.path.join(input_dir, what.upper()), image_props, output_file.name)
+  File "/home/builder/android/lineage-17.1/build/make/tools/releasetools/build_image.py", line 478, in BuildImage
+    mkfs_output = BuildImageMkfs(in_dir, prop_dict, out_file, target_out, fs_config)
+  File "/home/builder/android/lineage-17.1/build/make/tools/releasetools/build_image.py", line 334, in BuildImageMkfs
+    mkfs_output = common.RunAndCheckOutput(build_command)
+  File "/home/builder/android/lineage-17.1/build/make/tools/releasetools/common.py", line 258, in RunAndCheckOutput
+    args, proc.returncode, output))
+ExternalError: Failed to run command '['mkuserimg_mke2fs', '-s', '/home/builder/android/lineage-17.1/out/soong/.temp/tmpyl0pGw', '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.img', 'ext4', '/', '3397386240', '-j', '0', '-T', '1230768000', '-C', '/home/builder/android/lineage-17.1/out/soong/.temp/merged_fs_confighxOT1D.txt', '-B', '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.map', '-L', '/', '-M', '0', '-U', '4729639d-b5f2-5cc1-a120-9ac5f788683c', '-S', 'fd77d4fd-bb91-5ef5-9533-d5d806da85a3', '--inode_size', '256', '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/file_contexts.bin']' (exit code 4):
+00:52:04 mkuserimg_mke2fs.py INFO: Env: {'E2FSPROGS_FAKE_TIME': '1230768000', 'MKE2FS_CONFIG': '/home/builder/android/lineage-17.1/out/soong/.temp/tmpibt4nr'}
+00:52:04 mkuserimg_mke2fs.py INFO: Running: mke2fs -O ^has_journal -L / -I 256 -M / -m 0 -U 4729639d-b5f2-5cc1-a120-9ac5f788683c -E android_sparse,hash_seed=fd77d4fd-bb91-5ef5-9533-d5d806da85a3 -t ext4 -b 4096 /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.img 829440
+00:52:04 mkuserimg_mke2fs.py INFO: Env: {'E2FSPROGS_FAKE_TIME': '1230768000'}
+00:52:04 mkuserimg_mke2fs.py INFO: Running: e2fsdroid -T 1230768000 -C /home/builder/android/lineage-17.1/out/soong/.temp/merged_fs_confighxOT1D.txt -B /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.map -S /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/META/file_contexts.bin -f /home/builder/android/lineage-17.1/out/soong/.temp/tmpyl0pGw -a / /home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder/IMAGES/system.img
+00:52:07 mkuserimg_mke2fs.py ERROR: Failed to run e2fsdroid_cmd: set_selinux_xattr: No such file or directory searching for label "/config/.keep"
+set_selinux_xattr: Inappropriate ioctl for device searching for label "/omr"
+e2fsdroid: File too large while configuring the file system
+loaded 3654 fs_config entries
+
+mke2fs 1.44.4 (18-Aug-2018)
+Creating filesystem with 829440 4k blocks and 207584 inodes
+Filesystem UUID: 4729639d-b5f2-5cc1-a120-9ac5f788683c
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200
+
+Allocating group tables:  0/26     done                            
+Writing inode tables:  0/26     done                            
+Writing superblocks and filesystem accounting information:  0/26     done
+
+
+set_selinux_xattr: No such file or directory searching for label "/config/.keep"
+set_selinux_xattr: Inappropriate ioctl for device searching for label "/omr"
+e2fsdroid: File too large while configuring the file system
+loaded 3654 fs_config entries
+
+
+Out of space? Out of inodes? The tree size of /home/builder/android/lineage-17.1/out/soong/.temp/tmpyl0pGw is 1075937280 bytes (1026 MB), with reserved space of 0 bytes (0 MB).
+The max image size for filesystem files is 3397386240 bytes (3240 MB), out of a total partition size of 3397386240 bytes (3240 MB).
+ninja: build stopped: subcommand failed.
+00:52:07 ninja failed with: exit status 1
+
+#### failed to build some targets (01:27 (mm:ss)) ####
+

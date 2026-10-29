@@ -1,0 +1,28 @@
+# Excerpt: property_contexts validation failure
+# Full log was ~80 KB; this is the failing rule and its message.
+
+build/make/core/base_rules.mk:510: warning: ignoring old commands for target `out/target/product/j8y18lte/vendor/lib/vendor.qti.hardware.wifi.supplicant@2.1.so'
+No need to regenerate ninja file
+Starting ninja...
+[ 14% 508/3557] build out/target/product/j8y18lte/obj/KERNEL_OBJ/.additional_config
+[ 14% 509/3557] build out/target/product/j8y18lte/obj/ETC/vendor_property_contexts_intermediates/vendor_property_contexts
+FAILED: out/target/product/j8y18lte/obj/ETC/vendor_property_contexts_intermediates/vendor_property_contexts
+/bin/bash -c "(cp -f out/target/product/j8y18lte/obj/ETC/vendor_property_contexts_intermediates/vendor_property_contexts.tmp out/target/product/j8y18lte/obj/ETC/vendor_property_contexts_intermediates/vendor_property_contexts ) && (out/host/linux-x86/bin/property_info_checker out/target/product/j8y18lte/obj/ETC/sepolicy_intermediates/sepolicy out/target/product/j8y18lte/obj/ETC/plat_property_contexts_intermediates/plat_property_contexts out/target/product/j8y18lte/obj/ETC/vendor_property_contexts_intermediates/vendor_property_contexts )"
+Could not read line from 'out/target/product/j8y18lte/obj/ETC/vendor_property_contexts_intermediates/vendor_property_contexts': Type 'camera blacklist prop readable to everything' is not valid
+[ 14% 510/3557] Install: out/target/product/j8y18lte/system/apex/com.android.media/javalib/updatable-media.jar
+[ 14% 511/3557] Copy: out/target/product/j8y18lte/root/ueventd.rc
+[ 14% 512/3557] Install: out/target/product/j8y18lte/system/lib/ld-android.so
+[ 14% 513/3557] Install: out/target/product/j8y18lte/system/apex/com.android.media.swcodec/lib/libscudo_wrapper.so
+[ 14% 514/3557] Install: out/target/product/j8y18lte/system/lib/libz.so
+[ 14% 515/3557] Install: out/target/product/j8y18lte/system/apex/com.android.media.swcodec/lib/libc_scudo.so
+[ 14% 516/3557] Install: out/target/product/j8y18lte/system/apex/com.android.conscrypt/javalib/conscrypt.jar
+[ 14% 517/3557] Copy init script: out/target/product/j8y18lte/root/init.usb.configfs.rc
+[ 14% 518/3557] Copy init script: out/target/product/j8y18lte/root/init.zygote32.rc
+[ 14% 519/3557] Copy init script: out/target/product/j8y18lte/system/etc/init/recovery-persist.rc
+[ 14% 520/3557] Copy init script: out/target/product/j8y18lte/root/init.usb.rc
+[ 14% 521/3557] Target product buildinfo: out/target/product/j8y18lte/system/product/build.prop
+[ 14% 522/3557] Target buildinfo: out/target/product/j8y18lte/system/etc/prop.default
+[ 14% 523/3557] Install: out/target/product/j8y18lte/root/init.environ.rc
+[ 14% 524/3557] Building Kernel Config
+make: Entering directory '/home/builder/android/lineage-17.1/kernel/samsung/j8y18lte'
+make[1]: Entering directory '/home/builder/android/lineage-17.1/out/target/product/j8y18lte/obj/KERNEL_OBJ'

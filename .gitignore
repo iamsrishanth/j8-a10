@@ -1,0 +1,38 @@
+# Build output
+out/
+obj/
+.so/
+*.o
+*.ko
+*.a
+*.img
+*.img.gz
+*.zip
+*.tar
+*.tar.md5
+*.log.gz
+
+# Keep the committed artifact manifest / sums, never the binaries
+!artifacts/MANIFEST.md
+!artifacts/SHA256SUMS.txt
+
+# Signing material — never commit
+*.pk8
+*.pem
+*.x509
+keys/
+secure/
+releasekey*
+verity_key*
+
+# Local environment
+.repo/
+.ccache/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Editor/OS noise
+*~

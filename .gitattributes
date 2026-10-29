@@ -1,0 +1,14 @@
+# This repository vendors a device tree byte-for-byte, so *no* line-ending
+# conversion is allowed anywhere. Each file is stored exactly as it exists on
+# the build host: the upstream device tree carries CRLF in several XML/conf
+# files, while the documentation and shell scripts here are LF.
+* -text
+
+# Mark the binaries explicitly so diffs stay readable.
+*.bin binary
+*.dat binary
+*.apk binary
+*.jar binary
+*.so binary
+*.img binary
+*.gz binary
