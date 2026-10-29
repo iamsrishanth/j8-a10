@@ -154,11 +154,18 @@ Memory note: on a 12 GB host, `-j16` works but leaves little headroom. If
 
 ```text
 out/target/product/j8y18lte/
-├── boot.img              # kernel + ramdisk      (13,064,192 B observed)
-├── recovery.img          # Lineage recovery      (22,274,048 B observed)
-├── vendor.img            # sparse vendor image   (248,783,020 B observed)
-├── system.img            # ← currently still fails
-└── lineage-17.1-*.zip    # ← only exists after a successful bacon
+├── boot.img              # kernel + ramdisk        13,064,192 B
+├── recovery.img          # Lineage recovery        22,284,288 B
+├── system.img            # sparse system image     1,078,473,140 B
+├── vendor.img            # sparse vendor image     248,877,228 B
+└── lineage-17.1-<date>-UNOFFICIAL-j8y18lte.zip      543,395,513 B
+```
+
+A successful run ends with:
+
+```text
+Package Complete: out/target/product/j8y18lte/lineage-17.1-<date>-UNOFFICIAL-j8y18lte.zip
+#### build completed successfully (… ) ####
 ```
 
 ---

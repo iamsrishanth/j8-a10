@@ -65,15 +65,25 @@ has nothing to sign with.
 | Image | Bytes | AVB footer (`AVBf` in last 4 KiB) | `AVB0` at offset 0 |
 |---|---:|---|---|
 | `boot.img` | 13,064,192 | no | no |
-| `recovery.img` | 22,274,048 | no | no |
-| `vendor.img` | 248,783,020 | no | no |
-| `system.img` | — | not created | — |
+| `recovery.img` | 22,284,288 | no | no |
+| `vendor.img` | 248,877,228 sparse → 503,316,480 raw | no | no |
+| `system.img` | 1,078,473,140 sparse | (sparse container) | no |
 | `vbmeta.img` | — | **does not exist** | — |
 
-Second, independent confirmation: partition images are **not padded to the
-board partition sizes**. With AVB, `avbtool add_hash_footer --partition_size N`
-pads the image to exactly `N`. Here `boot.img` is 13,064,192 B against a
-33,554,432 B partition, and `vendor.img` is 248,783,020 B against 503,316,480 B.
+Decisive evidence, strongest first:
+
+1. **`misc_info.txt` has no `avb_*`, no `verity=` and no `system_root_image`
+   key.** Releasetools is data-driven from that file; with those keys absent
+   there is nothing to sign and no verification metadata to generate.
+2. **No `vbmeta*.img` exists** in the product output.
+3. **No AVB footer on the images.** Unpacking the sparse `vendor.img` yields
+   exactly 503,316,480 B of valid ext4 (partition size) with no `AVBf` in its
+   last 4 KiB; `boot.img` has none either. With AVB,
+   `avbtool add_hash_footer --partition_size N` pads and appends a footer.
+
+(Image sizes change between builds; the assertions above were re-checked
+against the artifacts listed in
+[`../artifacts/MANIFEST.md`](../artifacts/MANIFEST.md).)
 
 ## 5. Boot image internals
 
