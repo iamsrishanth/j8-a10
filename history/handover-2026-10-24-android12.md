@@ -160,7 +160,7 @@ ramdisk ≈ 779 KB. Matches the device tree's `BoardConfig.mk` — a repacked im
 | `goldfish07/android_kernel_samsung_j8y18lte` | `kernel/samsung/j8y18lte` | `lineage-19.0` |
 | `goldfish07/android_vendor_samsung_j8y18lte` | `vendor/samsung/j8y18lte` | `10` |
 
-Ready-to-copy manifest: [local_manifests/j8y18lte.xml](local_manifests/j8y18lte.xml)
+Ready-to-copy manifest: [local_manifests/j8y18lte.xml](../manifests/j8y18lte.xml)
 
 ### Key build parameters (from `BoardConfig.mk`)
 
@@ -253,7 +253,7 @@ mirrors — Play Store only (WhatsApp has an official APK at `whatsapp.com/andro
 
 `ro.boot.flash.locked=1` on a Knox-tripped unit. If Odin refuses, `dd` from root adb
 is the only path — and it requires a bootable system. **Always dump partitions first**
-(see [scripts/backup-partitions.ps1](scripts/backup-partitions.ps1)).
+(see [scripts/backup-partitions.ps1](../scripts/backup-partitions.ps1)).
 
 ### 8.7 Secret on a network share
 
