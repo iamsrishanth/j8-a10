@@ -1,0 +1,42 @@
+From 2f2d3cc0725dfb1f4471809b59ca68e67935523c Mon Sep 17 00:00:00 2001
+From: j8-a10 <noreply@example.com>
+Date: Fri, 30 Oct 2026 11:54:55 +0530
+Subject: [PATCH] BoardConfig: register device sepolicy by literal path
+
+Android 10 builds the image file_contexts from build_vendor_policy(), which
+reads BOARD_VENDOR_SEPOLICY_DIRS. The compatibility shim copies
+BOARD_SEPOLICY_DIRS into it, but $(LOCAL_PATH) had already been rewritten in
+the decisive parse pass, so the entry became system/sepolicy/sepolicy and the
+device's own policy directory never reached the merge. Every j8y18lte context
+(/firmware, /omr, /efs, block devices, vendor services) was dropped and
+e2fsdroid aborted with 'searching for label "/firmware"'.
+
+Use the literal path. Keep it last so qcom policy still declares its types
+before device policy uses them. Also terminate the file with a newline.
+---
+ BoardConfig.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index 57827b8..c96c890 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -232,7 +232,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+ 
+ # SELinux
+ include device/qcom/sepolicy-legacy-um/sepolicy.mk
+-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
++BOARD_SEPOLICY_DIRS += device/samsung/j8y18lte/sepolicy
+ 
+ # Treble
+ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+@@ -262,4 +262,4 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
+ WIFI_DRIVER_FW_PATH_STA := "sta"
+ WPA_SUPPLICANT_VERSION := VER_0_8_X
+ TARGET_DISABLE_WCNSS_CONFIG_COPY := true
+-WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
+\ No newline at end of file
++WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
+-- 
+2.34.1
+

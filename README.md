@@ -16,9 +16,11 @@ tree, kernel rebuild and vendor blob set are all part of the story.
 
 ## Status
 
-> **The ROM builds.** `m bacon` completes and produces a flashable, test-key
-> signed OTA. It has **not** been installed or booted on hardware yet. See
-> [STATUS.md](STATUS.md) for the evidence.
+> **It boots.** Android 10 builds, is signed with the project's own release
+> keys, installs through TWRP, and reaches a working LineageOS UI on the
+> device. The validated build is the **permissive diagnostic** one; the
+> **enforcing** OTA is built and verified but has not had its cold boot yet.
+> Full evidence: [STATUS.md](STATUS.md) · [VALIDATION.md](VALIDATION.md).
 
 | Stage | Result |
 |---|---|
@@ -26,15 +28,24 @@ tree, kernel rebuild and vendor blob set are all part of the story.
 | Kernel build (3.18.140, arm64, `Image.gz-dtb`) | ✅ complete |
 | `system.img` / `vendor.img` / `boot.img` / `recovery.img` | ✅ produced |
 | OTA ZIP (`lineage-17.1-*-UNOFFICIAL-j8y18lte.zip`, 543 MB) | ✅ produced |
-| Release-key signing | ❌ not applied (build uses AOSP test keys) |
-| Flashed and booted on hardware | ❌ not attempted |
-| SELinux enforcing | ❌ build is `permissive` (userdebug bring-up) |
+| Release-key signing | ✅ applied (`release-keys`) |
+| TWRP install + data format | ✅ done |
+| First boot (`sys.boot_completed=1`, Setup Wizard) | ✅ done |
+| Hardware validation | ⚠️ partial — [results](VALIDATION.md) |
+| Enforcing cold boot | ⛔ pending (device offline) |
+
+<p align="center">
+  <img src="evidence/2026-10-30-first-boot/screenshots/setup-wizard-04-33.png" width="240" alt="LineageOS Setup Wizard on the Galaxy J8">
+  <img src="evidence/2026-10-30-first-boot/screenshots/lock-screen-11-17.png" width="240" alt="LineageOS lock screen, 5.5 hours uptime">
+</p>
 
 Two build blockers had to be fixed to get here, both in the device tree:
 
-1. **`e2fsdroid` could not label `/firmware`** — a dangling root-directory
-   symlink left in the staging tree by earlier manual workarounds, combined
-   with the device sepolicy directory not being registered by an explicit path.
+1. **`e2fsdroid` could not label `/firmware`** — `$(LOCAL_PATH)` in
+   `BoardConfig.mk` resolved to `system/sepolicy` in the decisive parse pass, so
+   the device's own sepolicy directory never reached
+   `BOARD_VENDOR_SEPOLICY_DIRS` and every device context (including `/firmware`)
+   was silently dropped from the image.
 2. **`vendor_property_contexts` failed its self-check** — a missing trailing
    newline in `sepolicy/property_contexts` glued the last rule to the next
    file's first line during the policy concatenation.
@@ -124,6 +135,8 @@ rollback reality: [docs/install.md](docs/install.md).
 
 | Path | Contents |
 |---|---|
+| [`STATUS.md`](STATUS.md) | Current state, artifact hashes, blocker, next step |
+| [`VALIDATION.md`](VALIDATION.md) | Measured on-device results for the installed build |
 | [`docs/device.md`](docs/device.md) | Hardware, partition map, boot image header, ABI details |
 | [`docs/build.md`](docs/build.md) | Host setup and the full build procedure |
 | [`docs/build-troubleshooting.md`](docs/build-troubleshooting.md) | Known build failures and fixes, including the current blocker |
@@ -138,7 +151,8 @@ rollback reality: [docs/install.md](docs/install.md).
 | [`patches/`](patches/) | Local device-tree patches applied on top of the pin |
 | [`device/samsung/j8y18lte/`](device/samsung/j8y18lte/) | Vendored device tree at the build pin (+ fixes) |
 | [`scripts/`](scripts/) | Sync, build, patch, image, backup and verification scripts |
-| [`artifacts/`](artifacts/) | Manifest and SHA-256 sums of the images built so far |
+| [`artifacts/`](artifacts/) | Manifest and SHA-256 sums of every image built |
+| [`evidence/`](evidence/) | Boot evidence from the device: props, kernel log, denials, screenshots |
 | [`logs/`](logs/) | Representative build logs (trimmed) |
 | [`history/`](history/) | Earlier handovers and reports, preserved verbatim |
 

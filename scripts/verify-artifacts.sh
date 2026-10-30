@@ -72,20 +72,19 @@ if [ -f "$BOOT" ]; then
   python3 - "$BOOT" <<'EOF'
 import struct, sys
 p = sys.argv[1]
-with open(p, 'rb') as f:
-    h = f.read(1632)
-fields = struct.unpack('<8s10I16s512s32s1024s', h)
-magic, kernel_size, kernel_addr, ramdisk_size, ramdisk_addr, _, page_size = fields[:7]
-tags_addr = fields[9] if len(fields) > 9 else 0
-print('  magic        ', magic)
-print('  kernel_size  ', kernel_size)
-print('  ramdisk_size ', ramdisk_size)
-print('  page_size    ', page_size)
-print('  kernel_addr   0x%08x' % kernel_addr)
-print('  ramdisk_addr  0x%08x' % ramdisk_addr)
-print('  tags_addr     0x%08x' % tags_addr)
-cmdline = fields[10].split(b'\0')[0].decode(errors='replace')
-print('  cmdline      ', cmdline)
+d = open(p, 'rb').read(2048)
+(magic, ksize, kaddr, rsize, raddr, ssize, saddr,
+ tags, page, hdr_ver, os_ver) = struct.unpack('<8s10I', d[:48])
+cmdline = d[64:576].split(b'\0')[0].decode(errors='replace')
+print('  magic         ', magic)
+print('  kernel_size   ', ksize)
+print('  ramdisk_size  ', rsize)
+print('  page_size     ', page)
+print('  kernel_addr    0x%08x' % kaddr)
+print('  ramdisk_addr   0x%08x' % raddr)
+print('  tags_addr      0x%08x' % tags)
+print('  cmdline       ', cmdline)
+print('  selinux       ', 'permissive' if 'androidboot.selinux=permissive' in cmdline else 'enforcing (no permissive arg)')
 if magic != b'ANDROID!':
     sys.exit('  !! not an Android boot image')
 EOF

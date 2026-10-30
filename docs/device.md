@@ -13,7 +13,7 @@ device tree. Where the two disagree, both values are shown.
 | Shipped Android | 8.0 (TouchWiz Essence) | device tree README |
 | Target Android here | 10 / API 29 (LineageOS 17.1) | this project |
 | Bootloader (last read) | `J810GDDU6CWH2` | `ro.boot.bootloader` |
-| Verified boot state | `green` | `ro.boot.verifiedbootstate` |
+| Verified boot state | `orange` with this ROM (`green` on the previous stock/AICP install) | `ro.boot.verifiedbootstate` |
 | `ro.boot.flash.locked` | `1` | measured |
 | Knox warranty bit | `1` (tripped) | `ro.boot.warranty_bit` |
 
@@ -65,7 +65,10 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 |---|---|---:|---|
 | boot | `mmcblk0p25` | 33,554,432 | 32 MiB |
 | recovery | `mmcblk0p26` | 33,554,432 | 32 MiB |
-| persist | `mmcblk0p31` | 1,048,576 | 1 MiB |
+| persist | `mmcblk0p31` | 33,554,432 | 32 MiB |
+| efs | — | 16,777,216 | 16 MiB |
+| omr | — | 20,971,520 | 20 MiB |
+| config | — | 1,048,576 | 1 MiB |
 | system | `mmcblk0p40` | 3,397,386,240 | ~3.16 GiB |
 | vendor | `mmcblk0p41` | 503,316,480 | 480 MiB |
 | cache | `mmcblk0p43` | 314,572,800 | 300 MiB |
@@ -74,10 +77,10 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 Notes:
 
 - Numbers come from `BoardConfig.mk` and were cross-checked against
-  `/dev/block/by-name/` on a live device.
+  `/dev/block/by-name/` on a live device (`blockdev --getsize64`).
 - The live `userdata` measurement was 57,415,806,976 B — 16,384 B larger than
-  the build-time value. Do not assume either number blindly; measure with
-  `blockdev --getsize64 /dev/block/by-name/<name>` before writing raw images.
+  the build-time value. Do not assume either number blindly; measure before
+  writing raw images.
 - `/dev/block/by-name/*` symlinks exist in the running system and in TWRP.
   Using them is safer than hard-coding `mmcblk0pNN`.
 - **Never** write `persist`, `efs`, `modemst1/2`, `fsg`, `fsc`, `apnhlos` or
@@ -183,7 +186,37 @@ file-encrypted.
 The blobs being Android 10-era is the reason Android 10 is the realistic
 target for a from-source build: the HAL interfaces match.
 
-## 10. Quick inspection commands
+## 11. Properties the stock ODM partition overrides
+
+The device has a separate **ODM** partition from the stock Samsung firmware.
+This build does not touch it (by design — it is not part of the ROM payload),
+and it defines properties that therefore win over the ones in
+`/system/build.prop` and `/vendor/build.prop`.
+
+Observed on the installed build:
+
+```text
+ro.system.build.fingerprint = samsung/j8y18ltedd/j8y18lte:10/QP1A.190711.020/J810GDDU4CUB2:user/release-keys
+ro.build.fingerprint        = (same stock Samsung string)
+```
+
+while `/system/build.prop` correctly contains the LineageOS identity
+(`ro.lineage.version=17.1-…`, `ro.build.tags=release-keys`).
+
+Why it matters: anything that reads `ro.build.fingerprint` for identity —
+Play certification, Play Integrity style checks, CTS, some banking apps — sees
+a **stock Samsung Android 10** build, not LineageOS. It is cosmetic for the ROM
+itself but explains results those tools will report.
+
+Options if you need to change it (all outside this repository's scope):
+
+- overlay the properties from `/vendor` with a higher-priority prop file
+  (Android 10 property precedence allows vendor to override odm only in
+  specific cases — test it),
+- patch the stock ODM image (destructive, needs a backup),
+- leave it alone and accept the stock fingerprint.
+
+## 12. Quick inspection commands
 
 ```bash
 # identity
@@ -199,10 +232,12 @@ adb shell blockdev --getsize64 /dev/block/by-name/vendor
 # boot header of a built image
 python3 - <<'EOF'
 import struct
-h = open('boot.img','rb').read(2048)
-f = struct.unpack('<8s10I16s512s32s1024s', h[:1664])
-print('magic', f[0], 'kernel', f[1], 'ramdisk', f[3], 'page', f[5])
-print('kernel_addr 0x%08x ramdisk_addr 0x%08x tags 0x%08x' % (f[6], f[7], f[8]))
-print('cmdline', f[10].split(b'\0')[0].decode())
+d = open('boot.img','rb').read(2048)
+(magic, ksize, kaddr, rsize, raddr, ssize, saddr,
+ tags, page, hdr_ver, os_ver) = struct.unpack('<8s10I', d[:48])
+cmdline = d[64:576].split(b'\0')[0].decode()
+print(magic, 'kernel', ksize, 'ramdisk', rsize, 'page', page)
+print('kernel_addr 0x%08x ramdisk_addr 0x%08x tags 0x%08x' % (kaddr, raddr, tags))
+print('cmdline:', cmdline)
 EOF
 ```

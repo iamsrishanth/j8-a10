@@ -38,56 +38,97 @@ if (retval < 0) {
 `file_contexts.bin` matches the path**. So e2fsdroid is walking an entry named
 `/firmware` in the system image source tree and cannot find a label for it.
 
-### Why `/firmware` was in the system tree at all
+### Root cause
 
-`/firmware` is a **runtime** path on this device, not a system-image path:
+`m systemimage` labels the image with
+`out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin`.
+That file is built by `system/sepolicy/Android.mk` from the platform contexts
+plus **`build_vendor_policy`, which reads `BOARD_VENDOR_SEPOLICY_DIRS`**.
 
-- `rootdir/fstab.qcom` mounts the vfat `apnhlos` partition at
-  `/vendor/firmware_mnt` with `context=u:object_r:firmware_file:s0`;
-- `rootdir/init.qcom.rc` has the `symlink /vendor/firmware_mnt /firmware` lines
-  **commented out**;
-- the device's `sepolicy/file_contexts` labels `/firmware(/.*)?` for the
-  runtime path.
+The device tree only set the legacy variable:
 
-None of that should put a `/firmware` entry in `system/`. What did was
-**debugging leftovers**: earlier attempts had created `firmware`, `omr`,
-`config`, `efs`, `dsp` and `persist` entries under
-`out/target/product/j8y18lte/system/` (and `.keep` files) to "make the error go
-away". A dangling `firmware -> /vendor/firmware_mnt` symlink in the staging
-tree is exactly an entry whose path has no matching label in the *system*
-context set, because the policy entry that matches is the vendor-prefixed one
-(`/vendor/firmware_mnt(/.*)?`).
-
-Confirm for yourself:
-
-```bash
-strings out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin \
-  | grep -E 'firmware|omr'
+```make
+# device/samsung/j8y18lte/BoardConfig.mk (pinned state)
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 ```
 
-You will see `/vendor/firmware_mnt(/.*)?` and `/vendor/bt_firmware(/.*)?` —
-never a bare `/firmware`.
+Android 10's compatibility shim copies `BOARD_SEPOLICY_DIRS` into
+`BOARD_VENDOR_SEPOLICY_DIRS` at parse time — **but the value it received was
+wrong**. In the decisive parse pass `$(LOCAL_PATH)` had already been clobbered,
+so the entry became `system/sepolicy/sepolicy` instead of the device's own
+directory.
+
+Instrumented evidence (temporary `$(warning)` lines, since removed):
+
+```text
+J8D_VENDOR=[system/sepolicy/sepolicy device/qcom/sepolicy-legacy-um/vendor/common …
+            device/lineage/sepolicy/common/vendor]
+J8D_WILD=[device/samsung/j8y18lte/sepolicy/file_contexts]     # the file exists
+J8D_SAM=[]                                                     # but is not in the list
+```
+
+Consequence: **every `j8y18lte` context entry was silently dropped** from the
+image — `/firmware`, `/omr`, `/efs`, `/config`, the `mmcblk` block devices and
+the device's own service domains. `e2fsdroid` then failed on the first
+unlabelled path it met and aborted image creation.
+
+That also explains the confusing earlier sequence of failures (`/firmware` →
+`/omr` → `/config/.keep`): those reports were chasing paths that had never been
+labelled in the first place, and which one failed first depended on which
+workaround was active at the time.
+
+`/firmware` itself is a **runtime** path: `rootdir/fstab.qcom` mounts the vfat
+`apnhlos` partition at `/vendor/firmware_mnt` with
+`context=u:object_r:firmware_file:s0`. The device's `sepolicy/file_contexts`
+labels it (`/firmware(/.*)?  u:object_r:firmware_file:s0`) — but only if that
+directory reaches the merge.
 
 ### Fix
 
-1. **Remove the manual workarounds from the staging tree** and let the build
-   recreate it:
+Use the literal path, and keep it **last** in the list so the qcom fragments
+still contribute their type declarations before device policy uses them:
 
-   ```bash
-   rm -rf out/target/product/j8y18lte/system out/target/product/j8y18lte/root
-   m -j16 bacon
-   ```
+```diff
+-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
++BOARD_SEPOLICY_DIRS += device/samsung/j8y18lte/sepolicy
+```
 
-2. **Make sure the device's sepolicy directory is registered by an explicit
-   path**, so its entries participate in the aggregation the image build uses:
+Plus the trailing-newline fix from §2 — both are in
+[`../patches/`](../patches/).
 
-   ```make
-   # device/samsung/j8y18lte/BoardConfig.mk
-   BOARD_SEPOLICY_DIRS += device/samsung/j8y18lte/sepolicy
-   ```
+Verify the merge and the image:
 
-   (The pinned tree used `$(LOCAL_PATH)/sepolicy` here. `LOCAL_PATH` is an
-   `Android.mk` variable; relying on it inside `BoardConfig.mk` is fragile.)
+```bash
+grep -c . out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.device.tmp
+grep -E '\^/(firmware|omr)' out/target/product/j8y18lte/obj/ETC/file_contexts.bin_intermediates/file_contexts.device.tmp
+
+# after a successful systemimage:
+debugfs -R 'ea_list /firmware' out/target/product/j8y18lte/system.img | grep -i selinux
+```
+
+Expected labels in the finished image: `/firmware` → `firmware_file`,
+`/omr` → `omr_file`, `/efs` → `efs_file`, `/config` → `rootfs`,
+`/system/bin/init` → `init_exec`, `/system/bin/logd` → `logd_exec`.
+
+### Two rejected attempts (kept for the record)
+
+1. `BOARD_VENDOR_SEPOLICY_DIRS += $(BOARD_SEPOLICY_DIRS)` — appends every
+   directory a second time → `Multiple same specifications for /dev/…` in
+   `vendor_file_contexts`.
+2. Appending only the device directory to `BOARD_VENDOR_SEPOLICY_DIRS` at
+   BoardConfig time — correct content, but places the device directory
+   **before** the qcom policy, so `checkpolicy` fails on
+   `hal_gnss_qti.te:11: ERROR 'unknown type hal_gnss_qti'` (declaration order
+   matters).
+
+### Stale kati graph
+
+A stale `kati` state masked the fix for one cycle. If a source change appears
+to have no effect on the build, force regeneration:
+
+```bash
+rm -f out/.kati_stamp-* out/build-*.ninja out/combined-*.ninja
+```
 
 ### The wrong fix, for the record
 

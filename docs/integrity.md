@@ -102,6 +102,16 @@ cmdline      console=null androidboot.hardware=qcom msm_rtb.filter=0x237
              buildvariant=userdebug
 ```
 
+The **enforcing** image is byte-identical apart from the cmdline:
+
+```text
+console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3
+androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 buildvariant=userdebug
+```
+
+(`sha256` of the permissive boot: `b335f561…ffe3`; enforcing:
+`fc23372e…a8e54`. Same kernel and ramdisk — only the cmdline string differs.)
+
 The boot ramdisk contains 7 entries (`apex/ debug_ramdisk/ dev/ init mnt/ proc/
 sys/`) and a 1.37 MB statically linked first-stage `init`. **There is no fstab
 in the boot ramdisk.** The runtime fstab lives at `/vendor/etc/fstab.qcom`.
@@ -145,32 +155,61 @@ it to consume.
 Two structural oddities worth knowing before debugging a boot failure:
 
 1. `/system` is marked `recoveryonly` in the normal-boot fstab, and the boot
-   ramdisk has no fstab of its own. How (and whether) `/system` and `/vendor`
-   get mounted at normal boot is **unverified** and needs a real boot log.
+   ramdisk has no fstab of its own. **Resolved in practice:** the device boots
+   (system-as-root; `/init` links to `/system/bin/init`), so fs_mgr finds the
+   vendor fstab after `/vendor` is mounted. It is worth knowing because a
+   *flat* image — one without the nested `/system` tree — fails exactly here
+   and loops `logd` at exit 255.
 2. The recovery fstab asks for `forceencrypt=footer` while the kernel has
    `CONFIG_FS_ENCRYPTION` unset — a configuration that cannot work as written.
+   The normal-boot fstab requests no encryption, and `/data` is indeed
+   unencrypted.
 
 ## 8. SELinux
 
-- The only SELinux setting in the device + vendor trees is
-  `androidboot.selinux=permissive` in `BoardConfig.mk`.
-- `androidboot.selinux=enforcing` appears nowhere.
-- `SELINUX_DEVELOP=y` is set in the kernel config, so the default without a
-  cmdline override would be permissive anyway.
+There are **two** boot images in this project, identical apart from one
+kernel-cmdline word:
 
-Consequence: SELinux denials in `logcat`/`dmesg` on this build are **logged,
-not fatal**. They are not the reason a boot hangs. A release build must flip
-this to `enforcing` and then fix the real denials, which is a separate body of
-work (Samsung HAL domains are the usual suspects).
+| Build | `androidboot.selinux` | Status |
+|---|---|---|
+| Permissive (diagnostic) | `permissive` | installed and validated — [VALIDATION.md](../VALIDATION.md) |
+| Enforcing (release candidate) | *(absent ⇒ enforcing)* | built, signed, not yet flashed |
+
+`androidboot.selinux=enforcing` is not written explicitly; the enforcing image
+simply **omits** the `permissive` argument, so the kernel uses its default.
+`SELINUX_DEVELOP=y` is set in the kernel config, which makes that default
+permissive unless the policy is loaded as enforcing — so the boot must be
+verified with `getenforce`, not assumed.
+
+### What was measured on the device
+
+- Permissive build: ~530 AVC denials per boot, all logged and none fatal —
+  mostly `flags_health_check` property reads (445), plus `main`/zygote,
+  `health@2.0-service`, `init.qcom.post_boot` and `healthd`.
+- Runtime `setenforce 1` on the running permissive build **held for 5+ hours**
+  with the UI, adb, Wi-Fi and `sys.boot_completed=1` intact. Under enforcing,
+  the only denials were `healthd` reading battery sysfs
+  (`/sys/class/power_supply/battery/*`, labelled `sysfs` instead of
+  `sysfs_batteryinfo`) and `kernel` reading `hall_detect`.
+- The built image itself carries correct labels: `/firmware` → `firmware_file`,
+  `/omr` → `omr_file`, `/efs` → `efs_file`, `/config` → `rootfs`,
+  `/system/bin/init` → `init_exec`, `/system/bin/logd` → `logd_exec`.
+
+The clean `init`/`vold`/`servicemanager` domains show no denials, which is why
+an enforcing cold boot is expected to work — but it has **not been proven
+yet**, and this document does not claim otherwise.
+
+Denial breakdown: [`../evidence/2026-10-30-first-boot/avc-denials-summary.txt`](../evidence/2026-10-30-first-boot/avc-denials-summary.txt).
 
 ## 9. What to do about it
 
 | Goal | Action |
 |---|---|
-| Reproduce this build exactly | change nothing — this is the configured behaviour |
-| Add dm-verity | set `PRODUCT_SUPPORTS_VERITY := true`, provide `verity` keys, and expect fstab changes |
+| Reproduce the validated build | `scripts/set-selinux-mode.sh permissive`, build, sign |
+| Produce the enforcing candidate | `scripts/set-selinux-mode.sh enforcing`, build, sign, flash, confirm `getenforce` |
+| Add dm-verity | set `PRODUCT_SUPPORTS_VERITY := true`, provide `verity` keys, expect fstab changes |
 | Add AVB | not possible on this kernel without backporting AVB support; the bootloader would also have to accept it |
-| Make it enforcing | change the cmdline, build, capture denials, iteratively add policy — and expect boot loops until the policy is complete |
 
-For a bring-up build, the current configuration is the pragmatic one: it
-removes a whole class of failure modes from the debugging surface.
+For bring-up, permissive first is the pragmatic order: it removes a whole class
+of failure modes from the debugging surface. It is not a shipping
+configuration.

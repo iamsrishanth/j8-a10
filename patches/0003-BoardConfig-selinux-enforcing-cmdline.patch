@@ -1,0 +1,30 @@
+From 3684e15c86f225edceff4d2cb0268b3921f12aeb Mon Sep 17 00:00:00 2001
+From: j8-a10 <noreply@example.com>
+Date: Fri, 30 Oct 2026 11:54:55 +0530
+Subject: [PATCH] BoardConfig: drop androidboot.selinux=permissive for the
+ release build
+
+The cmdline is baked into boot.img, so SELinux mode is a build-time choice.
+Without the permissive argument the kernel defaults to enforcing; verify with
+getenforce after a cold boot. Revert this patch (or use
+scripts/set-selinux-mode.sh permissive) for the diagnostic build.
+---
+ BoardConfig.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index c96c890..2d9b593 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -44,7 +44,7 @@ BOARD_RAMDISK_OFFSET := 0x02000000
+ BOARD_TAGS_OFFSET := 0x01e00000
+ BOARD_KERNEL_PAGESIZE := 2048
+ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
++BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
+ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
+ 
+ # Kernel config
+-- 
+2.34.1
+

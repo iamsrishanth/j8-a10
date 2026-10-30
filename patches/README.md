@@ -6,33 +6,49 @@ idempotent and refuses to guess when the tree is in an unexpected state.
 
 | Patch | File | Effect |
 |---|---|---|
-| `0001-BoardConfig-explicit-sepolicy-path.patch` | `BoardConfig.mk` | Registers the device's sepolicy directory by an explicit path (`device/samsung/j8y18lte/sepolicy`) instead of `$(LOCAL_PATH)/sepolicy`, and adds the missing final newline |
+| `0001-BoardConfig-device-sepolicy-path.patch` | `BoardConfig.mk` | Registers the device's sepolicy directory by a literal path (`device/samsung/j8y18lte/sepolicy`) instead of `$(LOCAL_PATH)/sepolicy`, and adds the missing final newline |
 | `0002-sepolicy-property-contexts-trailing-newline.patch` | `sepolicy/property_contexts` | Adds the missing final newline that corrupted the merged policy file |
+| `0003-BoardConfig-selinux-enforcing-cmdline.patch` | `BoardConfig.mk` | Drops `androidboot.selinux=permissive` from the kernel cmdline (release / enforcing build) |
 
-## Why these two matter
+Patches 1 and 2 are **required for the ROM to build at all**. Patch 3 is a
+policy choice: without it the build boots permissive, which is what was
+validated first. Toggle it with
+[`../scripts/set-selinux-mode.sh`](../scripts/set-selinux-mode.sh).
 
-**0001 — explicit sepolicy path.** Android 10 merges every `BOARD_SEPOLICY_DIRS`
-entry into the file contexts used for the system image. `$(LOCAL_PATH)` is an
-`Android.mk` variable; depending on include order in `BoardConfig.mk` it can be
-unset, which silently drops the device's own `file_contexts` (the entries for
-`/firmware`, `/omr`, the `mmcblk` block devices and the Samsung HAL binaries)
-from the merge. When that happens, `e2fsdroid` fails with
-`set_selinux_xattr: … searching for label "/firmware"` — `selabel_lookup()`
-found no rule at all.
+## Why these matter
+
+**0001 — explicit sepolicy path.** `m systemimage` labels the image with
+`file_contexts.bin`, which `build_vendor_policy()` generates from
+`BOARD_VENDOR_SEPOLICY_DIRS`. The pinned tree only set `BOARD_SEPOLICY_DIRS`
+using `$(LOCAL_PATH)`; in the decisive parse pass that variable had already
+been rewritten, so the entry became `system/sepolicy/sepolicy` and the device's
+own policy directory never reached the merge. Every device context — `/firmware`,
+`/omr`, `/efs`, the `mmcblk` block devices, the vendor service domains — was
+dropped, and `e2fsdroid` aborted with:
+
+```text
+set_selinux_xattr: No such file or directory searching for label "/firmware"
+```
 
 **0002 — trailing newline.** The policy build concatenates every
-`property_contexts` through `cpp`. Without a final newline, the last rule of
-this file is joined to the first line of the next file, producing a line like
+`property_contexts` through `cpp`. Without a final newline, this file's last
+rule is glued to the next file's first line:
 
 ```text
 vendor.sys.qseecomd.enable  u:object_r:vendor_default_prop:s0# Aux camera blacklist prop readable to everything
 ```
 
-and `vendor_property_contexts` fails its validation with a confusing
-"Type 'camera blacklist prop readable to everything' is not valid".
+and `vendor_property_contexts` fails its check with
+`Type 'camera blacklist prop readable to everything' is not valid`.
 
-Both failures are analysed in
-[`../docs/build-troubleshooting.md`](../docs/build-troubleshooting.md).
+**0003 — SELinux mode.** The cmdline is baked into `boot.img`, so this is a
+build-time choice, not a runtime property. Removing the `permissive` argument
+lets the kernel default to enforcing; that behaviour still has to be verified
+with `getenforce` after a cold boot.
+
+All three are analysed in
+[`../docs/build-troubleshooting.md`](../docs/build-troubleshooting.md) and
+[`../docs/integrity.md`](../docs/integrity.md).
 
 ## Applying
 

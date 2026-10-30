@@ -77,15 +77,42 @@ git, and the real investigation started:
   staging tree clean and make the policy aggregation correct — not to delete
   labels.
 
-### 2026-10-29 → 2026-10-30 — bring-up continues
+### 2026-10-29 → 2026-10-30 — the build is fixed, and the phone boots
 
-Work continued on the system image and policy aggregation. The build now
-reaches OTA packaging (`add_img_to_target_files`), producing a sparse
-`system.img` of ~1.08 GB and a complete set of images. Device partition
-backups (boot, efs, persist, modemst1/2, fsg, config, misc) were captured.
+The investigation converged on a single wrong variable. `e2fsdroid` was not
+tripping over root folders or `.keep` files — it was labelling an image built
+from a **file_contexts that never contained the device's own policy**. In
+`BoardConfig.mk`, `BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy` was evaluated
+when `$(LOCAL_PATH)` had already been rewritten, so the list contained
+`system/sepolicy/sepolicy` and every j8y18lte context (`/firmware`, `/omr`,
+`/efs`, the block devices, the vendor service domains) was silently dropped.
+A forced `$(warning)` dump proved it; using the literal path fixed it, and a
+missing trailing newline in `sepolicy/property_contexts` accounted for the
+second failure ("Type 'camera blacklist prop readable to everything' is not
+valid").
 
-The current state, including the latest failure or success, is in
-[../STATUS.md](../STATUS.md) — that file is updated as the build moves.
+From there the pipeline ran end to end:
+
+1. `m bacon` → permissive OTA; signed with the project's own release keys.
+2. Installed through TWRP (`/sbin/twrp install`), data formatted.
+3. **Booted**: `sys.boot_completed=1`, Setup Wizard on a 720×1480 display,
+   Wi-Fi, Bluetooth, Samsung RIL daemons, 5 sensors, 2 cameras, storage,
+   charging all healthy. `setenforce 1` held for 5+ hours.
+4. An **enforcing** OTA was built and verified (its boot image simply omits
+   `androidboot.selinux=permissive`).
+
+Earlier boot cycle 0 had failed with `logd` exiting 255 in a loop. That image
+was *flat* and labelled entirely `rootfs`; this device is system-as-root, so
+`/system/bin/*` did not exist as the init scripts expected. The native nested
+image with correct labels removed that failure.
+
+Then the session hit a hardware limit, not a software one: after
+`adb reboot recovery` the phone went dark and stopped enumerating on USB — the
+battery had drained while the host slept. Nothing was being written at the
+time. The enforcing image is ready to flash when the device returns.
+
+Current state: [../STATUS.md](../STATUS.md). Measured results:
+[../VALIDATION.md](../VALIDATION.md).
 
 ## <a name="scope"></a>Why the scope is narrow
 

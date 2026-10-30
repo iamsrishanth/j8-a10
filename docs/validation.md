@@ -1,5 +1,11 @@
 # Post-install validation
 
+> **Results already measured on hardware** are in
+> [`../VALIDATION.md`](../VALIDATION.md) — that is the file to read for what
+> this build actually does. This page is the reusable checklist for the next
+> flashing cycle (for example: the enforcing cold boot, or after a policy
+> change).
+
 A build that flashes is not a working ROM. Fill this table in with real
 evidence and store the raw output next to it. "Not tested" is a valid — and
 honest — result.

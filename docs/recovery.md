@@ -1,123 +1,139 @@
 # Recovery and the button-less workflow
 
-The reference device has a **broken power button**. That changes everything
-about recovery: you cannot hold Volume Up + Power to enter TWRP, you cannot
-force a reboot by holding buttons, and you cannot power the phone back on if it
-shuts down completely. Every procedure in this repository is designed around
-that constraint.
+The reference device has a **broken power button**: no key combination reaches
+recovery, Download mode or a forced reboot. Every procedure here is built
+around that. It has been exercised on the device.
 
-## 1. What works
+## 1. What is installed
 
-| Action | Method |
+| Item | Value |
 |---|---|
-| Enter recovery | `adb reboot recovery` from a booted Android |
-| Reboot out of recovery | `adb shell twrp reboot system` (see below) |
-| Reboot to bootloader/download | `adb reboot download` |
-| Power off safely | avoid it — keep a bootable system or TWRP |
-| Wipe data | TWRP UI (**Wipe → Format Data**) |
-| Sideload an OTA | TWRP **Advanced → ADB Sideload**, then `adb sideload <zip>` |
-
-### TWRP's own reboot command
-
-On the reference unit, generic reboot commands were unreliable from recovery:
-
-```bash
-adb shell twrp reboot system      # worked
-adb shell reboot system           # did not reliably leave recovery
-adb reboot                        # did not reliably leave recovery
-```
-
-Use the `twrp` CLI when it exists; `reboot`/`reboot -p` from the recovery shell
-did not always take effect.
+| Recovery | TWRP **3.6.1_9-goldfish07** (Ayush Bisht), in the `recovery` partition |
+| Recovery image hash | `1b6538d566fd0a0c622ca2e78dedeb1b86a3dbf5f9199e9575ef67de0efd6e05` (33,554,432 B) |
+| Survives an OTA install | **yes** — the ROM's updater has no recovery payload, verified byte-identical after flashing |
+| ADB | works in TWRP main UI; **sideload mode has no shell** |
 
 ## 2. ADB in recovery
 
 | Mode | `adb` works? | Notes |
 |---|---|---|
-| TWRP main UI | yes, if authorized | host sees `<serial>  recovery` |
-| ADB Sideload | yes, `sideload` only | **no shell**, `adb shell` returns `error: closed` |
+| TWRP main UI | yes, if authorised | host sees `<serial>  recovery` |
+| ADB Sideload | `sideload` only | `adb shell` returns `error: closed` |
 | Fastboot | no | this device uses Download mode, not fastboot |
 
-If the host shows `unauthorized`, the TWRP key is not in
-`/data/misc/adb/adb_keys`. Accept the prompt on screen, or push your public key
-into the recovery's key file while it is mounted. Do not blindly overwrite
-`adb_keys` on a device whose data you care about.
+### If ADB shows `unauthorized`
 
-## 3. Keeping a recovery route alive
+That is not a cable or driver problem: TWRP's adbd rejects the host key because
+`/data/misc/adb/adb_keys` is missing or empty — typically after a data format.
+Observed and fixed on this device like this:
 
-The recovery partition is separate from the system. A normal Android image
-build does **not** overwrite `recovery.img` — but if your install method writes
-boot/system/vendor only, TWRP stays intact.
+1. Push the host public key (`%USERPROFILE%\.android\adbkey.pub`) to the phone's
+   internal storage over **MTP** as `/sdcard/adb_keys`.
+2. Push a small script as `/sdcard/adbfix.sh`:
 
-Recommended belt-and-braces:
-
-1. Copy the TWRP image to the phone's `/cache` (survives Format Data, unlike
-   `/sdcard`):
-   ```bash
-   adb push twrp-recovery-<serial>.img /cache/twrp-recovery.img
+   ```sh
+   #!/system/bin/sh
+   mkdir -p /data/misc/adb
+   cp /sdcard/adb_keys /data/misc/adb/adb_keys
+   chown 1000:2000 /data/misc/adb/adb_keys
+   chmod 0640 /data/misc/adb/adb_keys
    ```
-2. Keep a copy on the host, with its SHA-256 recorded.
-3. Confirm it is the *same* image that is currently flashed (compare hashes),
-   because a recovery image is not a data backup.
 
-To restore TWRP if it ever gets overwritten:
+3. On the phone: **TWRP → Advanced → Terminal**, run `sh /sdcard/adbfix.sh`, then
+   **Reboot → Recovery** (no power button involved).
+4. `adb devices -l` should now show `<serial>  recovery`.
+
+Remember: formatting `/data` (which includes `/sdcard`) deletes the key again.
+
+## 3. The `twrp` CLI
+
+TWRP 3.6.1 on this device exposes a command-line tool that makes recovery fully
+scriptable:
 
 ```bash
-adb push twrp-recovery.img /data/local/tmp/twrp.img   # from a booted system
-adb shell 'dd if=/data/local/tmp/twrp.img of=/dev/block/by-name/recovery bs=1M'
-adb shell 'sync'
+adb shell /sbin/twrp
+#   install <zip>        wipe <partition>      format data
+#   backup | restore     remountrw             fixperms
+#   mount | unmount <path>
+#   reboot [recovery|system|download|bootloader|poweroff|edl]
 ```
 
-This requires a booted system or a shell-capable recovery. Neither may be
-available if you have just bricked the boot image — which is why the order
-matters.
+Verified commands:
 
-## 4. The "TWRP on boot" rescue (experimental, last resort)
+```bash
+adb shell "/sbin/twrp install /sdcard/j8os-17.1-*.zip"   # script succeeded: result was [1.000000]
+adb shell "/sbin/twrp format data"
+adb shell "/sbin/twrp reboot system"                     # reliable
+adb shell "/sbin/twrp reboot recovery"
+```
 
-If Android will not boot and TWRP is unreachable by any other route, the only
-remaining lever is Download mode + Odin:
+Plain `adb reboot` / `adb shell reboot` from recovery did **not** reliably take
+effect; use `/sbin/twrp reboot …`.
 
-- Pack a **known-good TWRP image** as an Odin `AP` tar and flash it. It lands
-  in the `boot` partition, so the phone boots *into TWRP* instead of Android.
-- From that TWRP you can run `adb shell`, repair partitions, or restore a boot
-  image.
-- Afterwards you **must** write a valid `boot.img` back, or the phone will keep
-  booting recovery.
+## 4. Keeping a recovery route alive
 
-Risks: this overwrites the Android boot image; if Odin stalls at
-`SetupConnection` (which has been observed on this Knox-tripped unit) you gain
-nothing and may lose the last working slot. Treat it as an experiment with a
-written-down expected outcome, not a guaranteed instruction. The single-member
-tar proves only what is in the archive — not that the phone will accept it.
+- Keep TWRP's own image (`twrp-recovery-<serial>.img`, hash above) off-device.
+- Keep a **boot image that reaches adbd** as your rollback. This is the real
+  safety net on a power-button-less device: if Android boots far enough for
+  `adb`, you can always get back to TWRP.
+- Before flashing an unproven boot image, consider pre-setting the boot-control
+  block so a power cycle lands in recovery:
 
-## 5. Off-device backups
+  ```bash
+  printf 'boot-recovery' | dd of=/dev/block/by-name/misc bs=1 seek=0 conv=notrunc
+  ```
 
-`scripts/backup-device.ps1` (PowerShell) and `scripts/backup-partitions.ps1`
-do partition-level dumps over ADB with size and SHA-256 verification.
+  `misc` is 1 MB, backed up by `scripts/backup-device.ps1`, and the change is
+  12 bytes and reversible.
 
-What to back up, in priority order:
+## 5. Battery: the failure mode that actually bit
+
+The device booted fine, was left idle for ~5½ hours while the host slept, and
+then **powered off during a reboot to recovery** and stopped enumerating on
+USB. Nothing was being written; the battery was simply empty.
+
+Rules that follow from that:
+
+- Keep the phone on a **powered** USB port between sessions, not on a sleeping
+  laptop's port.
+- Check `dumpsys battery` before rebooting into recovery for a flash.
+- Do not start a flash below ~40 %.
+- If it goes dark: leave it charging and poll `adb devices` /
+  `Get-PnpDevice` for `VID_04E8` / `VID_18D1`. It will come back.
+
+## 6. The "TWRP on boot" rescue (last resort, untested here)
+
+If Android will not boot and TWRP is unreachable, the remaining lever is
+Download mode + Odin: pack a known-good TWRP image as an Odin `AP` tar so the
+phone boots *into TWRP* instead of Android, fix what you need, then write a
+valid `boot.img` back.
+
+Caveats, stated because they matter:
+
+- It overwrites the Android boot image.
+- Odin has **never** been exercised successfully on this unit; a
+  `SetupConnection` stall was reported historically, and the phone has not been
+  observed in Download mode since.
+- Download mode requires a key combination this device cannot perform.
+
+So: expect it to be theoretical, not a plan.
+
+## 7. Off-device backups
+
+`scripts/backup-device.ps1` dumps and verifies each partition. Priority order:
 
 1. `efs`, `persist`, `modemst1`, `modemst2`, `fsg`, `fsc` — identity,
-   calibration, radio. **Never restored casually.**
-2. `boot`, `recovery` — lets you get back to a known state.
-3. `system`, `vendor` — only useful if you have space; these are the ROM.
-4. `userdata` — personal data, privacy sensitive. Prefer a normal
-   `adb pull /sdcard` plus per-app backups.
+   calibration, radio. Never restored casually.
+2. `boot`, `recovery` — gets you back to a known state.
+3. `system`, `vendor` — the ROM itself; large.
+4. `userdata` — personal data; prefer per-app backups and `adb pull /sdcard`.
 
-Everything above is only as good as its verification: compare hashes after
-pulling.
+A dump is only as good as its verification: the script compares size and
+SHA-256 against the device for every file. Check them yourself too.
 
-## 6. If you lose the power button *and* the system
+## 8. Physical reality check
 
-There is no software-only way to power a phone on. The realistic options, in
-order of cost:
-
-1. USB cable insertion can wake some Qualcomm devices from a powered-off state
-   (not reliable, and not a documented behaviour — treat any success as luck).
-2. Charge the battery externally, then use Download mode.
-3. Repair the power button, or use a momentary-contact jumper on the button's
-   pads.
-
-Plan the install so that you never end up in that state: keep TWRP working,
-keep a bootable boot image on hand, and do not erase the only working system
-without a tested replacement.
+With no power button and no working Download mode, a phone that cannot reach
+`adbd` or TWRP is a brick until the battery/button is serviced. Plan every
+write so that the image you flash is one that reaches `adbd`, and keep the last
+known-good boot image on hand.

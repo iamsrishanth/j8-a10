@@ -1,0 +1,260 @@
+SIGN_START 2026-10-30T05:07:07+05:30
+Trying dependencies-only mode on a non-existing device tree?
+
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=10
+LINEAGE_VERSION=17.1-20261029-UNOFFICIAL-j8y18lte
+TARGET_PRODUCT=lineage_j8y18lte
+TARGET_BUILD_VARIANT=userdebug
+TARGET_BUILD_TYPE=release
+TARGET_ARCH=arm
+TARGET_ARCH_VARIANT=armv8-a
+TARGET_CPU_VARIANT=cortex-a53
+HOST_ARCH=x86_64
+HOST_2ND_ARCH=x86
+HOST_OS=linux
+HOST_OS_EXTRA=Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-Ubuntu-22.04.5-LTS
+HOST_CROSS_OS=windows
+HOST_CROSS_ARCH=x86
+HOST_CROSS_2ND_ARCH=x86_64
+HOST_BUILD_TYPE=release
+BUILD_ID=QQ3A.200805.001
+OUT_DIR=out
+PRODUCT_SOONG_NAMESPACES=device/samsung/j8y18lte vendor/samsung/j8y18lte hardware/qcom-caf/msm8996
+============================================
+TARGET_ZIP=out/target/product/j8y18lte/obj/PACKAGING/target_files_intermediates/lineage_j8y18lte-target_files-eng.builder.zip
+2026-10-30 05:07:08 - common.py - WARNING : Failed to read PRODUCT/build.prop
+2026-10-30 05:07:08 - common.py - WARNING : Failed to read PRODUCT/etc/build.prop
+2026-10-30 05:07:08 - common.py - WARNING : Failed to read PRODUCT_SERVICES/build.prop
+2026-10-30 05:07:08 - common.py - WARNING : Failed to read PRODUCT_SERVICES/etc/build.prop
+2026-10-30 05:07:08 - common.py - WARNING : Failed to read ODM/build.prop
+2026-10-30 05:07:08 - common.py - WARNING : Failed to read ODM/etc/build.prop
+Rewriting RECOVERY/RAMDISK/default.prop:
+Rewriting RECOVERY/RAMDISK/prop.default:
+  replace:  ro.system.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/test-keys
+     with:  ro.system.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/release-keys
+  replace:  ro.system.build.tags=test-keys
+     with:  ro.system.build.tags=release-keys
+  replace:  ro.build.display.id=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220 test-keys
+     with:  ro.build.display.id=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220
+  replace:  ro.build.tags=test-keys
+     with:  ro.build.tags=release-keys
+  replace:  ro.build.description=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220 test-keys
+     with:  ro.build.description=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220 release-keys
+  replace:  ro.vendor.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/test-keys
+     with:  ro.vendor.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/release-keys
+  replace:  ro.vendor.build.tags=test-keys
+     with:  ro.vendor.build.tags=release-keys
+  replace:  ro.bootimage.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/test-keys
+     with:  ro.bootimage.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/release-keys
+  replace:  ro.odm.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10251855:userdebug/test-keys
+     with:  ro.odm.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10251855:userdebug/release-keys
+  replace:  ro.odm.build.tags=test-keys
+     with:  ro.odm.build.tags=release-keys
+Rewriting ROOT/default.prop:
+    signing: AntHalService.apk                                 (/home/builder/secure/j8os-keys/platform)
+    signing: Backgrounds.apk                                   (/home/builder/secure/j8os-keys/releasekey)
+    signing: BasicDreams.apk                                   (/home/builder/secure/j8os-keys/releasekey)
+    signing: Bluetooth.apk                                     (/home/builder/secure/j8os-keys/platform)
+    signing: BluetoothMidiService.apk                          (/home/builder/secure/j8os-keys/platform)
+    signing: BookmarkProvider.apk                              (/home/builder/secure/j8os-keys/releasekey)
+    signing: BuiltInPrintService.apk                           (/home/builder/secure/j8os-keys/releasekey)
+    signing: CaptivePortalLogin.apk                            (/home/builder/secure/j8os-keys/networkstack)
+    signing: CarrierDefaultApp.apk                             (/home/builder/secure/j8os-keys/platform)
+    signing: CertInstaller.apk                                 (/home/builder/secure/j8os-keys/platform)
+    signing: CompanionDeviceManager.apk                        (/home/builder/secure/j8os-keys/releasekey)
+NOT signing: CtsShimPrebuilt.apk
+        (skipped due to special cert string)
+    signing: EasterEgg.apk                                     (/home/builder/secure/j8os-keys/platform)
+    signing: ExtShared.apk                                     (/home/builder/secure/j8os-keys/platform)
+    signing: FM2.apk                                           (/home/builder/secure/j8os-keys/platform)
+    signing: HTMLViewer.apk                                    (/home/builder/secure/j8os-keys/releasekey)
+    signing: KeyChain.apk                                      (/home/builder/secure/j8os-keys/platform)
+    signing: LiveWallpapersPicker.apk                          (/home/builder/secure/j8os-keys/platform)
+    signing: OsuLogin.apk                                      (/home/builder/secure/j8os-keys/platform)
+    signing: PacProcessor.apk                                  (/home/builder/secure/j8os-keys/platform)
+    signing: PrintRecommendationService.apk                    (/home/builder/secure/j8os-keys/releasekey)
+    signing: PrintSpooler.apk                                  (/home/builder/secure/j8os-keys/releasekey)
+    signing: Profiles.apk                                      (/home/builder/secure/j8os-keys/platform)
+    signing: SecureElement.apk                                 (/home/builder/secure/j8os-keys/platform)
+    signing: SimAppDialog.apk                                  (/home/builder/secure/j8os-keys/platform)
+    signing: Stk.apk                                           (/home/builder/secure/j8os-keys/platform)
+    signing: Terminal.apk                                      (/home/builder/secure/j8os-keys/releasekey)
+    signing: Traceur.apk                                       (/home/builder/secure/j8os-keys/platform)
+    signing: WAPPushManager.apk                                (/home/builder/secure/j8os-keys/releasekey)
+    signing: WallpaperBackup.apk                               (/home/builder/secure/j8os-keys/platform)
+Rewriting SYSTEM/build.prop:
+  replace:  ro.system.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/test-keys
+     with:  ro.system.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/release-keys
+  replace:  ro.system.build.tags=test-keys
+     with:  ro.system.build.tags=release-keys
+  replace:  ro.build.display.id=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220 test-keys
+     with:  ro.build.display.id=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220
+  replace:  ro.build.tags=test-keys
+     with:  ro.build.tags=release-keys
+  replace:  ro.build.description=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220 test-keys
+     with:  ro.build.description=lineage_j8y18lte-userdebug 10 QQ3A.200805.001 eng.<builder>.20261030.043220 release-keys
+Rewriting SYSTEM/etc/prop.default:
+Rewriting SYSTEM/etc/selinux/plat_mac_permissions.xml with new keys.
+    signing: framework-res.apk                                 (/home/builder/secure/j8os-keys/platform)
+    signing: org.lineageos.platform-res.apk                    (/home/builder/secure/j8os-keys/platform)
+    signing: AudioFX.apk                                       (/home/builder/secure/j8os-keys/platform)
+    signing: BackupRestoreConfirmation.apk                     (/home/builder/secure/j8os-keys/platform)
+    signing: BlockedNumberProvider.apk                         (/home/builder/secure/j8os-keys/shared)
+    signing: CalendarProvider.apk                              (/home/builder/secure/j8os-keys/releasekey)
+    signing: CallLogBackup.apk                                 (/home/builder/secure/j8os-keys/shared)
+    signing: CellBroadcastReceiver.apk                         (/home/builder/secure/j8os-keys/platform)
+    signing: ContactsProvider.apk                              (/home/builder/secure/j8os-keys/shared)
+NOT signing: CtsShimPrivPrebuilt.apk
+        (skipped due to special cert string)
+    signing: DocumentsUI.apk                                   (/home/builder/secure/j8os-keys/platform)
+    signing: DownloadProvider.apk                              (/home/builder/secure/j8os-keys/media)
+    signing: DownloadProviderUi.apk                            (/home/builder/secure/j8os-keys/media)
+    signing: DynamicSystemInstallationService.apk              (/home/builder/secure/j8os-keys/platform)
+    signing: ExtServices.apk                                   (/home/builder/secure/j8os-keys/platform)
+    signing: ExternalStorageProvider.apk                       (/home/builder/secure/j8os-keys/platform)
+    signing: FusedLocation.apk                                 (/home/builder/secure/j8os-keys/platform)
+    signing: InputDevices.apk                                  (/home/builder/secure/j8os-keys/platform)
+    signing: LineageParts.apk                                  (/home/builder/secure/j8os-keys/platform)
+    signing: LineageSettingsProvider.apk                       (/home/builder/secure/j8os-keys/platform)
+    signing: LineageSetupWizard.apk                            (/home/builder/secure/j8os-keys/platform)
+    signing: LocalTransport.apk                                (/home/builder/secure/j8os-keys/platform)
+    signing: ManagedProvisioning.apk                           (/home/builder/secure/j8os-keys/platform)
+    signing: MediaProvider.apk                                 (/home/builder/secure/j8os-keys/media)
+    signing: MmsService.apk                                    (/home/builder/secure/j8os-keys/platform)
+    signing: MtpDocumentsProvider.apk                          (/home/builder/secure/j8os-keys/media)
+    signing: NetworkPermissionConfig.apk                       (/home/builder/secure/j8os-keys/networkstack)
+    signing: NetworkStack.apk                                  (/home/builder/secure/j8os-keys/networkstack)
+    signing: ONS.apk                                           (/home/builder/secure/j8os-keys/platform)
+    signing: PackageInstaller.apk                              (/home/builder/secure/j8os-keys/platform)
+    signing: PermissionController.apk                          (/home/builder/secure/j8os-keys/platform)
+    signing: ProxyHandler.apk                                  (/home/builder/secure/j8os-keys/platform)
+    signing: Seedvault.apk                                     (/home/builder/secure/j8os-keys/platform)
+    signing: SettingsProvider.apk                              (/home/builder/secure/j8os-keys/platform)
+    signing: SharedStorageBackup.apk                           (/home/builder/secure/j8os-keys/platform)
+    signing: Shell.apk                                         (/home/builder/secure/j8os-keys/platform)
+    signing: StatementService.apk                              (/home/builder/secure/j8os-keys/releasekey)
+    signing: TeleService.apk                                   (/home/builder/secure/j8os-keys/platform)
+    signing: Telecom.apk                                       (/home/builder/secure/j8os-keys/platform)
+    signing: TelephonyProvider.apk                             (/home/builder/secure/j8os-keys/platform)
+    signing: Updater.apk                                       (/home/builder/secure/j8os-keys/releasekey)
+    signing: UserDictionaryProvider.apk                        (/home/builder/secure/j8os-keys/shared)
+    signing: VpnDialogs.apk                                    (/home/builder/secure/j8os-keys/platform)
+    signing: DeskClock.apk                                     (/home/builder/secure/j8os-keys/releasekey)
+    signing: DynamicDDSService.apk                             (/home/builder/secure/j8os-keys/platform)
+    signing: Email.apk                                         (/home/builder/secure/j8os-keys/releasekey)
+    signing: Etar.apk                                          (/home/builder/secure/j8os-keys/releasekey)
+    signing: ExactCalculator.apk                               (/home/builder/secure/j8os-keys/releasekey)
+    signing: Exchange2.apk                                     (/home/builder/secure/j8os-keys/releasekey)
+    signing: Jelly.apk                                         (/home/builder/secure/j8os-keys/releasekey)
+    signing: LatinIME.apk                                      (/home/builder/secure/j8os-keys/shared)
+    signing: LineageThemesStub.apk                             (/home/builder/secure/j8os-keys/releasekey)
+    signing: ModuleMetadata.apk                                (/home/builder/secure/j8os-keys/releasekey)
+    signing: PhotoTable.apk                                    (/home/builder/secure/j8os-keys/releasekey)
+    signing: Recorder.apk                                      (/home/builder/secure/j8os-keys/releasekey)
+    signing: messaging.apk                                     (/home/builder/secure/j8os-keys/releasekey)
+    signing: remotesimlockservice.apk                          (/home/builder/secure/j8os-keys/platform)
+    signing: webview.apk                                       (/home/builder/secure/j8os-keys/releasekey)
+Rewriting SYSTEM/product/build.prop:
+    signing: AccentColorBlackOverlay.apk                       (/home/builder/secure/j8os-keys/releasekey)
+    signing: AccentColorCinnamonOverlay.apk                    (/home/builder/secure/j8os-keys/releasekey)
+    signing: AccentColorGreenOverlay.apk                       (/home/builder/secure/j8os-keys/releasekey)
+    signing: AccentColorOceanOverlay.apk                       (/home/builder/secure/j8os-keys/releasekey)
+    signing: AccentColorOrchidOverlay.apk                      (/home/builder/secure/j8os-keys/releasekey)
+    signing: AccentColorPurpleOverlay.apk                      (/home/builder/secure/j8os-keys/releasekey)
+    signing: AccentColorSpaceOverlay.apk                       (/home/builder/secure/j8os-keys/releasekey)
+    signing: DisplayCutoutEmulationCornerOverlay.apk           (/home/builder/secure/j8os-keys/releasekey)
+    signing: DisplayCutoutEmulationDoubleOverlay.apk           (/home/builder/secure/j8os-keys/releasekey)
+    signing: DisplayCutoutEmulationTallOverlay.apk             (/home/builder/secure/j8os-keys/releasekey)
+    signing: FontNotoSerifSourceOverlay.apk                    (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackCircularAndroidOverlay.apk                (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackCircularLauncherOverlay.apk               (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackCircularSettingsOverlay.apk               (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackCircularSystemUIOverlay.apk               (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackCircularThemePickerOverlay.apk            (/home/builder/secure/j8os-keys/platform)
+    signing: IconPackFilledAndroidOverlay.apk                  (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackFilledLauncherOverlay.apk                 (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackFilledSettingsOverlay.apk                 (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackFilledSystemUIOverlay.apk                 (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackFilledThemePickerOverlay.apk              (/home/builder/secure/j8os-keys/platform)
+    signing: IconPackRoundedAndroidOverlay.apk                 (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackRoundedLauncherOverlay.apk                (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackRoundedSettingsOverlay.apk                (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackRoundedSystemUIOverlay.apk                (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconPackRoundedThemePickerOverlay.apk             (/home/builder/secure/j8os-keys/platform)
+    signing: IconShapeRoundedRectOverlay.apk                   (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconShapeSquircleOverlay.apk                      (/home/builder/secure/j8os-keys/releasekey)
+    signing: IconShapeTeardropOverlay.apk                      (/home/builder/secure/j8os-keys/releasekey)
+    signing: LineageBlackAccent.apk                            (/home/builder/secure/j8os-keys/platform)
+    signing: LineageBlackTheme.apk                             (/home/builder/secure/j8os-keys/platform)
+    signing: LineageBlueAccent.apk                             (/home/builder/secure/j8os-keys/platform)
+    signing: LineageBrownAccent.apk                            (/home/builder/secure/j8os-keys/platform)
+    signing: LineageCyanAccent.apk                             (/home/builder/secure/j8os-keys/platform)
+    signing: LineageGreenAccent.apk                            (/home/builder/secure/j8os-keys/platform)
+    signing: LineageLatoFont.apk                               (/home/builder/secure/j8os-keys/platform)
+    signing: LineageNavigationBarNoHint.apk                    (/home/builder/secure/j8os-keys/platform)
+    signing: LineageOrangeAccent.apk                           (/home/builder/secure/j8os-keys/platform)
+/usr/lib/python3.10/zipfile.py:1541: UserWarning: Duplicate name: 'home/builder/secure/j8os-keys/releasekey.x509.pem'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+2026-10-30 05:10:23 - common.py - WARNING : Failed to read PRODUCT/build.prop
+2026-10-30 05:10:23 - common.py - WARNING : Failed to read PRODUCT/etc/build.prop
+2026-10-30 05:10:23 - common.py - WARNING : Failed to read PRODUCT_SERVICES/build.prop
+2026-10-30 05:10:23 - common.py - WARNING : Failed to read PRODUCT_SERVICES/etc/build.prop
+2026-10-30 05:10:23 - common.py - WARNING : Failed to read ODM/build.prop
+2026-10-30 05:10:23 - common.py - WARNING : Failed to read ODM/etc/build.prop
+    signing: LineagePinkAccent.apk                             (/home/builder/secure/j8os-keys/platform)
+    signing: LineagePurpleAccent.apk                           (/home/builder/secure/j8os-keys/platform)
+    signing: LineageRedAccent.apk                              (/home/builder/secure/j8os-keys/platform)
+    signing: LineageRubikFont.apk                              (/home/builder/secure/j8os-keys/platform)
+    signing: LineageYellowAccent.apk                           (/home/builder/secure/j8os-keys/platform)
+    signing: NavigationBarMode2ButtonOverlay.apk               (/home/builder/secure/j8os-keys/releasekey)
+    signing: NavigationBarMode3ButtonOverlay.apk               (/home/builder/secure/j8os-keys/releasekey)
+    signing: NavigationBarModeGesturalOverlay.apk              (/home/builder/secure/j8os-keys/releasekey)
+    signing: NavigationBarModeGesturalOverlayExtraWideBack.apk (/home/builder/secure/j8os-keys/releasekey)
+    signing: NavigationBarModeGesturalOverlayNarrowBack.apk    (/home/builder/secure/j8os-keys/releasekey)
+    signing: NavigationBarModeGesturalOverlayWideBack.apk      (/home/builder/secure/j8os-keys/releasekey)
+    signing: CarrierConfig.apk                                 (/home/builder/secure/j8os-keys/platform)
+    signing: Contacts.apk                                      (/home/builder/secure/j8os-keys/shared)
+    signing: Dialer.apk                                        (/home/builder/secure/j8os-keys/shared)
+    signing: Eleven.apk                                        (/home/builder/secure/j8os-keys/releasekey)
+    signing: EmergencyInfo.apk                                 (/home/builder/secure/j8os-keys/platform)
+    signing: Gallery2.apk                                      (/home/builder/secure/j8os-keys/platform)
+    signing: OneTimeInitializer.apk                            (/home/builder/secure/j8os-keys/releasekey)
+    signing: Settings.apk                                      (/home/builder/secure/j8os-keys/platform)
+    signing: SettingsIntelligence.apk                          (/home/builder/secure/j8os-keys/releasekey)
+    signing: Snap.apk                                          (/home/builder/secure/j8os-keys/platform)
+    signing: StorageManager.apk                                (/home/builder/secure/j8os-keys/releasekey)
+    signing: SystemUI.apk                                      (/home/builder/secure/j8os-keys/platform)
+    signing: ThemePicker.apk                                   (/home/builder/secure/j8os-keys/releasekey)
+    signing: TrebuchetQuickStep.apk                            (/home/builder/secure/j8os-keys/releasekey)
+    signing: WallpaperCropper.apk                              (/home/builder/secure/j8os-keys/platform)
+Rewriting VENDOR/build.prop:
+  replace:  ro.vendor.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/test-keys
+     with:  ro.vendor.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/release-keys
+  replace:  ro.vendor.build.tags=test-keys
+     with:  ro.vendor.build.tags=release-keys
+  replace:  ro.bootimage.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/test-keys
+     with:  ro.bootimage.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10300432:userdebug/release-keys
+Rewriting VENDOR/etc/selinux/vendor_mac_permissions.xml with new keys.
+Rewriting VENDOR/odm/etc/build.prop:
+  replace:  ro.odm.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10251855:userdebug/test-keys
+     with:  ro.odm.build.fingerprint=samsung/lineage_j8y18lte/j8y18lte:10/QQ3A.200805.001/builder10251855:userdebug/release-keys
+  replace:  ro.odm.build.tags=test-keys
+     with:  ro.odm.build.tags=release-keys
+extra recovery-only key(s): /home/builder/secure/j8os-keys/releasekey.x509.pem
+META/otakeys.txt has no keys; using /home/builder/secure/j8os-keys/releasekey.x509.pem for OTA package verification.
+done.
+SIGNED_TARGET_OK 2026-10-30T05:12:06+05:30
+2026-10-30 05:12:06 - common.py - WARNING : Failed to read PRODUCT/build.prop
+2026-10-30 05:12:06 - common.py - WARNING : Failed to read PRODUCT/etc/build.prop
+2026-10-30 05:12:06 - common.py - WARNING : Failed to read PRODUCT_SERVICES/build.prop
+2026-10-30 05:12:06 - common.py - WARNING : Failed to read PRODUCT_SERVICES/etc/build.prop
+2026-10-30 05:12:06 - common.py - WARNING : Failed to read ODM/build.prop
+2026-10-30 05:12:06 - common.py - WARNING : Failed to read ODM/etc/build.prop
+Compressing system.new.dat with brotli
+Compressing vendor.new.dat with brotli
+SIGNED_OTA_OK 2026-10-30T05:18:05+05:30
+e48075692dfd0666e71c23af1d6179accfbbae4cb31e32ce982aaf6d9c899072  /mnt/d/j8-os/artifacts/j8os-17.1-release/j8os-17.1-20261030-0507-signed-target_files.zip
+d105a267a8979b2b634b02aa48f5094f898f6ed0537a35e0bf3be0817592fd91  /mnt/d/j8-os/artifacts/j8os-17.1-release/j8os-17.1-20261030-0507-signed-ota.zip
+SIGN_END 2026-10-30T05:18:39+05:30

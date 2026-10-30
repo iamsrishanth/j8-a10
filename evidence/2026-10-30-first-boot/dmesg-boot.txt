@@ -1,0 +1,891 @@
+﻿# Kernel log from the first boot, with the permissive-mode vc: denied lines removed.
+# Those are summarised in avc-denials-summary.txt.
+
+[   30.944227] KGSL: Trying to detach context 3 multiple times
+[   30.944323] KGSL: Trying to detach context 4 multiple times
+[   30.963100] init: Service 'bootanim' (pid 1130) exited with status 0
+[   31.066136] [MDSS] set_normal_br_values : cd_idx (40) candela_level (98) 
+[   31.096053] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 100  candela : 98CD hbm : 0 (0)
+[   31.097394] [MDSS] set_normal_br_values : cd_idx (39) candela_level (93) 
+[   31.120544] sdcardfs version 2.0
+[   31.120589] sdcardfs: dev_name -> /data/media
+[   31.120635] sdcardfs: options -> fsuid=1023,fsgid=1023,multiuser,derive_gid,default_normal,unshared_obb,mask=6,userid=0,gid=1015
+[   31.120770] sdcardfs: mounted on top of /data/media type ext4
+[   31.121235] SELinux: initialized (dev sdcardfs, type sdcardfs), uses genfs_contexts
+[   31.122004] Remount options were mask=23,gid=9997.
+[   31.122063] sdcardfs : options - debug:1
+[   31.122106] sdcardfs : options - gid:9997
+[   31.122154] sdcardfs : options - mask:23
+[   31.122623] Remount options were mask=7,gid=9997.
+[   31.122679] sdcardfs : options - debug:1
+[   31.122725] sdcardfs : options - gid:9997
+[   31.122771] sdcardfs : options - mask:7
+[   31.123252] Remount options were mask=7,gid=9997.
+[   31.123311] sdcardfs : options - debug:1
+[   31.123355] sdcardfs : options - gid:9997
+[   31.123402] sdcardfs : options - mask:7
+[   31.129482] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 97  candela : 93CD hbm : 0 (0)
+[   31.130974] [MDSS] set_normal_br_values : cd_idx (36) candela_level (77) 
+[   31.134013] init: processing action (sys.usb.config=none && sys.usb.configfs=0) from (/init.usb.rc:25)
+[   31.134130] init: Sending signal 9 to service 'adbd' (pid 681) process group...
+[   31.162876] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 91  candela : 77CD hbm : 0 (0)
+[   31.164308] [MDSS] set_normal_br_values : cd_idx (33) candela_level (64) 
+[   31.192127] dwc3 7000000.dwc3: request 0000000000000000 was not queued to ep0out
+[   31.192213] usb: usb_remove_config cdev->config=0000000000000000, config=0000000000000000
+[   31.192355] DUN is unregisterd
+[   31.192408] usb: dwc3_gadget_pullup is_on: 0
+[   31.192468] usb: dwc3_gadget_run_stop is_on:0 
+[   31.196319] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 85  candela : 64CD hbm : 0 (0)
+[   31.197640] libprocessgroup: Successfully killed process cgroup uid 0 pid 681 in 63ms
+[   31.198452] [MDSS] set_normal_br_values : cd_idx (31) candela_level (56) 
+[   31.198741] init: Command 'stop adbd' action=sys.usb.config=none && sys.usb.configfs=0 (/init.usb.rc:26) took 64ms and succeeded
+[   31.200672] init: Service 'adbd' (pid 681) received signal 9
+[   31.203450] init: processing action (sys.usb.config=none) from (/vendor/etc/init/hw/init.qcom.usb.rc:177)
+[   31.204412] init: Command 'stop ss_conn_daemon2_service' action=sys.usb.config=none (/vendor/etc/init/hw/init.qcom.usb.rc:179) took 0ms and failed: service ss_conn_daemon2_service not found
+[   31.205637] enable_store: android_usb: already disabled
+[   31.209816] init: processing action (sys.boot_completed=1) from (/init.rc:810)
+[   31.210729] init: starting service 'exec 16 (/bin/rm -rf /data/per_boot)'...
+[   31.212975] init: SVC_EXEC service 'exec 16 (/bin/rm -rf /data/per_boot)' pid 2291 (uid 1000 gid 1000+0 context default) started; waiting...
+[   31.229706] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 82  candela : 56CD hbm : 0 (0)
+[   31.233969] init: Service 'exec 16 (/bin/rm -rf /data/per_boot)' (pid 2291) exited with status 0 waiting took 0.021000 seconds
+[   31.235849] init: processing action (sys.boot_completed=1) from (/vendor/etc/init/hw/init.qcom.rc:620)
+[   31.236502] Boot completed 
+[   31.240044] init: processing action (sys.boot_completed=1) from (/vendor/etc/init/hw/init.qcom.rc:955)
+[   31.241004] init: starting service 'qcom-post-boot'...
+[   31.243977] init: starting service 'qti-testscripts'...
+[   31.246422] init: processing action (sys.boot_completed=1) from (/vendor/etc/init/hw/init.target.rc:144)
+[   31.246868] init: processing action (sys.boot_completed=1 && sys.logbootcomplete=1) from (/system/etc/init/bootstat.rc:78)
+[   31.247332] init: starting service 'exec 17 (/system/bin/bootstat --record_boot_complete --record_boot_reason --record_time_since_factory_reset -l)'...
+[   31.249503] init: processing action (sys.boot_completed=1) from (/system/etc/init/flags_health_check.rc:7)
+[   31.254802] init: processing action (sys.boot_completed=1) from (/system/etc/init/logd.rc:32)
+[   31.256635] init: starting service 'logd-auditctl'...
+[   31.259521] init: processing action (sys.boot_completed=1 && sys.wifitracing.started=0) from (/system/etc/init/wifi-events.rc:20)
+[   31.308843] init: Service 'qti-testscripts' (pid 2303) exited with status 127
+[   31.309825] init: Service 'exec 17 (/system/bin/bootstat --record_boot_complete --record_boot_reason --record_time_since_factory_reset -l)' (pid 2305) exited with status 0
+[   31.387334] qpnp_set_resin_wk_int: wake_enabled = 0
+[   31.390446] init: Command 'write /sys/kernel/debug/tracing/instances/wifi/buffer_size_kb 1' action=sys.boot_completed=1 && sys.wifitracing.started=0 (/system/etc/init/wifi-events.rc:25) took 77ms and succeeded
+[   31.391944] init: Service 'logd-auditctl' (pid 2306) exited with status 0
+[   31.393675] ------------[ cut here ]------------
+[   31.393736] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.393843] static_key_slow_inc used before call to jump_label_init
+[   31.393897] Modules linked in:
+[   31.393931] 
+[   31.393939] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.394001] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.394054] Call trace:
+[   31.394090] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.394137] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.394189] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.394241] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.394291] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.394341] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.394401] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.394455] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.394511] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.394560] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.394606] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.394650] ---[ end trace 04c2f532abbe0214 ]---
+[   31.395625] ------------[ cut here ]------------
+[   31.395685] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.395785] static_key_slow_inc used before call to jump_label_init
+[   31.395837] Modules linked in:
+[   31.395871] 
+[   31.395879] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.395939] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.395988] Call trace:
+[   31.396025] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.396078] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.396130] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.396179] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.396232] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.396281] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.396334] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.396383] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.396437] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.396487] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.396533] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.396590] ---[ end trace 04c2f532abbe0215 ]---
+[   31.397594] ------------[ cut here ]------------
+[   31.397654] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.397747] static_key_slow_inc used before call to jump_label_init
+[   31.397801] Modules linked in:
+[   31.397835] 
+[   31.397843] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.397902] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.397950] Call trace:
+[   31.397986] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.398034] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.398081] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.398128] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.398181] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.398236] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.398291] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.398340] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.398395] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.398451] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.398502] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.398546] ---[ end trace 04c2f532abbe0216 ]---
+[   31.399499] ------------[ cut here ]------------
+[   31.399555] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.399647] static_key_slow_inc used before call to jump_label_init
+[   31.399698] Modules linked in:
+[   31.399734] 
+[   31.399743] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.399804] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.399856] Call trace:
+[   31.399899] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.399955] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.400007] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.400063] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.400121] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.400183] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.400245] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.400301] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.400360] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.400421] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.400476] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.400574] ---[ end trace 04c2f532abbe0217 ]---
+[   31.401591] ------------[ cut here ]------------
+[   31.401649] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.401757] static_key_slow_inc used before call to jump_label_init
+[   31.401816] Modules linked in:
+[   31.401860] 
+[   31.401878] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.401951] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.402015] Call trace:
+[   31.402061] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.402118] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.402178] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.402231] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.402288] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.402347] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.402410] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.402469] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.402537] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.402595] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.402657] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.402709] ---[ end trace 04c2f532abbe0218 ]---
+[   31.403732] ------------[ cut here ]------------
+[   31.403796] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.403901] static_key_slow_inc used before call to jump_label_init
+[   31.403964] Modules linked in:
+[   31.404009] 
+[   31.404017] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.404082] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.404131] Call trace:
+[   31.404168] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.404222] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.404275] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.404328] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.404383] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.404433] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.404498] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.404558] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.404626] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.404689] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.404748] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.404800] ---[ end trace 04c2f532abbe0219 ]---
+[   31.405838] ------------[ cut here ]------------
+[   31.405897] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.406008] static_key_slow_inc used before call to jump_label_init
+[   31.406061] Modules linked in:
+[   31.406097] 
+[   31.406106] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.406172] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.406223] Call trace:
+[   31.406266] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.406320] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.406372] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.406420] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.406473] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.406525] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.406584] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.406635] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.406691] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.406747] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.406799] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.406844] ---[ end trace 04c2f532abbe021a ]---
+[   31.407864] ------------[ cut here ]------------
+[   31.407919] WARNING: CPU: 5 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.408014] static_key_slow_inc used before call to jump_label_init
+[   31.408064] Modules linked in:
+[   31.408097] 
+[   31.408106] CPU: 5 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.408166] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.408214] Call trace:
+[   31.408251] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.408300] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.408348] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.408398] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.408454] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.408509] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.408564] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.408616] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.408672] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.408725] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.408773] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.408818] ---[ end trace 04c2f532abbe021b ]---
+[   31.460387] init: Command 'write /sys/kernel/debug/tracing/instances/wifi/events/net/filter name==${wifi.interface:-wlan0}' action=sys.boot_completed=1 && sys.wifitracing.started=0 (/system/etc/init/wifi-events.rc:46) took 51ms and succeeded
+[   31.461493] ------------[ cut here ]------------
+[   31.461549] WARNING: CPU: 0 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.461643] static_key_slow_inc used before call to jump_label_init
+[   31.461692] Modules linked in:
+[   31.461726] 
+[   31.461734] CPU: 0 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.461797] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.461850] Call trace:
+[   31.461891] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.461944] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.461992] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.462038] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.462089] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.462138] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.462194] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.462243] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.462297] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.462347] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.462392] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.462436] ---[ end trace 04c2f532abbe021c ]---
+[   31.463297] ------------[ cut here ]------------
+[   31.463348] WARNING: CPU: 0 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.463463] static_key_slow_inc used before call to jump_label_init
+[   31.463518] Modules linked in:
+[   31.463613] 
+[   31.463622] CPU: 6 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.463686] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.463737] Call trace:
+[   31.463775] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.463826] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.463874] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.463920] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.463970] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.464018] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.464071] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.464119] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.464173] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.464223] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.464269] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.464312] ---[ end trace 04c2f532abbe021d ]---
+[   31.465166] ------------[ cut here ]------------
+[   31.465216] WARNING: CPU: 6 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.465306] static_key_slow_inc used before call to jump_label_init
+[   31.465354] Modules linked in:
+[   31.465387] 
+[   31.465394] CPU: 6 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.465452] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.465499] Call trace:
+[   31.465534] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.465582] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.465628] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.465674] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.465723] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.465770] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.465824] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.465874] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.465931] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.465979] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.466024] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.466067] ---[ end trace 04c2f532abbe021e ]---
+[   31.466933] ------------[ cut here ]------------
+[   31.466981] WARNING: CPU: 6 PID: 1 at /home/builder/android/lineage-17.1/kernel/samsung/j8y18lte/include/linux/jump_label.h:167 tracepoint_probe_register+0x174/0x1c4()
+[   31.467072] static_key_slow_inc used before call to jump_label_init
+[   31.467120] Modules linked in:
+[   31.467153] 
+[   31.467160] CPU: 6 PID: 1 Comm: init Tainted: G        W      3.18.140-g3a7e8032-dirty #1
+[   31.467219] Hardware name: Samsung J8Y18- LTE SWA INS Rev03 (DT)
+[   31.467266] Call trace:
+[   31.467301] [<ffffffc00008b87c>] dump_backtrace+0x0/0x130
+[   31.467348] [<ffffffc00008b9c0>] show_stack+0x14/0x1c
+[   31.467394] [<ffffffc00103bbac>] dump_stack+0x84/0xa8
+[   31.467440] [<ffffffc0000a9088>] warn_slowpath_common+0x88/0xac
+[   31.467490] [<ffffffc0000a910c>] warn_slowpath_fmt+0x60/0x80
+[   31.467538] [<ffffffc000147fa0>] tracepoint_probe_register+0x174/0x1c4
+[   31.467592] [<ffffffc000158cdc>] ftrace_event_reg+0x84/0xa8
+[   31.467641] [<ffffffc000159080>] __ftrace_event_enable_disable+0x178/0x1e4
+[   31.467694] [<ffffffc00015a8ac>] event_enable_write+0x90/0xe0
+[   31.467743] [<ffffffc0001caa5c>] vfs_write+0xb8/0x1b0
+[   31.467787] [<ffffffc0001cb29c>] SyS_write+0x54/0xa4
+[   31.467830] ---[ end trace 04c2f532abbe021f ]---
+[   31.471946] init: processing action (init.svc.adbd=stopped) from (/init.usb.configfs.rc:14)
+[   31.474296] init: processing action (init.svc.adbd=stopped) from (/init.usb.configfs.rc:14)
+[   31.476069] init: processing action (sys.usb.config=adb && sys.usb.configfs=0) from (/init.usb.rc:34)
+[   31.479704] usb: enable_store f_holder->f:ffs
+[   31.479911] init: starting service 'adbd'...
+[   31.482483] init: processing action (sys.usb.config=adb) from (/vendor/etc/init/hw/init.qcom.usb.rc:187)
+[   31.482547] init: Created socket '/dev/socket/adbd', mode 660, user 1000, group 1000
+[   31.488282] usb: enable_store f_holder->f:ffs
+[   31.524233] usb: dwc3_gadget_pullup is_on: 1
+[   31.524296] usb: dwc3_gadget_run_stop is_on:1 
+[   31.530129] msm_thermal:store_cc_enabled Core control disabled
+[   31.594757] msm_thermal:store_cc_enabled Core control enabled
+[   31.633831] dwc3_gadget_suspend_interrupt(): state:0. Ignore SUSPEND.
+[   31.940345] cfg80211: Calling CRDA for country: IN
+[   31.940678] cfg80211: Regulatory domain changed to country: IN
+[   31.940749] cfg80211:  DFS Master region: JP
+[   31.940801] cfg80211:   (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)
+[   31.940886] cfg80211:   (2402000 KHz - 2482000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+[   31.940963] cfg80211:   (5170000 KHz - 5250000 KHz @ 80000 KHz, 160000 KHz AUTO), (N/A, 2000 mBm), (N/A)
+[   31.941056] cfg80211:   (5250000 KHz - 5330000 KHz @ 80000 KHz, 160000 KHz AUTO), (N/A, 2000 mBm), (0 s)
+[   31.941149] cfg80211:   (5735000 KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+[   32.206066] usb: dwc3_gadget_reset_interrupt
+[   32.206154] msm-dwc3 7000000.ssusb: Avail curr from USB = 0
+[   32.206214] usb: composite_disconnect
+[   32.206322] sec_bat_set_property: usb configured 100
+[   32.206371] sec_bat_set_current_event: current event before(0x8000), after(0x8000)
+[   32.206433] sec_bat_get_charging_current_by_siop: incurr(1000), chgcurr(1500)
+[   32.206925] android_work: android_work: sent uevent USB_STATE=DISCONNECTED
+[   32.207136] audit: audit_lost=1 audit_rate_limit=5 audit_backlog_limit=64
+[   32.207205] audit: rate limit exceeded
+[   32.207712] sm5708-charger: sm5708_otg_get_property: POWER_SUPPLY_PROP_ONLINE - OFF
+[   32.208050] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   32.208296] sec_bat_get_property cable type = 5 max charger power = 5000
+[   32.208352] healthd: battery l=33 v=3952 t=32.7 h=2 st=2 c=0 fc=3500000 chg=u
+[   32.208755] healthd: efs_buf: 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 327 324 0 0 0 0 0 0 327 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 327 324 0 0 0 0 0 0 327 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   32.209062] healthd: battery l=33 v=3952 t=32.7 h=2 st=2 c=0 fc=3500000 o=5 ca=634 ct=1 ps=0 hv=0 sec=0 sec=32768 chg=u
+[   32.259493] usb:: dwc3_gadget_conndone_interrupt (HS)
+[   32.295610] usb_notify: state_store_usblog_notify state param error. state=SPEED=HIGH
+[   32.295681] usb: GET_DES
+[   32.296630] android_work: android_work: sent uevent USB_STATE=CONNECTED
+[   32.309309] usb_notify: state_store_usblog_notify state param error. state=SPEED=HIGH
+[   32.309383] usb: GET_DES
+[   32.315652] usb: set_config_number single config num=0
+[   32.315710] usb: set_interface_count next_interface_id=1
+[   32.334852] init: Service 'qcom-post-boot' (pid 2302) exited with status 1
+[   32.415871] [04:32:32.220424] [00000000283F7AAE] [VosMC]  wlan: [E :PE ] Switching channel to 9
+[   32.426207] [04:32:32.230759] [00000000284281D1] [VosMC]  wlan: [E :PE ] limProcessSwitchChannelRsp: 4153: channelChangeReasonCode 2 status 0
+[   32.802327] usb_notify: state_store_usblog_notify state param error. state=SPEED=HIGH
+[   32.802410] usb: GET_DES
+[   32.802919] usb: set_config_number single config num=0
+[   32.802985] usb: set_interface_count next_interface_id=1
+[   32.803207] usb: set_config_number single config num=0
+[   32.803269] usb: set_interface_count next_interface_id=1
+[   32.804027] android_usb gadget: high-speed config #1: 86000c8.android_usb
+[   32.804186] msm-dwc3 7000000.ssusb: Avail curr from USB = 500
+[   32.804253] usb: SET_CON
+[   32.804294] usb: set_config_number single config num=0
+[   32.804446] sec_bat_set_property: usb configured 500
+[   32.804503] sec_bat_set_misc_event: clear misc event(now=0x0, value=0x4)
+[   32.804571] sec_bat_set_current_event: current event before(0x8000), after(0x8000)
+[   32.804647] sec_bat_change_default_current: cable_type: 4 input: 500 output: 500
+[   32.804716] sec_bat_get_charging_current_by_siop: incurr(1000), chgcurr(1500)
+[   32.805052] android_work: android_work: sent uevent USB_STATE=CONFIGURED
+[   32.807060] sm5708-charger: sm5708_otg_get_property: POWER_SUPPLY_PROP_ONLINE - OFF
+[   32.807412] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   32.807547] sec_bat_get_property cable type = 5 max charger power = 5000
+[   32.808060] healthd: efs_buf: 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 327 324 0 0 0 0 0 0 327 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 327 324 0 0 0 0 0 0 327 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   32.808413] healthd: battery l=33 v=3952 t=32.7 h=2 st=2 c=0 fc=3500000 o=5 ca=634 ct=1 ps=0 hv=0 sec=0 sec=32768 chg=u
+[   32.808640] healthd: battery l=33 v=3952 t=32.7 h=2 st=2 c=0 fc=3500000 chg=u
+[   33.239595] audit: audit_lost=26 audit_rate_limit=5 audit_backlog_limit=64
+[   33.239680] audit: rate limit exceeded
+[   33.864945] type=1400 audit(1793314953.659:575): avc: granted { read } for comm="main" name="u:object_r:net_dns_prop:s0" dev="tmpfs" ino=14495 scontext=u:r:untrusted_app_25:s0:c512,c768 tcontext=u:object_r:net_dns_prop:s0 tclass=file
+[   33.969442] type=1400 audit(1793314953.659:575): avc: granted { read } for comm="main" name="u:object_r:net_dns_prop:s0" dev="tmpfs" ino=14495 scontext=u:r:untrusted_app_25:s0:c512,c768 tcontext=u:object_r:net_dns_prop:s0 tclass=file
+[   34.480506] audit: audit_lost=29 audit_rate_limit=5 audit_backlog_limit=64
+[   34.480576] audit: rate limit exceeded
+[   34.920218] etspi_work_func_debug ldo: 0, sleep: 0, tz: 1, type: egis
+[   35.238868] init: Received control message 'start' for 'gsid' from pid: 1224 (system_server)
+[   35.239449] init: starting service 'gsid'...
+[   35.305710] init: Received control message 'stop' for 'gsid' from pid: 1224 (system_server)
+[   35.305834] init: Sending signal 9 to service 'gsid' (pid 2937) process group...
+[   35.311354] libprocessgroup: Successfully killed process cgroup uid 0 pid 2937 in 5ms
+[   35.313962] init: Service 'gsid' (pid 2937) received signal 9
+[   35.705258] init: starting service 'cnss-daemon'...
+[   35.708486] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   35.712362] init: Service 'cnss-daemon' (pid 3014) exited with status 127
+[   35.712482] init: Sending signal 9 to service 'cnss-daemon' (pid 3014) process group...
+[   35.712757] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3014 in 0ms
+[   35.713036] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   35.713566] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   35.714340] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   35.717631] init: Received control message 'stop' for 'idmap2d' from pid: 1224 (system_server)
+[   35.717792] init: Sending signal 9 to service 'idmap2d' (pid 723) process group...
+[   35.723425] libprocessgroup: Successfully killed process cgroup uid 1000 pid 723 in 5ms
+[   35.723526] audit: audit_lost=32 audit_rate_limit=5 audit_backlog_limit=64
+[   35.723591] audit: rate limit exceeded
+[   35.726106] init: Service 'idmap2d' (pid 723) received signal 9
+[   36.230604] msm_pm_qos_update_request: update request 100
+[   36.230660] msm_pm_qos_add_request: add request
+[   36.231743] sm5708_get_vbat: read = 0x1fbc, vbat = 3966
+[   36.231795] sm5708_cal_avg_vbat: batt_avgvoltage = 3956
+[   36.232735] sm5708_get_vbat: read = 0x1fbc, vbat = 3966
+[   36.232786] sm5708_cal_avg_vbat: batt_avgvoltage = 3957
+[   36.233767] sm5708_get_ocv: read = 0x1e44, ocv = 3783
+[   36.234808] sm5708_get_curr: read = 0x4bb, curr = 591
+[   36.236514] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x84
+[   36.236587] sm5708_cal_avg_current: batt_avgcurrent = 586
+[   36.237518] sm5708_get_curr: read = 0x4bb, curr = 591
+[   36.239234] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x84
+[   36.239315] sm5708_cal_avg_current: batt_avgcurrent = 569
+[   36.239711] msm_csid_init: CSID_VERSION = 0x30050001
+[   36.240014] msm_eeprom_open E
+[   36.240122] msm_eeprom_open X
+[   36.240943] msm_csid_irq CSID1_IRQ_STATUS_ADDR = 0x800
+[   36.244305] MSM-CPP cpp_init_hardware:1011 CPP HW Version: 0x40030003
+[   36.244378] MSM-CPP cpp_init_hardware:1029 stream_cnt:0
+[   36.246423] sec-battery battery: sec_bat_get_value_by_adc:[2] Temp(328), Temp-ADC(32222)
+[   36.247920] msm_sensor_config32:450 s5k3p8sp cfgtype = 7
+[   36.247984] msm_sensor_config32:450 s5k3p8sp cfgtype = 5
+[   36.248041] Sensor 1 tagged as NON-SECURE
+[   36.248090] msm_camera_power_up:1752
+[   36.248654] msm_camera_power_up index 0
+[   36.248698] msm_camera_power_up type 1
+[   36.248740] msm_camera_power_up:1821 gpio set val 21
+[   36.248787] msm_camera_power_up index 1
+[   36.248827] msm_camera_power_up type 2
+[   36.250505] msm_camera_power_up index 2
+[   36.250569] msm_camera_power_up type 1
+[   36.250626] msm_camera_power_up:1821 gpio set val 20
+[   36.252742] msm_camera_power_up index 3
+[   36.252827] msm_camera_power_up type 1
+[   36.252902] msm_camera_power_up:1821 gpio set val 129
+[   36.253094] sec-battery battery: sec_bat_get_value_by_adc:[3] Temp(328), Temp-ADC(32221)
+[   36.254208] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   36.255064] msm_camera_power_up index 4
+[   36.255122] msm_camera_power_up type 0
+[   36.256039] msm_pm_qos_update_request: update request -1
+[   36.256086] msm_pm_qos_add_request: add request
+[   36.258352] msm_cci_init:1434: hw_version = 0x10020005
+[   36.258530] MSM-SENSOR-INIT front_camera_firmware_show:506 [FW_DBG] front_cam_fw_ver : A16QLLC00CM A16QLLC00CA\x0a\x0a
+[   36.258660] msm_camera_power_up exit
+[   36.258900] msm_sensor_match_id: slave_info->sensor_slave_addr = 0x20 
+[   36.258968] msm_sensor_match_id: slave_info->sensor_id_reg_addr = 0x0 
+[   36.259029] msm_sensor_match_id: read id: 0x3108 expected id 0x3108:
+[   36.259093] msm_sensor_config32:951 sensor state 1
+[   36.259169] msm_sensor_config32:450 s5k3p8sp cfgtype = 2
+[   36.267667] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   36.267933] msm_flash_subdev_do_ioctl:1540 Enter
+[   36.268000] msm_flash_subdev_do_ioctl:1555 msm_flash_subdev_do_ioctl flash current 0
+[   36.268190] msm_flash_subdev_do_ioctl:1555 msm_flash_subdev_do_ioctl flash current 0
+[   36.268253] msm_flash_subdev_do_ioctl:1555 msm_flash_subdev_do_ioctl flash current 0
+[   36.268309] msm_flash_subdev_do_ioctl:1567 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   msm_flash_subdev_do_ioctl[1567]: cam(1 == 1) type(CFG_FLASH_INIT)
+[   36.268553] msm_flash_subdev_ioctl:1105 Enter
+[   36.268595] msm_flash_config:805 Enter msm_flash_config type 0 flash_pos: (1)
+[   36.268658] msm_flash_init:517 Enter
+[   36.268727] msm_ext_flash_init:952 Enter msm_ext_flash_init 
+[   36.268902] sm5708-fled sm5708-fled: sm5708_fled_led_off: LED - OFF
+[   36.270422] sm5708-fled sm5708-fled: sm5708_FLEDx_mode_enable: FLED[1] set mode = 0
+[   36.271327] sm5708-charger: sm5708_charger_oper_push_event: event_type=3, enable=0
+[   36.272168] sm5708-charger: sm5708_charger_oper_push_event: event_type=2, enable=0
+[   36.272237] sm5708-fled sm5708-fled: sm5708_fled_turn_off: FLED[1] turn-off done.
+[   36.272309] msm_ext_flash_init:974 Exit msm_ext_flash_init
+[   36.272372] msm_flash_init:575 Exit
+[   36.272420] msm_flash_prepare:645 msm_flash_prepare:645: State : 0
+[   36.272480] msm_flash_config:905 Exit msm_flash_config type 0
+[   36.272538] msm_flash_subdev_do_ioctl:1611 Exit
+[   36.275996] msm_flash_subdev_do_ioctl:1540 Enter
+[   36.276063] msm_flash_subdev_do_ioctl:1555 msm_flash_subdev_do_ioctl flash current -204033632
+[   36.276119] msm_flash_subdev_do_ioctl:1555 msm_flash_subdev_do_ioctl flash current -204030040
+[   36.276204] msm_flash_subdev_do_ioctl:1555 msm_flash_subdev_do_ioctl flash current -198897116
+[   36.276252] msm_flash_subdev_do_ioctl:1567 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   msm_flash_subdev_do_ioctl[1567]: cam(2 == 2) type(DEFAULT)
+[   36.276408] msm_flash_subdev_ioctl:1105 Enter
+[   36.276464] msm_flash_config:805 Enter msm_flash_config type 1 flash_pos: (2)
+[   36.276557] msm_ext_flash_release:982 Enter msm_ext_flash_release 
+[   36.276636] sm5708-fled sm5708-fled: sm5708_fled_led_off: LED - OFF
+[   36.277938] sm5708-fled sm5708-fled: sm5708_FLEDx_mode_enable: FLED[0] set mode = 0
+[   36.278780] sm5708-charger: sm5708_charger_oper_push_event: event_type=3, enable=0
+[   36.279608] sm5708-charger: sm5708_charger_oper_push_event: event_type=2, enable=0
+[   36.279689] sm5708-fled sm5708-fled: sm5708_fled_turn_off: FLED[0] turn-off done.
+[   36.279771] sm5708-fled sm5708-fled: sm5708_fled_led_off: LED - OFF
+[   36.281013] sm5708-fled sm5708-fled: sm5708_FLEDx_mode_enable: FLED[1] set mode = 0
+[   36.281875] sm5708-charger: sm5708_charger_oper_push_event: event_type=3, enable=0
+[   36.282719] sm5708-charger: sm5708_charger_oper_push_event: event_type=2, enable=0
+[   36.282783] sm5708-fled sm5708-fled: sm5708_fled_turn_off: FLED[1] turn-off done.
+[   36.282845] msm_ext_flash_release:999 Exit msm_ext_flash_release
+[   36.282902] msm_flash_prepare:645 msm_flash_prepare:645: State : 5
+[   36.282959] msm_flash_config:905 Exit msm_flash_config type 1
+[   36.283013] msm_flash_subdev_do_ioctl:1611 Exit
+[   36.283115] msm_eeprom_close E
+[   36.283156] msm_eeprom_close X
+[   36.283212] msm_sensor_config32:450 s5k3p8sp cfgtype = 6
+[   36.283267] msm_camera_power_down:1979
+[   36.283499] msm_camera_power_down index 0
+[   36.283545] msm_camera_power_down type 0
+[   36.284655] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   36.284824] sm5708_get_all_value: get POWER_SUPPLY_PROP_HEALTH = 0x1
+[   36.285626] msm_camera_power_down index 1
+[   36.285676] msm_camera_power_down type 1
+[   36.287251] sm5708_get_vbat: read = 0x1fbc, vbat = 3966
+[   36.287303] sm5708_cal_avg_vbat: batt_avgvoltage = 3958
+[   36.287759] msm_camera_power_down index 2
+[   36.287806] msm_camera_power_down type 1
+[   36.287855] msm_camera_power_down index 3
+[   36.287900] msm_camera_power_down type 2
+[   36.288052] msm_camera_power_down index 4
+[   36.288096] msm_camera_power_down type 1
+[   36.288258] sm5708_get_curr: read = 0x4bb, curr = 591
+[   36.289915] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x84
+[   36.289995] sm5708_cal_avg_current: batt_avgcurrent = 561
+[   36.290211] msm_camera_power_down exit
+[   36.290336] msm_sensor_config32:1148 sensor state 0
+[   36.291001] sm5708_get_ocv: read = 0x1e44, ocv = 3783
+[   36.291982] sm5708_get_temperature: read = 0x27a0, temp_fg = 396
+[   36.292958] sm5708_get_soc_cycle: read = 0x0, soc_cycle = 0
+[   36.293031] sm5708_vbatocv_check: mode change to mix RS auto mode
+[   36.295612] sm5708_vbatocv_check: PARAM_RUN_UPDATE 0x14 = 0x0 
+[   36.298830] sm5708_cal_carc: <1 6 1 11 -1 1 6 1 9 1>, temp_fg = 396 ,p_curr_cal = 0x8c, n_curr_cal = 0x89, curr_offset = 0x84, volt_cal = 0x8084 ,fg_delta_volcal = 0x0
+[   36.300542] sm5708_cal_carc: <0 2 1 2 1 1 2 4 2 4>, p_curr_cal = 0x8c, n_curr_cal = 0x89, mix_factor=0x147 ,batt_temp = 328
+[   36.303321] sm5708_fg_check_reg_init_need: SM5708_REG_FG_OP_STATUS : 0x8010 , return 0
+[   36.303391] sm5708_get_soc: read = 0x211c, soc = 331
+[   36.310650] sm5708_fg_test_read: 0xA0=0x1b72, 0xAC=0x1400, 0xAD=0x20e9, 0xAE=0x225a, 0xAF=0x2400, 0x28=0x09b4, 0x2F=0x031b, 0x01=0xc401, SM5708_ID=0x000b
+[   36.321384] sm5708_fg_test_read: 0xB0=0x0000, 0xBC=0x0000, 0xBD=0x14d7, 0xBE=0x1b6b, 0xBF=0x1b72, 0x85=0x04cb, 0x86=0x8005, 0x87=0x0914, 0x1F=0x0020, 0x94=0x0001 , 0x13=0x000f, 0x14=0x0000
+[   36.322391] sm5708_get_all_value: chg_h=1, chg_f=0, chg_s=1, is_chg=1, ta_exist=1, v=3966, v_avg=3958, i=591, i_avg=561, ocv=3783, fg_t=396, b_t=328, cycle=0, soc=331, state=0x7
+[   36.322507] sm5708_fg_get_scaled_capacity: scaled capacity (33.1)
+[   36.322567] sm5708_fg_get_atomic_capacity : NOW(33), OLD(33)
+[   36.322632] sec-battery battery: sec_bat_get_battery_info:Vnow(3966mV),Inow(591mA),Imax(1000mA),Ichg(1500mA),SOC(33%),Tbat(328), Tusb(0), Tchg(0), Twpc(0), Tblkt(0)
+[   36.323257] sm5708-charger: sm5708_get_input_current: src_type=5, current=1000
+[   36.323831] sm5708-charger: sm5708_CHG_get_FASTCHG: get FASTCHG, offset=0x1c, current=1500mA
+[   36.323911] sm5708-charger: sm5708_get_charge_current: src_type=5, current=1500
+[   36.323985] sec-battery battery: sec_bat_cisd_check: [CISD] iavg: 569, incur: 1000, chgcur: 1500,\x0acc_T: 0, lcd_off_T: 0, passed_T: 24, full_T: 0, chg_end_T: 0, cisd: 0x0
+[   36.325119] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   36.336005] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   36.347230] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   36.347434] sec-battery battery: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(USB_CDP, USB_CDP, 2, 0, 0), level(100%), slate_mode(0), store_mode(0), Cycle(-1)
+[   36.347578] sec-battery battery: sec_bat_set_polling: Polling time 20/30 sec.
+[   36.347690] sec_bat_get_property cable type = 5 max charger power = 5000
+[   36.347760] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   36.348660] sm5708-charger: sm5708_otg_get_property: POWER_SUPPLY_PROP_ONLINE - OFF
+[   36.349098] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   36.349237] sec_bat_get_property cable type = 5 max charger power = 5000
+[   36.349304] healthd: battery l=33 v=3966 t=32.8 h=2 st=2 c=0 fc=3500000 chg=u
+[   36.349780] healthd: efs_buf: 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 327 324 0 0 0 0 0 0 327 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 327 324 0 0 0 0 0 0 327 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   36.349936] healthd: update cisd_data 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 328 324 0 0 0 0 0 0 328 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 328 324 0 0 0 0 0 0 328 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   36.352974] healthd: battery l=33 v=3966 t=32.8 h=2 st=2 c=0 fc=3500000 o=5 ca=569 ct=1 ps=0 hv=0 sec=0 sec=32768 chg=u
+[   38.801091] subsys-restart: subsystem_put(): subsystem_put: venus count:1
+[   38.801170] subsys-restart: subsys_stop(): subsys_stop venus sysmon_send_shutdown
+[   40.568933] [SENSOR][ACCEL] lis2ds_acc_work_func: x = 28, y = 172, z = 7948
+[   40.712305] init: starting service 'cnss-daemon'...
+[   40.714469] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   40.717159] init: Service 'cnss-daemon' (pid 3241) exited with status 127
+[   40.717251] init: Sending signal 9 to service 'cnss-daemon' (pid 3241) process group...
+[   40.717481] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3241 in 0ms
+[   40.717680] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   40.718016] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   40.718390] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   45.720111] init: starting service 'cnss-daemon'...
+[   45.722520] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   45.725003] init: Service 'cnss-daemon' (pid 3246) exited with status 127
+[   45.725094] init: Sending signal 9 to service 'cnss-daemon' (pid 3246) process group...
+[   45.725321] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3246 in 0ms
+[   45.725494] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   45.725975] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   45.726453] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   45.920931] etspi_work_func_debug ldo: 0, sleep: 0, tz: 1, type: egis
+[   46.349765] sm5708_get_vbat: read = 0x1ff0, vbat = 3992
+[   46.349929] sm5708_cal_avg_vbat: batt_avgvoltage = 3968
+[   46.351489] sm5708_get_vbat: read = 0x1ff0, vbat = 3992
+[   46.351631] sm5708_cal_avg_vbat: batt_avgvoltage = 3973
+[   46.353020] sm5708_get_ocv: read = 0x1e44, ocv = 3783
+[   46.354406] sm5708_get_curr: read = 0x73d, curr = 904
+[   46.356820] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   46.357028] sm5708_cal_avg_current: batt_avgcurrent = 654
+[   46.358417] sm5708_get_curr: read = 0x73d, curr = 904
+[   46.360996] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   46.361216] sm5708_cal_avg_current: batt_avgcurrent = 700
+[   46.367948] sec-battery battery: sec_bat_get_value_by_adc:[2] Temp(328), Temp-ADC(32213)
+[   46.374613] sec-battery battery: sec_bat_get_value_by_adc:[3] Temp(328), Temp-ADC(32212)
+[   46.375805] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   46.387831] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   46.399952] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   46.400238] sm5708_get_all_value: get POWER_SUPPLY_PROP_HEALTH = 0x1
+[   46.402929] sm5708_get_vbat: read = 0x1ff0, vbat = 3992
+[   46.403000] sm5708_cal_avg_vbat: batt_avgvoltage = 3976
+[   46.404008] sm5708_get_curr: read = 0x73d, curr = 904
+[   46.405777] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   46.405882] sm5708_cal_avg_current: batt_avgcurrent = 723
+[   46.406887] sm5708_get_ocv: read = 0x1e44, ocv = 3783
+[   46.407888] sm5708_get_temperature: read = 0x27c0, temp_fg = 397
+[   46.408897] sm5708_get_soc_cycle: read = 0x0, soc_cycle = 0
+[   46.408970] sm5708_vbatocv_check: mode change to mix RS auto mode
+[   46.411753] sm5708_vbatocv_check: PARAM_RUN_UPDATE 0x14 = 0x0 
+[   46.415074] sm5708_cal_carc: <1 6 1 11 -1 1 6 1 9 1>, temp_fg = 397 ,p_curr_cal = 0x8c, n_curr_cal = 0x89, curr_offset = 0x84, volt_cal = 0x8086 ,fg_delta_volcal = 0x0
+[   46.416752] sm5708_cal_carc: <0 2 1 2 1 1 2 4 2 4>, p_curr_cal = 0x8c, n_curr_cal = 0x89, mix_factor=0x147 ,batt_temp = 328
+[   46.419668] sm5708_fg_check_reg_init_need: SM5708_REG_FG_OP_STATUS : 0x8010 , return 0
+[   46.419759] sm5708_get_soc: read = 0x2128, soc = 331
+[   46.426973] sm5708_fg_test_read: 0xA0=0x1b72, 0xAC=0x2064, 0xAD=0x2064, 0xAE=0x225a, 0xAF=0x225a, 0x28=0x0798, 0x2F=0x031b, 0x01=0xc401, SM5708_ID=0x000b
+[   46.437692] sm5708_fg_test_read: 0xB0=0x0000, 0xBC=0x14d7, 0xBD=0x16f3, 0xBE=0x1b6b, 0xBF=0x1b72, 0x85=0x06eb, 0x86=0x008e, 0x87=0x0918, 0x1F=0x0020, 0x94=0x0001 , 0x13=0x000f, 0x14=0x0000
+[   46.438676] sm5708_get_all_value: chg_h=1, chg_f=0, chg_s=1, is_chg=1, ta_exist=1, v=3992, v_avg=3976, i=904, i_avg=723, ocv=3783, fg_t=397, b_t=328, cycle=0, soc=331, state=0x7
+[   46.438787] sm5708_fg_get_scaled_capacity: scaled capacity (33.1)
+[   46.438842] sm5708_fg_get_atomic_capacity : NOW(33), OLD(33)
+[   46.438904] sec-battery battery: sec_bat_get_battery_info:Vnow(3992mV),Inow(904mA),Imax(1000mA),Ichg(1500mA),SOC(33%),Tbat(328), Tusb(0), Tchg(0), Twpc(0), Tblkt(0)
+[   46.439488] sm5708-charger: sm5708_get_input_current: src_type=5, current=1000
+[   46.440083] sm5708-charger: sm5708_CHG_get_FASTCHG: get FASTCHG, offset=0x1c, current=1500mA
+[   46.440154] sm5708-charger: sm5708_get_charge_current: src_type=5, current=1500
+[   46.440244] sec-battery battery: sec_bat_cisd_check: [CISD] iavg: 700, incur: 1000, chgcur: 1500,\x0acc_T: 0, lcd_off_T: 0, passed_T: 24, full_T: 0, chg_end_T: 0, cisd: 0x0
+[   46.441377] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   46.452008] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   46.462705] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   46.462885] sec-battery battery: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(USB_CDP, USB_CDP, 2, 0, 0), level(100%), slate_mode(0), store_mode(0), Cycle(-1)
+[   46.463016] sec-battery battery: sec_bat_set_polling: Polling time 30/30 sec.
+[   46.463122] sec_bat_get_property cable type = 5 max charger power = 5000
+[   46.463187] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   46.464477] audit: audit_lost=54 audit_rate_limit=5 audit_backlog_limit=64
+[   46.464724] audit: rate limit exceeded
+[   46.464914] sm5708-charger: sm5708_otg_get_property: POWER_SUPPLY_PROP_ONLINE - OFF
+[   46.465198] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   46.465484] sec_bat_get_property cable type = 5 max charger power = 5000
+[   46.465886] healthd: battery l=33 v=3992 t=32.8 h=2 st=2 c=0 fc=3500000 chg=u
+[   46.466213] healthd: efs_buf: 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 328 324 0 0 0 0 0 0 328 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 328 324 0 0 0 0 0 0 328 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   46.466718] healthd: battery l=33 v=3992 t=32.8 h=2 st=2 c=0 fc=3500000 o=5 ca=700 ct=1 ps=0 hv=0 sec=0 sec=32768 chg=u
+[   50.728581] init: starting service 'cnss-daemon'...
+[   50.734070] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   50.739057] init: Service 'cnss-daemon' (pid 3248) exited with status 127
+[   50.739251] init: Sending signal 9 to service 'cnss-daemon' (pid 3248) process group...
+[   50.739706] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3248 in 0ms
+[   50.740389] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   50.741262] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   50.742666] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   55.638271] [SENSOR][ACCEL] lis2ds_acc_work_func: x = 20, y = 160, z = 7952
+[   55.742271] init: starting service 'cnss-daemon'...
+[   55.748271] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   55.754736] init: Service 'cnss-daemon' (pid 3273) exited with status 127
+[   55.754996] init: Sending signal 9 to service 'cnss-daemon' (pid 3273) process group...
+[   55.755643] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3273 in 0ms
+[   55.756142] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   55.757406] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   55.758817] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   56.464479] sm5708_get_vbat: read = 0x1ff2, vbat = 3993
+[   56.464544] sm5708_cal_avg_vbat: batt_avgvoltage = 3984
+[   56.465501] sm5708_get_vbat: read = 0x1ff2, vbat = 3993
+[   56.465558] sm5708_cal_avg_vbat: batt_avgvoltage = 3988
+[   56.466515] sm5708_get_ocv: read = 0x1e45, ocv = 3783
+[   56.467472] sm5708_get_curr: read = 0x736, curr = 901
+[   56.469161] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   56.469246] sm5708_cal_avg_current: batt_avgcurrent = 812
+[   56.470341] sm5708_get_curr: read = 0x736, curr = 901
+[   56.472097] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   56.472173] sm5708_cal_avg_current: batt_avgcurrent = 857
+[   56.479343] sec-battery battery: sec_bat_get_value_by_adc:[2] Temp(329), Temp-ADC(32205)
+[   56.485989] sec-battery battery: sec_bat_get_value_by_adc:[3] Temp(329), Temp-ADC(32205)
+[   56.487038] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   56.498014] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   56.509488] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   56.509663] sm5708_get_all_value: get POWER_SUPPLY_PROP_HEALTH = 0x1
+[   56.512311] sm5708_get_vbat: read = 0x1fe0, vbat = 3984
+[   56.512369] sm5708_cal_avg_vbat: batt_avgvoltage = 3988
+[   56.513292] sm5708_get_curr: read = 0x736, curr = 901
+[   56.515016] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   56.515136] sm5708_cal_avg_current: batt_avgcurrent = 879
+[   56.516143] sm5708_get_ocv: read = 0x1e45, ocv = 3783
+[   56.517078] sm5708_get_temperature: read = 0x2780, temp_fg = 395
+[   56.517995] sm5708_get_soc_cycle: read = 0x0, soc_cycle = 0
+[   56.518049] sm5708_vbatocv_check: mode change to mix RS auto mode
+[   56.520717] sm5708_vbatocv_check: PARAM_RUN_UPDATE 0x14 = 0x0 
+[   56.523796] sm5708_cal_carc: <1 6 1 11 -1 1 6 1 9 1>, temp_fg = 395 ,p_curr_cal = 0x8c, n_curr_cal = 0x89, curr_offset = 0x84, volt_cal = 0x8086 ,fg_delta_volcal = 0x0
+[   56.525326] sm5708_cal_carc: <0 2 1 2 1 1 2 4 2 4>, p_curr_cal = 0x8c, n_curr_cal = 0x89, mix_factor=0x147 ,batt_temp = 329
+[   56.528006] sm5708_fg_check_reg_init_need: SM5708_REG_FG_OP_STATUS : 0x8010 , return 0
+[   56.528081] sm5708_get_soc: read = 0x2134, soc = 332
+[   56.535139] sm5708_fg_test_read: 0xA0=0x1400, 0xAC=0x2064, 0xAD=0x2064, 0xAE=0x225a, 0xAF=0x2400, 0x28=0x0750, 0x2F=0x031b, 0x01=0xc401, SM5708_ID=0x000b
+[   56.546149] sm5708_fg_test_read: 0xB0=0x0000, 0xBC=0x0000, 0xBD=0x16f3, 0xBE=0x16f3, 0xBF=0x1b72, 0x85=0x06ee, 0x86=0x801e, 0x87=0x091d, 0x1F=0x0020, 0x94=0x0001 , 0x13=0x000f, 0x14=0x0000
+[   56.547144] sm5708_get_all_value: chg_h=1, chg_f=0, chg_s=1, is_chg=1, ta_exist=1, v=3984, v_avg=3988, i=901, i_avg=879, ocv=3783, fg_t=395, b_t=329, cycle=0, soc=332, state=0x7
+[   56.547254] sm5708_fg_get_scaled_capacity: scaled capacity (33.2)
+[   56.547310] sm5708_fg_get_atomic_capacity : NOW(33), OLD(33)
+[   56.547373] sec-battery battery: sec_bat_get_battery_info:Vnow(3993mV),Inow(901mA),Imax(1000mA),Ichg(1500mA),SOC(33%),Tbat(329), Tusb(0), Tchg(0), Twpc(0), Tblkt(0)
+[   56.547975] sm5708-charger: sm5708_get_input_current: src_type=5, current=1000
+[   56.548516] sm5708-charger: sm5708_CHG_get_FASTCHG: get FASTCHG, offset=0x1c, current=1500mA
+[   56.548585] sm5708-charger: sm5708_get_charge_current: src_type=5, current=1500
+[   56.548653] sec-battery battery: sec_bat_cisd_check: [CISD] iavg: 857, incur: 1000, chgcur: 1500,\x0acc_T: 0, lcd_off_T: 0, passed_T: 24, full_T: 0, chg_end_T: 0, cisd: 0x0
+[   56.549775] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   56.560883] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   56.572485] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   56.572667] sec-battery battery: sec_bat_time_management: Charging Time : 54 secs
+[   56.572733] sec_bat_set_current_event: current event before(0x8000), after(0x8000)
+[   56.572800] sec-battery battery: sec_bat_temperature_check, health 1, swelling_mode 0(0x0)
+[   56.572871] sec-battery battery: sec_bat_fullcharged_check: Charging Mode : Normal
+[   56.572935] sec_bat_set_current_event: current event before(0x8000), after(0x8000)
+[   56.573001] sec_bat_calculate_safety_time : EXPIRED_TIME(14083989), IP(5000000), CP(6525000), CURR(1034), STANDARD(1550)
+[   56.573084] sec_bat_calculate_safety_time : CAL_EXPIRED_TIME(21112362) TIME NOW(56) TIME PREV(26)
+[   56.573155] sec_bat_calculate_safety_time : REMAIN_TIME(14063975) CAL_REMAIN_TIME(21082362)
+[   56.573226] sec_bat_get_charging_current_by_siop: incurr(1000), chgcurr(1500)
+[   56.573295] sec-battery battery: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(USB_CDP, USB_CDP, 2, 0, 0), level(100%), slate_mode(0), store_mode(0), Cycle(-1)
+[   56.573426] sec-battery battery: sec_bat_set_polling: Polling time 10/30 sec.
+[   56.573534] sec_bat_get_property cable type = 5 max charger power = 5000
+[   56.573600] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   56.574864] sm5708-charger: sm5708_otg_get_property: POWER_SUPPLY_PROP_ONLINE - OFF
+[   56.575258] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   56.575374] sec_bat_get_property cable type = 5 max charger power = 5000
+[   56.575567] healthd: battery l=33 v=3993 t=32.9 h=2 st=2 c=0 fc=3500000 chg=u
+[   56.576173] audit: audit_lost=59 audit_rate_limit=5 audit_backlog_limit=64
+[   56.576235] audit: rate limit exceeded
+[   56.576487] healthd: efs_buf: 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 328 324 0 0 0 0 0 0 328 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 328 324 0 0 0 0 0 0 328 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   56.576616] healthd: update cisd_data 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 329 324 0 0 0 0 0 0 329 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 329 324 0 0 0 0 0 0 329 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   56.584840] healthd: battery l=33 v=3993 t=32.9 h=2 st=2 c=0 fc=3500000 o=5 ca=857 ct=1 ps=0 hv=0 sec=0 sec=32768 chg=u
+[   56.920372] etspi_work_func_debug ldo: 0, sleep: 0, tz: 1, type: egis
+[   60.751646] init: starting service 'cnss-daemon'...
+[   60.753703] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   60.755957] init: Service 'cnss-daemon' (pid 3308) exited with status 127
+[   60.756047] init: Sending signal 9 to service 'cnss-daemon' (pid 3308) process group...
+[   60.756272] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3308 in 0ms
+[   60.756456] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   60.756806] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   60.757139] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   65.760488] init: starting service 'cnss-daemon'...
+[   65.764945] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   65.769337] init: Service 'cnss-daemon' (pid 3309) exited with status 127
+[   65.769526] init: Sending signal 9 to service 'cnss-daemon' (pid 3309) process group...
+[   65.770019] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3309 in 0ms
+[   65.770750] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   65.771906] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   65.773279] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   66.575485] sm5708_get_vbat: read = 0x1ff5, vbat = 3994
+[   66.575646] sm5708_cal_avg_vbat: batt_avgvoltage = 3988
+[   66.577030] sm5708_get_vbat: read = 0x1ff5, vbat = 3994
+[   66.577169] sm5708_cal_avg_vbat: batt_avgvoltage = 3988
+[   66.578555] sm5708_get_ocv: read = 0x1e45, ocv = 3783
+[   66.579942] sm5708_get_curr: read = 0x733, curr = 899
+[   66.582554] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   66.582762] sm5708_cal_avg_current: batt_avgcurrent = 889
+[   66.584155] sm5708_get_curr: read = 0x733, curr = 899
+[   66.586567] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   66.586771] sm5708_cal_avg_current: batt_avgcurrent = 894
+[   66.595245] sec-battery battery: sec_bat_get_value_by_adc:[2] Temp(329), Temp-ADC(32198)
+[   66.603711] sec-battery battery: sec_bat_get_value_by_adc:[3] Temp(329), Temp-ADC(32198)
+[   66.605530] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   66.622657] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   66.634957] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   66.635215] sm5708_get_all_value: get POWER_SUPPLY_PROP_HEALTH = 0x1
+[   66.638081] sm5708_get_vbat: read = 0x1ff1, vbat = 3992
+[   66.638159] sm5708_cal_avg_vbat: batt_avgvoltage = 3988
+[   66.639173] sm5708_get_curr: read = 0x733, curr = 899
+[   66.641036] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   66.641177] sm5708_cal_avg_current: batt_avgcurrent = 897
+[   66.642193] sm5708_get_ocv: read = 0x1e45, ocv = 3783
+[   66.643202] sm5708_get_temperature: read = 0x2740, temp_fg = 392
+[   66.644221] sm5708_get_soc_cycle: read = 0x0, soc_cycle = 0
+[   66.644301] sm5708_vbatocv_check: mode change to mix RS auto mode
+[   66.647025] sm5708_vbatocv_check: PARAM_RUN_UPDATE 0x14 = 0x0 
+[   66.650390] sm5708_cal_carc: <1 6 1 11 -1 1 6 1 9 1>, temp_fg = 392 ,p_curr_cal = 0x8c, n_curr_cal = 0x89, curr_offset = 0x84, volt_cal = 0x8086 ,fg_delta_volcal = 0x0
+[   66.652100] sm5708_cal_carc: <0 2 1 2 1 1 2 4 2 4>, p_curr_cal = 0x8c, n_curr_cal = 0x89, mix_factor=0x147 ,batt_temp = 329
+[   66.655017] sm5708_fg_check_reg_init_need: SM5708_REG_FG_OP_STATUS : 0x8010 , return 0
+[   66.655107] sm5708_get_soc: read = 0x214c, soc = 332
+[   66.662662] sm5708_fg_test_read: 0xA0=0x1400, 0xAC=0x2064, 0xAD=0x20e9, 0xAE=0x20e9, 0xAF=0x225a, 0x28=0x0750, 0x2F=0x031b, 0x01=0xc401, SM5708_ID=0x000b
+[   66.673126] sm5708_fg_test_read: 0xB0=0x0000, 0xBC=0x14d7, 0xBD=0x16f3, 0xBE=0x1b6b, 0xBF=0x1b72, 0x85=0x072f, 0x86=0x8004, 0x87=0x0922, 0x1F=0x0020, 0x94=0x0001 , 0x13=0x000f, 0x14=0x0000
+[   66.674108] sm5708_get_all_value: chg_h=1, chg_f=0, chg_s=1, is_chg=1, ta_exist=1, v=3992, v_avg=3988, i=899, i_avg=897, ocv=3783, fg_t=392, b_t=329, cycle=0, soc=332, state=0x7
+[   66.674218] sm5708_fg_get_scaled_capacity: scaled capacity (33.2)
+[   66.674274] sm5708_fg_get_atomic_capacity : NOW(33), OLD(33)
+[   66.674334] sec-battery battery: sec_bat_get_battery_info:Vnow(3994mV),Inow(899mA),Imax(1000mA),Ichg(1500mA),SOC(33%),Tbat(329), Tusb(0), Tchg(0), Twpc(0), Tblkt(0)
+[   66.674915] sm5708-charger: sm5708_get_input_current: src_type=5, current=1000
+[   66.675455] sm5708-charger: sm5708_CHG_get_FASTCHG: get FASTCHG, offset=0x1c, current=1500mA
+[   66.675524] sm5708-charger: sm5708_get_charge_current: src_type=5, current=1500
+[   66.675592] sec-battery battery: sec_bat_cisd_check: [CISD] iavg: 894, incur: 1000, chgcur: 1500,\x0acc_T: 0, lcd_off_T: 0, passed_T: 54, full_T: 0, chg_end_T: 0, cisd: 0x0
+[   66.676679] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   66.687351] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   66.698064] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   66.698253] sec-battery battery: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(USB_CDP, USB_CDP, 2, 0, 0), level(100%), slate_mode(0), store_mode(0), Cycle(-1)
+[   66.698387] sec-battery battery: sec_bat_set_polling: Polling time 20/30 sec.
+[   66.698496] sec_bat_get_property cable type = 5 max charger power = 5000
+[   66.698565] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   66.700121] sm5708-charger: sm5708_otg_get_property: POWER_SUPPLY_PROP_ONLINE - OFF
+[   66.700418] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   66.700540] sec_bat_get_property cable type = 5 max charger power = 5000
+[   66.700727] healthd: battery l=33 v=3994 t=32.9 h=2 st=2 c=0 fc=3500000 chg=u
+[   66.700844] healthd: efs_buf: 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 329 324 0 0 0 0 0 0 329 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 329 324 0 0 0 0 0 0 329 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   66.701236] healthd: battery l=33 v=3994 t=32.9 h=2 st=2 c=0 fc=3500000 o=5 ca=894 ct=1 ps=0 hv=0 sec=0 sec=32768 chg=u
+[   67.920871] etspi_work_func_debug ldo: 0, sleep: 0, tz: 1, type: egis
+[   69.720409] healthd: battery l=33 v=3994 t=32.9 h=2 st=2 c=0 fc=3500000 chg=u
+[   70.703572] [SENSOR][ACCEL] lis2ds_acc_work_func: x = 36, y = 168, z = 7964
+[   70.770176] init: starting service 'cnss-daemon'...
+[   70.775911] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   70.781907] init: Service 'cnss-daemon' (pid 3311) exited with status 127
+[   70.782152] init: Sending signal 9 to service 'cnss-daemon' (pid 3311) process group...
+[   70.782760] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3311 in 0ms
+[   70.783238] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   70.784442] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   70.785957] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   72.640599] muic_print_reg_log:11(0)0 12(0)0 13(0)0 14(0)0 15(1)0 16(26)0 17(2)0 18(20)0 22(0)0 2(1f)0 2(1e)1 2(1e)0 2(1e)0 3(0)0 4(0)0 5(0)0 a(20)0 b(0)0 c(0)0 15(1)0 9(1f)0 13(0)0 13(24)1 13(24)0 13(24)0 
+[   72.651604] muic_print_reg_dump:CT:1e IM1:fc IM2:0 MS1:24 MS2:0 ADC:1f DT1:20 DT2:0 DT3:0 RS1:1 RS2:26ACNT:20
+[   75.781597] init: starting service 'cnss-daemon'...
+[   75.787439] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   75.793435] init: Service 'cnss-daemon' (pid 3312) exited with status 127
+[   75.793682] init: Sending signal 9 to service 'cnss-daemon' (pid 3312) process group...
+[   75.794317] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3312 in 0ms
+[   75.794802] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   75.796064] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   75.797496] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set
+[   76.702052] sm5708_get_vbat: read = 0x1ff6, vbat = 3995
+[   76.702224] sm5708_cal_avg_vbat: batt_avgvoltage = 3990
+[   76.703744] sm5708_get_vbat: read = 0x1ff6, vbat = 3995
+[   76.703893] sm5708_cal_avg_vbat: batt_avgvoltage = 3991
+[   76.705248] sm5708_get_ocv: read = 0x1e45, ocv = 3783
+[   76.706666] sm5708_get_curr: read = 0x6f3, curr = 868
+[   76.709103] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   76.709330] sm5708_cal_avg_current: batt_avgcurrent = 890
+[   76.710922] sm5708_get_curr: read = 0x6f3, curr = 868
+[   76.713203] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   76.713319] sm5708_cal_avg_current: batt_avgcurrent = 886
+[   76.719821] sec-battery battery: sec_bat_get_value_by_adc:[2] Temp(329), Temp-ADC(32192)
+[   76.727188] sec-battery battery: sec_bat_get_value_by_adc:[3] Temp(329), Temp-ADC(32191)
+[   76.728383] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   76.740477] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   76.752645] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   76.752876] sm5708_get_all_value: get POWER_SUPPLY_PROP_HEALTH = 0x1
+[   76.755494] sm5708_get_vbat: read = 0x1ff6, vbat = 3995
+[   76.755564] sm5708_cal_avg_vbat: batt_avgvoltage = 3992
+[   76.756570] sm5708_get_curr: read = 0x6f3, curr = 868
+[   76.758340] sm5708_get_curr: <1 0 100 10> info.volt_cal = 0x8000, volt_slope = 0x8000, mohm_volt_cal = 0x86
+[   76.758444] sm5708_cal_avg_current: batt_avgcurrent = 884
+[   76.759450] sm5708_get_ocv: read = 0x1e45, ocv = 3783
+[   76.760567] sm5708_get_temperature: read = 0x2710, temp_fg = 390
+[   76.761658] sm5708_get_soc_cycle: read = 0x0, soc_cycle = 0
+[   76.761717] sm5708_vbatocv_check: mode change to mix RS auto mode
+[   76.764211] sm5708_vbatocv_check: PARAM_RUN_UPDATE 0x14 = 0x0 
+[   76.767248] sm5708_cal_carc: <1 6 1 11 -1 1 6 1 9 1>, temp_fg = 390 ,p_curr_cal = 0x8c, n_curr_cal = 0x89, curr_offset = 0x84, volt_cal = 0x8086 ,fg_delta_volcal = 0x0
+[   76.768914] sm5708_cal_carc: <0 2 1 2 1 1 2 4 2 4>, p_curr_cal = 0x8c, n_curr_cal = 0x89, mix_factor=0x147 ,batt_temp = 329
+[   76.771771] sm5708_fg_check_reg_init_need: SM5708_REG_FG_OP_STATUS : 0x8010 , return 0
+[   76.771838] sm5708_get_soc: read = 0x2158, soc = 333
+[   76.778754] sm5708_fg_test_read: 0xA0=0x1400, 0xAC=0x2064, 0xAD=0x20e9, 0xAE=0x225a, 0xAF=0x225a, 0x28=0x0758, 0x2F=0x031b, 0x01=0xc401, SM5708_ID=0x000b
+[   76.789221] sm5708_fg_test_read: 0xB0=0x0000, 0xBC=0x14d7, 0xBD=0x16f3, 0xBE=0x1b6b, 0xBF=0x1b72, 0x85=0x0741, 0x86=0x801e, 0x87=0x0927, 0x1F=0x0020, 0x94=0x0001 , 0x13=0x000f, 0x14=0x0000
+[   76.790272] sm5708_get_all_value: chg_h=1, chg_f=0, chg_s=1, is_chg=1, ta_exist=1, v=3995, v_avg=3992, i=868, i_avg=884, ocv=3783, fg_t=390, b_t=329, cycle=0, soc=333, state=0x7
+[   76.790388] sm5708_fg_get_scaled_capacity: scaled capacity (33.3)
+[   76.790445] sm5708_fg_get_atomic_capacity : NOW(33), OLD(33)
+[   76.790506] sec-battery battery: sec_bat_get_battery_info:Vnow(3995mV),Inow(868mA),Imax(1000mA),Ichg(1500mA),SOC(33%),Tbat(329), Tusb(0), Tchg(0), Twpc(0), Tblkt(0)
+[   76.791111] sm5708-charger: sm5708_get_input_current: src_type=5, current=1000
+[   76.791651] sm5708-charger: sm5708_CHG_get_FASTCHG: get FASTCHG, offset=0x1c, current=1500mA
+[   76.791719] sm5708-charger: sm5708_get_charge_current: src_type=5, current=1500
+[   76.791788] sec-battery battery: sec_bat_cisd_check: [CISD] iavg: 886, incur: 1000, chgcur: 1500,\x0acc_T: 0, lcd_off_T: 0, passed_T: 54, full_T: 0, chg_end_T: 0, cisd: 0x0
+[   76.792876] sm5708-charger: psy_chg_get_charging_health: is_charging=1(1), cable_type=5, input_limit=1000, chg_curr=1500, REG_STATUS1=0x29, REG_STATUS2=0x18
+[   76.803506] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   76.814193] sm5708-charger: sm5708_chg_test_read: [CHG] 0x04:0xfe, 0x05:0xbf, 0x06:0xfb, 0x07:0xff, 0x08:0x29, 0x09:0x18, 0x0A:0x00, 0x0B:0x00, 0x0C:0x05, 0x0D:0x24, 0x0E:0x1c, 0x0F:0x03, 0x0F:0x03, 0x10:0x1c, 0x12:0x64, 0x13:0x0a, 0x14:0x02, 0x15:0x2c, 0x16:0x18, 0x17:0x1c, 0x20:0x05, 0x21:0x00, 
+[   76.814370] sec-battery battery: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(USB_CDP, USB_CDP, 2, 0, 0), level(100%), slate_mode(0), store_mode(0), Cycle(-1)
+[   76.814500] sec-battery battery: sec_bat_set_polling: Polling time 30/30 sec.
+[   76.814608] sec_bat_get_property cable type = 5 max charger power = 5000
+[   76.814675] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   76.816586] sm5708-charger: sm5708_otg_get_property: POWER_SUPPLY_PROP_ONLINE - OFF
+[   76.816865] sec_bat_get_property cable type = 5 sleep_mode = 0
+[   76.816985] sec_bat_get_property cable type = 5 max charger power = 5000
+[   76.817049] healthd: battery l=33 v=3995 t=32.9 h=2 st=2 c=0 fc=3500000 chg=u
+[   76.817252] healthd: efs_buf: 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 1 329 324 0 0 0 0 0 0 329 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 329 324 0 0 0 0 0 0 329 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   76.817558] healthd: battery l=33 v=3995 t=32.9 h=2 st=2 c=0 fc=3500000 o=5 ca=886 ct=1 ps=0 hv=0 sec=0 sec=32768 chg=u
+[   77.198859] [MDSS] set_normal_br_values : cd_idx (30) candela_level (53) 
+[   77.226187] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 80  candela : 53CD hbm : 0 (0)
+[   77.231108] [MDSS] set_normal_br_values : cd_idx (29) candela_level (50) 
+[   77.259565] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 77  candela : 50CD hbm : 0 (0)
+[   77.265194] [MDSS] set_normal_br_values : cd_idx (26) candela_level (41) 
+[   77.292977] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 71  candela : 41CD hbm : 0 (0)
+[   77.298040] [MDSS] set_normal_br_values : cd_idx (23) candela_level (34) 
+[   77.326362] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 65  candela : 34CD hbm : 0 (0)
+[   77.331594] [MDSS] set_normal_br_values : cd_idx (20) candela_level (29) 
+[   77.359770] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 59  candela : 29CD hbm : 0 (0)
+[   77.365850] [MDSS] set_normal_br_values : cd_idx (17) candela_level (24) 
+[   77.393174] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 53  candela : 24CD hbm : 0 (0)
+[   77.398294] [MDSS] set_normal_br_values : cd_idx (14) candela_level (20) 
+[   77.426565] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 47  candela : 20CD hbm : 0 (0)
+[   77.432233] [MDSS] set_normal_br_values : cd_idx (11) candela_level (16) 
+[   77.459962] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 41  candela : 16CD hbm : 0 (0)
+[   77.465400] [MDSS] set_normal_br_values : cd_idx (9) candela_level (14) 
+[   77.493398] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 34  candela : 14CD hbm : 0 (0)
+[   77.498606] [MDSS] set_normal_br_values : cd_idx (7) candela_level (12) 
+[   77.526518] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 28  candela : 12CD hbm : 0 (0)
+[   77.531106] [MDSS] set_normal_br_values : cd_idx (6) candela_level (11) 
+[   77.560476] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 22  candela : 11CD hbm : 0 (0)
+[   77.565601] [MDSS] set_normal_br_values : cd_idx (4) candela_level (9) 
+[   77.593598] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 16  candela : 9CD hbm : 0 (0)
+[   77.599352] [MDSS] set_normal_br_values : cd_idx (3) candela_level (8) 
+[   77.627002] [MDSS] mdss_samsung_brightness_dcs : DSI0 level : 10  candela : 8CD hbm : 0 (0)
+[   78.922296] etspi_work_func_debug ldo: 0, sleep: 0, tz: 1, type: egis
+[   80.791710] init: starting service 'cnss-daemon'...
+[   80.794724] init: cannot execve('/system/vendor/bin/cnss-daemon'): Operation not permitted
+[   80.797466] init: Service 'cnss-daemon' (pid 3325) exited with status 127
+[   80.797593] init: Sending signal 9 to service 'cnss-daemon' (pid 3325) process group...
+[   80.797917] libprocessgroup: Successfully killed process cgroup uid 1000 pid 3325 in 0ms
+[   80.798147] init: updatable process 'cnss-daemon' exited 4 times in 4 minutes
+[   80.798848] init: Unable to set property 'ro.init.updatable_crashing_process_name' to 'cnss-daemon' from uid:0 gid:0 pid:1: Read-only property was already set
+[   80.799925] init: Unable to set property 'ro.init.updatable_crashing' to '1' from uid:0 gid:0 pid:1: Read-only property was already set

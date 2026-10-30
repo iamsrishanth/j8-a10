@@ -1,65 +1,105 @@
 # Installing the build
 
-> ⚠️ **Nothing here has been flashed to real hardware yet.** The build
-> completes and produces a valid OTA ZIP, but no device test has been recorded.
-> Read [Rollback reality](#7-rollback-reality) before you start.
+This procedure has been executed on hardware: the OTA was installed through
+TWRP, data was formatted, and Android 10 booted to a working UI. The steps and
+outputs below are the ones actually observed.
 
 ## 1. Prerequisites
 
 | Requirement | Detail |
 |---|---|
 | Bootloader | Unlocked (`OEM LOCK: OFF` in Download mode) |
-| Recovery | TWRP for `j8y18lte` installed and bootable (3.x) |
+| Recovery | TWRP 3.6.1 for `j8y18lte`, ADB authorised |
 | Host tools | `adb` (platform-tools), `sha256sum` |
-| Battery | Charged. **The reference device's power button is broken** — a dead battery means no easy way back |
-| Files | The OTA ZIP, *or* `boot.img` + `system.img` + `vendor.img` from the same build |
+| Battery | **Charged.** The reference device has a broken power button and was lost for hours because it drained mid-session |
+| Files | The signed OTA ZIP (`j8os-17.1-*-signed-ota.zip`) |
 
 Verify what you are about to flash:
 
 ```bash
-sha256sum lineage-17.1-*-UNOFFICIAL-j8y18lte.zip
-# compare with artifacts/SHA256SUMS.txt
-unzip -p lineage-17.1-*-UNOFFICIAL-j8y18lte.zip META-INF/com/android/metadata
+sha256sum j8os-17.1-enforcing-20261030-0532-signed-ota.zip
+# 8f5669c8ae47368e986ae7f9610b94857ee005832ef7e935e6138376f3c98abc
+unzip -p j8os-17.1-*.zip META-INF/com/android/metadata
 ```
 
-The OTA metadata should contain `pre-device=j8y18lte`, `post-sdk-level=29`
-and `ota-type=BLOCK`. If `pre-device` is anything else, stop.
+`pre-device=j8y18lte`, `post-sdk-level=29`, `ota-type=BLOCK`, and
+`post-build=…:userdebug/release-keys` are the strings to look for.
 
 ## 2. Back up first
-
-Identity partitions are not rebuildable from source:
 
 ```powershell
 pwsh -File scripts/backup-device.ps1 -Serial <serial> -BackupRoot D:\j8-backup
 ```
 
-This verifies SHA-256 of every dumped partition against the device. It does
-**not** dump `system`/`vendor` (size) or `userdata` (privacy), so it is **not**
-a full rollback set. Say that out loud before flashing.
+Dumps and verifies `boot`, `recovery`, `efs`, `persist`, `modemst1/2`, `fsg`,
+`fsc`, `misc`, `config`. It does **not** cover `system`/`vendor`/`userdata`, so
+it is not a full rollback set — say that out loud before flashing.
 
-## 3. Install the OTA with TWRP sideload (recommended)
+## 3. Get into TWRP
+
+With a broken power button, recovery is a software-only destination:
 
 ```bash
-adb devices -l                 # expect: <serial>  recovery
-adb reboot recovery            # only works from a booted Android
+adb devices -l                 # confirm the device is online
+adb reboot recovery            # from a booted Android
 ```
 
-1. In TWRP: **Wipe → Format Data → yes.**
-   Required — a locally built ROM uses different signing keys than whatever is
-   installed, and Android will not boot over a `/data` written by another key.
-   This erases `/data` **and** internal storage (`/sdcard`).
-2. In TWRP: **Advanced → ADB Sideload** (swipe to start).
-3. On the host:
+If Android will not boot, you are dependent on whatever recovery route you
+prepared beforehand — see [recovery.md](recovery.md).
 
-   ```bash
-   adb devices -l               # expect: <serial>  sideload
-   adb sideload lineage-17.1-20261029-UNOFFICIAL-j8y18lte.zip
-   ```
+## 4. Format data
 
-4. Wait for `Total xfer: 1.00x` and TWRP's success message. Do not reboot early.
-5. Reboot to system: **Reboot → System**, or `adb shell twrp reboot system`.
+This is mandatory: the ROM is signed with different keys than whatever was
+installed, and Android will not boot over a `/data` written by another key.
 
-What the OTA writes (from its `updater-script`):
+```bash
+adb shell "/sbin/twrp format data"
+```
+
+**This also erases internal storage (`/sdcard`)** — it lives in `/data/media`.
+That means the controller's ADB key in `/data/misc/adb/adb_keys` is gone after
+the wipe; re-seed it before the next recovery session (see
+[recovery.md §2](recovery.md#2-adb-in-recovery)).
+
+## 5. Install the OTA
+
+There are two ways; both were tested.
+
+**A. TWRP's own installer (used for the validated build):**
+
+```bash
+adb push j8os-17.1-*.zip /sdcard/
+adb shell sha256sum /sdcard/j8os-17.1-*.zip      # must match the host hash
+adb shell "/sbin/twrp install /sdcard/j8os-17.1-*.zip"
+```
+
+Expected output ends with:
+
+```text
+script succeeded: result was [1.000000]
+```
+
+**B. ADB sideload (no shell needed):**
+
+```bash
+# TWRP: Advanced -> ADB Sideload (swipe to start)
+adb devices -l                  # <serial>  sideload
+adb sideload j8os-17.1-*.zip
+# wait for: Total xfer: 1.00x
+```
+
+Stop on any write error or non-zero script result. **Do not reboot after a
+failed write.**
+
+## 6. Verify before rebooting
+
+```bash
+adb shell sha256sum /dev/block/by-name/boot     # expect the OTA's boot.img hash
+adb shell sha256sum /dev/block/by-name/recovery # expect the TWRP hash, unchanged
+adb shell blockdev --getsize64 /dev/block/by-name/system
+```
+
+What the OTA touches, from its own `updater-script`:
 
 ```text
 block_image_update("/dev/block/bootdevice/by-name/system", …)
@@ -67,107 +107,49 @@ block_image_update("/dev/block/bootdevice/by-name/vendor", …)
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
 ```
 
-- It does **not** contain or flash a recovery image — **TWRP survives**.
-- Do not flash the build's `recovery.img` unless you intend to replace TWRP.
+No recovery payload — **TWRP survives**, and it was verified byte-identical
+after the install.
 
-If `/sdcard` is not mounted after Format Data, stage the ZIP on a microSD card
-or push it to `/cache` (which survives Format Data):
-
-```bash
-adb push lineage-17.1-*.zip /cache/
-# then in TWRP: Install → select /cache/<file>
-```
-
-## 4. Install raw images (when there is no OTA)
-
-Useful for bringing up a build that never got packaged, or for restoring one
-image at a time.
-
-`system.img` and `vendor.img` from the build are **Android sparse**. TWRP's
-*Install Image* handles them; `dd` does not. Convert for `dd`:
+## 7. Boot
 
 ```bash
-out/host/linux-x86/bin/simg2img system.img system-raw.img
-out/host/linux-x86/bin/simg2img vendor.img vendor-raw.img
+adb shell "/sbin/twrp reboot system"
+adb wait-for-device
+adb shell getprop sys.boot_completed     # 1
+adb shell getprop ro.build.version.release   # 10
 ```
 
-TWRP method (no shell needed):
+First boot takes a few minutes (dexopt). Then run
+[`scripts/collect-bootlogs.sh`](../scripts/collect-bootlogs.sh) or the checks in
+[validation.md](validation.md).
+
+## 8. Optional: make a power-cycle land in recovery
+
+If you are about to boot an **unproven** boot image on a device with no working
+power button, you can pre-set the boot-control block so the next boot lands in
+recovery instead of looping:
 
 ```bash
-adb push boot.img        /cache/boot.img
-adb push system-raw.img  /cache/system.img
-adb push vendor-raw.img  /cache/vendor.img
-adb shell sha256sum /cache/*.img
-# TWRP: Install -> Install Image -> pick file -> pick partition:
-#   boot.img   -> Boot
-#   system.img -> System Image
-#   vendor.img -> Vendor Image
+printf 'boot-recovery' | dd of=/dev/block/by-name/misc bs=1 seek=0 conv=notrunc
 ```
 
-## 5. Fallback: `dd` from a shell
+`misc` is backed up by `scripts/backup-device.ps1`, and the write is 12 bytes
+and reversible. It is not part of the normal sequence — only use it when a
+failed boot would otherwise leave you with no software route.
 
-Only with a **shell-capable** environment — TWRP's *sideload* mode has no
-shell.
+## 9. Rollback
 
-```bash
-adb shell 'blockdev --getsize64 /dev/block/by-name/system'   # capacity check
-adb push boot.img        /data/local/tmp/boot.img
-adb push system-raw.img  /data/local/tmp/system.img
-adb push vendor-raw.img  /data/local/tmp/vendor.img
-adb shell 'sha256sum /data/local/tmp/boot.img /data/local/tmp/system.img /data/local/tmp/vendor.img'
-adb shell 'dd if=/data/local/tmp/boot.img   of=/dev/block/by-name/boot   bs=1M'
-adb shell 'dd if=/data/local/tmp/system.img of=/dev/block/by-name/system bs=1M'
-adb shell 'dd if=/data/local/tmp/vendor.img of=/dev/block/by-name/vendor bs=1M'
-adb shell 'sync'
-```
+| Failure mode | Recovery action |
+|---|---|
+| Boots but behaves badly | In TWRP, restore the previous `boot` image from your backup |
+| Hangs before adbd | No software route; wait for a power cycle (or pre-set `misc` as in §8) |
+| TWRP lost | Restore the TWRP image by `dd` from another recovery, or Odin |
+| IMEI/modem damage | Restore `efs`/`modemst1`/`modemst2`/`fsg` from the verified backup |
 
-Rules:
+There is no complete known-good `system`/`vendor` image off-device, so
+"rollback" in practice means the boot image — not the ROM.
 
-- raw images only, and smaller than the partition (`blockdev --getsize64`);
-- write `boot`, `system`, `vendor` — nothing else in a normal install;
-- **never** write `persist`, `efs`, `modemst*`, `fsg`, `fsc`, `apnhlos`,
-  `modem` unless restoring that exact verified backup.
+## 10. Going back to another ROM
 
-## 6. Odin (last resort)
-
-Only sensible with a fully working Samsung-compatible archive.
-
-- Knox is tripped and `ro.boot.flash.locked=1`; Odin may reject a
-  non-Samsung-signed image or stall at `SetupConnection`.
-- Do **not** enable *Re-Partition* or *NAND Erase*; do not flash a PIT you did
-  not generate from this device.
-- Packing TWRP as an Odin `AP` tar boots recovery in place of Android — a
-  rescue trick, not an install method. See
-  [recovery.md](recovery.md#4-the-twrp-on-boot-rescue-experimental-last-resort).
-
-## 7. Rollback reality
-
-- No verified full rollback set exists in this project. The partition backups
-  cover boot/recovery/identity, not `system`/`vendor`.
-- If the new build does not boot, TWRP can format and retry, but there is no
-  preserved previous system image to restore.
-- With a broken power button, "cannot boot Android **and** cannot reach TWRP"
-  is a brick until a Download-mode route is found.
-- The safe order is: dump partitions → confirm TWRP boots → only then write.
-
-## 8. First boot
-
-Expect 5–15 minutes (dexopt). If it hangs:
-
-```bash
-adb devices
-adb shell getprop sys.boot_completed
-adb shell dmesg > dmesg.txt
-adb logcat -d > logcat.txt
-adb shell cat /proc/last_kmsg > last_kmsg.txt 2>/dev/null
-```
-
-Or run `scripts/collect-bootlogs.sh`. A boot animation that never ends is a
-`system_server`/HAL problem, not an image-build problem — the image either
-mounted or it did not. Check `getenforce`, the first fatal exception in
-`logcat`, and `/proc/cmdline`.
-
-## 9. Going back to another ROM
-
-Every ROM needs: TWRP → Format Data → flash that ROM. Different signing keys
-mean an in-place downgrade is not possible without wiping data.
+TWRP → format data → flash that ROM. Different signing keys make an in-place
+switch impossible without wiping data.

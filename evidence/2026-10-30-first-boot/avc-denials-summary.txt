@@ -1,0 +1,40 @@
+﻿# AVC denials from the first boot (SELinux was permissive, so these are logged, not enforced)
+
+total denials: 532
+
+## by process (comm)
+
+   445  flags_health_ch
+    32  main
+    13  health@2.0-serv
+    10  init.qcom.post_
+    10  healthd
+     8  kworker/5:2
+     4  chown
+     4  gsid
+     2  chmod
+     2  HwBinder:572_1
+     2  mkdir
+
+## by target class
+
+   530  file
+     2  capability
+
+## representative lines
+
+[   30.759824] type=1400 audit(1793314950.519:307): avc: denied { getattr } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_rild_prop:s0" dev="tmpfs" ino=14442 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_rild_prop:s0 tclass=file permissive=1
+[   30.759997] type=1400 audit(1793314950.519:308): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_rmt_storage_prop:s0" dev="tmpfs" ino=14443 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_rmt_storage_prop:s0 tclass=file permissive=1
+[   30.760270] type=1400 audit(1793314950.519:308): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_rmt_storage_prop:s0" dev="tmpfs" ino=14443 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_rmt_storage_prop:s0 tclass=file permissive=1
+[   30.760434] type=1400 audit(1793314950.519:309): avc: denied { getattr } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_rmt_storage_prop:s0" dev="tmpfs" ino=14443 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_rmt_storage_prop:s0 tclass=file permissive=1
+[   30.760648] type=1400 audit(1793314950.519:309): avc: denied { getattr } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_rmt_storage_prop:s0" dev="tmpfs" ino=14443 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_rmt_storage_prop:s0 tclass=file permissive=1
+[   30.760814] type=1400 audit(1793314950.519:310): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_wigigsvc_prop:s0" dev="tmpfs" ino=14444 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_wigigsvc_prop:s0 tclass=file permissive=1
+[   30.761020] type=1400 audit(1793314950.519:310): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_wigigsvc_prop:s0" dev="tmpfs" ino=14444 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_wigigsvc_prop:s0 tclass=file permissive=1
+[   30.761181] type=1400 audit(1793314950.519:311): avc: denied { getattr } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_wigigsvc_prop:s0" dev="tmpfs" ino=14444 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_wigigsvc_prop:s0 tclass=file permissive=1
+[   30.761384] type=1400 audit(1793314950.519:311): avc: denied { getattr } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:ctl_vendor_wigigsvc_prop:s0" dev="tmpfs" ino=14444 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:ctl_vendor_wigigsvc_prop:s0 tclass=file permissive=1
+[   30.761547] type=1400 audit(1793314950.519:312): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:device_logging_prop:s0" dev="tmpfs" ino=14457 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:device_logging_prop:s0 tclass=file permissive=1
+[   30.761744] type=1400 audit(1793314950.519:312): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:device_logging_prop:s0" dev="tmpfs" ino=14457 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:device_logging_prop:s0 tclass=file permissive=1
+[   30.761899] type=1400 audit(1793314950.519:313): avc: denied { getattr } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:device_logging_prop:s0" dev="tmpfs" ino=14457 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:device_logging_prop:s0 tclass=file permissive=1
+[   30.762111] type=1400 audit(1793314950.519:313): avc: denied { getattr } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:device_logging_prop:s0" dev="tmpfs" ino=14457 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:device_logging_prop:s0 tclass=file permissive=1
+[   30.762270] type=1400 audit(1793314950.519:314): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:dolby_prop:s0" dev="tmpfs" ino=14459 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:dolby_prop:s0 tclass=file permissive=1
+[   30.762461] type=1400 audit(1793314950.519:314): avc: denied { open } for comm="flags_health_ch" path="/dev/__properties__/u:object_r:dolby_prop:s0" dev="tmpfs" ino=14459 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:dolby_prop:s0 tclass=file permissive=1

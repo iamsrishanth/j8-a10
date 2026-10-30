@@ -150,6 +150,43 @@ bash <this-repo>/scripts/build.sh        # JOBS=16 by default
 Memory note: on a 12 GB host, `-j16` works but leaves little headroom. If
 `ninja` gets OOM-killed, drop to `-j8`.
 
+### Signing the build with your own keys
+
+The default `m bacon` output is signed with the AOSP **test keys**. To produce
+a build signed with your own keys (which is what the installed artifact in
+[`../STATUS.md`](../STATUS.md) is):
+
+```bash
+m -j8 target-files-package otatools
+KEYS=~/secure/j8os-keys ./scripts/sign-ota.sh
+```
+
+That runs `sign_target_files_apks` + `ota_from_target_files` and verifies the
+OTA certificate matches your release key. Details:
+[signing.md](signing.md).
+
+Because the platform signature changes, flashing a re-signed build over another
+ROM requires a data wipe.
+
+### Switching SELinux mode
+
+The pinned device tree carries `androidboot.selinux=permissive` in
+`BOARD_KERNEL_CMDLINE`. Two artifacts come out of that switch:
+
+```bash
+# diagnostic build (what was validated first)
+./scripts/set-selinux-mode.sh permissive && m -j16 bacon
+
+# release build (enforcing; needs a policy that survives a cold boot)
+./scripts/set-selinux-mode.sh enforcing && m -j16 bacon
+```
+
+The mode is baked into the boot image cmdline, so check it after building:
+
+```bash
+strings out/target/product/j8y18lte/boot.img | grep -o 'androidboot.selinux=[a-z]*'
+```
+
 ### Outputs
 
 ```text
@@ -197,10 +234,13 @@ grep -E 'ro.build.version.(release|sdk)|ro.build.type|ro.build.tags|ro.product.c
 # Boot image header + cmdline
 python3 - <<'EOF'
 import struct
-h = open('out/target/product/j8y18lte/boot.img','rb').read(2048)
-f = struct.unpack('<8s10I16s512s32s1024s', h[:1664])
-print('magic', f[0], 'kernel', f[1], 'ramdisk', f[3], 'page', f[5])
-print('cmdline:', f[10].split(b'\0')[0].decode())
+d = open('out/target/product/j8y18lte/boot.img','rb').read(2048)
+(magic, ksize, kaddr, rsize, raddr, ssize, saddr,
+ tags, page, hdr_ver, os_ver) = struct.unpack('<8s10I', d[:48])
+cmdline = d[64:576].split(b'\0')[0].decode()
+print(magic, 'kernel', ksize, 'ramdisk', rsize, 'page', page)
+print('addrs', hex(kaddr), hex(raddr), hex(tags))
+print('cmdline:', cmdline)
 EOF
 
 # Partition-sized filesystem check
@@ -219,17 +259,13 @@ file out/target/product/j8y18lte/system.img
 | `breakfast` cannot find the device | `local_manifests` not copied before sync | add them, `repo sync` again |
 | Kernel build fails on missing `aarch64-linux-android-gcc` | prebuilt toolchain not synced | confirm `prebuilts/gcc/.../aarch64-linux-android-4.9` exists |
 | `webview.apk` is a 133-byte file | Git LFS pointer, not the APK | `repo sync` with LFS, or see [build-troubleshooting.md](build-troubleshooting.md#3-chromium-webview-is-a-git-lfs-pointer) |
-| `e2fsdroid ... label "/firmware"` | root dir / file_contexts mismatch | see the current blocker, below |
+| `e2fsdroid ... searching for label "/firmware"` | device sepolicy dir never reached `BOARD_VENDOR_SEPOLICY_DIRS` | apply [`patches/0001`](../patches/0001-BoardConfig-device-sepolicy-path.patch); see [build-troubleshooting.md](build-troubleshooting.md#1-e2fsdroid-fails-on-firmware) |
+| `Type 'camera blacklist prop readable to everything' is not valid` | missing trailing newline in `sepolicy/property_contexts` | apply [`patches/0002`](../patches/0002-sepolicy-property-contexts-trailing-newline.patch) |
+| A source change appears to have no effect | stale kati graph | `rm -f out/.kati_stamp-* out/build-*.ninja out/combined-*.ninja` |
 | `ninja: build stopped` at 99 % on another target | look up the first `error:` in the log, not the last | grep the log |
 
-### Current blocker
-
-`m bacon` currently stops at the system-image step with:
-
-```text
-set_selinux_xattr: No such file or directory searching for label "/firmware"
-e2fsdroid: No such file or directory while configuring the file system
-```
-
-Full analysis and candidate fixes:
-[build-troubleshooting.md](build-troubleshooting.md#1-e2fsdroid-fails-on-firmware).
+Both device-tree fixes are applied by
+[`../scripts/apply-patches.sh`](../scripts/apply-patches.sh). The validated
+build for this repository used exactly that tree; see
+[`../STATUS.md`](../STATUS.md) for what it produced and
+[`../VALIDATION.md`](../VALIDATION.md) for what it did on the device.

@@ -1,18 +1,38 @@
 # SHA-256 of the artifacts described in MANIFEST.md
-# LineageOS 17.1 / Android 10 build for Samsung Galaxy J8 (j8y18lte)
-# Captured 2026-10-30 from the build host.
+# LineageOS 17.1 / Android 10 for Samsung Galaxy J8 (j8y18lte)
+# Captured 2026-10-30 from the build host and the controller.
 
-# --- current build (test-key signed, userdebug, SELinux permissive) ---
-f3c520dc0307af653d0f867d881008932c8a538e8a119eb017bdba1e32958940  lineage-17.1-20261029-UNOFFICIAL-j8y18lte.zip
-b335f5611d2329dfad1df6182d8bce7606ac85b6a0be07c2a704a7e57afcffe3  boot.img
+# --- signed builds (own release keys) ---
+d105a267a8979b2b634b02aa48f5094f898f6ed0537a35e0bf3be0817592fd91  j8os-17.1-20261030-0507-signed-ota.zip
+e48075692dfd0666e71c23af1d6179accfbbae4cb31e32ce982aaf6d9c899072  j8os-17.1-20261030-0507-signed-target_files.zip
+8f5669c8ae47368e986ae7f9610b94857ee005832ef7e935e6138376f3c98abc  j8os-17.1-enforcing-20261030-0532-signed-ota.zip
+0e429f547404203e0cf9d15da82fc97689e57ccc120154c64ec784f4e0ca1263  j8os-17.1-enforcing-20261030-0532-signed-target_files.zip
+
+# --- boot images ---
+b335f5611d2329dfad1df6182d8bce7606ac85b6a0be07c2a704a7e57afcffe3  boot-permissive.img
+fc23372e91e90281892cdd979e6affd34c0e3f19146f7fbaf4a6507f521a8e54  enforcing-boot.img
+
+# --- recovery ---
+1b6538d566fd0a0c622ca2e78dedeb1b86a3dbf5f9199e9575ef67de0efd6e05  twrp-recovery.img
+
+# --- device partition backups (2026-10-30, before the enforcing flash) ---
+d3068258ce373060d6ebd4d4a7be967a9c2df377534bf8d92e4883f28c5a886d  boot-partition-current.img
+d061870c25aaccc1156143b83d6a3f6d121d34c0fe3ea3ae9e774f8a7870531a  persist.img
+355103dd5a693746166cc6129fb16f68dda76db87892fac45c47e57668c76214  efs.img
+dec8b6f07f229d7eeabf1e650f55a594ac6e3c7bcac41c5b01f539125378277e  modemst1.img
+402884e7976336d23621a53b78e7c603a16b8e9d69b66e4aa9a067274b6e0327  modemst2.img
+4e3e180a4f50bd3536ae90d8299fdd850be8f6f50107a34fca3e2ea1cdade33f  fsg.img
+f5f22730aa58099dade8760a2add1bdda5064f7b621c7151e145afcbdde12054  misc.img
+30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58  config.img
+
+# --- first successful bacon output (superseded by the signed builds) ---
 e3cecf2b21494595b1441034d698eb239038f145b041c0e317df4a0a2a1a3742  system.img
 41816c1ca3d12c4072487d21e9c4c4c3a04dcca9b61c0223cf0f8aba93f8ecc3  vendor.img
 9910c42bda21239bbaa99985222f06cdd05b6ef91aba1b2d636eb8a994b60d37  recovery.img
 
-# --- diagnostic images (raw, minimal label set, do not ship) ---
+# --- diagnostic images from the earlier bring-up (do not ship) ---
 d071d4b81ab7354866ceec4da91fe714ade314f894078c7d930680cf2c082863  system-raw.img
 11aab794a42f7815ccef081433d528ba0cdeaa60ccadcc4c26708323884ef820  vendor-raw.img
-4d7ce4cf6ecc92c8d72ad1112e41a307170c2bb9af46b640e27bd98f9c4a825c  vendor.sparse.previous.img
 
 # --- verification ---
 # sha256sum -c SHA256SUMS.txt --ignore-missing

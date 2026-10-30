@@ -8,7 +8,7 @@ Candidate: j8os-18.1-C0-20261024
 
 ## Installed state
 
-- system: C0, `lineage_j8y18lte-userdebug 11 RQ3A.211001.001 eng.akshit.20261024.074113`, userdebug/test-keys, 32-bit.
+- system: C0, `lineage_j8y18lte-userdebug 11 RQ3A.211001.001 eng.<builder>.20261024.074113`, userdebug/test-keys, 32-bit.
 - vendor: C0, same fingerprint/date, 32-bit.
 - boot: C0 boot image; header load addresses match TWRP.
 - data: formatted.

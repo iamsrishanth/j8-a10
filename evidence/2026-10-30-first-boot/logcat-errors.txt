@@ -1,0 +1,403 @@
+﻿# logcat (first boot): error-level lines, fatal exceptions and AVC denials, first 400 matches.
+# Lines: 626 matched in total.
+
+10-30 04:32:19.303  1224  1224 I Watchdog: Pausing HandlerChecker: main thread for reason: dexopt. Pause count: 1
+10-30 04:32:20.568  1224  1224 I Watchdog: Resuming HandlerChecker: main thread for reason: dexopt. Pause count: 0
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: not able to find package com.google.android.gms
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: android.content.pm.PackageManager$NameNotFoundException: com.google.android.gms
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at android.app.ApplicationPackageManager.getPackageUidAsUser(ApplicationPackageManager.java:314)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at com.android.server.PersistentDataBlockService.getAllowedUid(PersistentDataBlockService.java:153)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at com.android.server.PersistentDataBlockService.lambda$onStart$0$PersistentDataBlockService(PersistentDataBlockService.java:166)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at com.android.server.-$$Lambda$PersistentDataBlockService$EZl9OYaT2eNL7kfSr2nKUBjxidk.run(Unknown Source:2)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at com.android.server.SystemServerInitThreadPool.lambda$submit$0$SystemServerInitThreadPool(SystemServerInitThreadPool.java:72)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at com.android.server.-$$Lambda$SystemServerInitThreadPool$jLyL3DFmbjsFesU5SGktD3NoWSc.run(Unknown Source:6)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:462)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+10-30 04:32:20.676  1224  1520 E PersistentDataBlockService: 	at com.android.internal.util.ConcurrentUtils$1$1.run(ConcurrentUtils.java:62)
+10-30 04:32:21.186  1224  1224 E ConnectivityService: Error in networkAttributes - ignoring attempt to define type 23
+10-30 04:32:21.186  1224  1224 E ConnectivityService: Error in networkAttributes - ignoring attempt to define type 24
+10-30 04:32:21.186  1224  1224 E ConnectivityService: Error in networkAttributes - ignoring attempt to define type 27
+10-30 04:32:21.186  1224  1224 E ConnectivityService: Error in networkAttributes - ignoring attempt to define type 28
+10-30 04:32:21.186  1224  1224 E ConnectivityService: Error in networkAttributes - ignoring attempt to define type 32
+10-30 04:32:21.186  1224  1224 E ConnectivityService: Error in networkAttributes - ignoring attempt to define type 30
+10-30 04:32:21.372  1224  1224 E WiredAccessoryManager: file /sys/devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/name not found
+10-30 04:32:21.372  1224  1224 E WiredAccessoryManager: file /sys/devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/name not found
+10-30 04:32:21.383  1224  1224 E UsbDeviceManager: Failed to open control for mtp
+10-30 04:32:21.383  1224  1224 E UsbDeviceManager: Failed to open control for ptp
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: Failed to initialize KernelCpuThreadReader
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: java.nio.file.NoSuchFileException: /proc/self/time_in_state
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at java.nio.file.Files.newByteChannel(Files.java:361)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at java.nio.file.Files.newByteChannel(Files.java:407)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at java.nio.file.Files.readAllBytes(Files.java:3152)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.ProcTimeInStateReader.initializeTimeInStateFormat(ProcTimeInStateReader.java:163)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.ProcTimeInStateReader.<init>(ProcTimeInStateReader.java:110)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.KernelCpuThreadReader.<init>(KernelCpuThreadReader.java:137)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.KernelCpuThreadReader.create(KernelCpuThreadReader.java:150)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.KernelCpuThreadReaderSettingsObserver.<init>(KernelCpuThreadReaderSettingsObserver.java:94)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.KernelCpuThreadReaderSettingsObserver.getSettingsModifiedReader(KernelCpuThreadReaderSettingsObserver.java:79)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.server.stats.StatsCompanionService.<init>(StatsCompanionService.java:379)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.server.stats.StatsCompanionService$Lifecycle.onStart(StatsCompanionService.java:2585)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.server.SystemServiceManager.startService(SystemServiceManager.java:130)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.server.SystemServiceManager.startService(SystemServiceManager.java:117)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:1907)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.server.SystemServer.run(SystemServer.java:529)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.server.SystemServer.main(SystemServer.java:356)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:491)
+10-30 04:32:21.539  1224  1224 E KernelCpuThreadReader: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+10-30 04:32:21.683   643  1561 E tftp_server: pid=643 tid=1561 tftp-server : ERR :[tftp_os_la.c, 70] open failed: [2] [No such file or directory]
+10-30 04:32:21.683   643  1561 E tftp_server: pid=643 tid=1561 tftp-server : ERR :[tftp_server.c, 1698] open failed : [-2] [Unknown error -2]
+10-30 04:32:21.683   643  1561 E tftp_server: pid=643 tid=1561 tftp-server : ERR :[tftp_protocol.c, 1229] sending error-pkt. Code = 1, Msg = Err=2 String=No such file or directory
+10-30 04:32:21.691   428   428 E ServiceManager: add_service('lineagehardware',9b) uid=1000 - ALREADY REGISTERED, OVERRIDE
+10-30 04:32:21.727   428   428 E ServiceManager: add_service('lineagetrust',9f) uid=1000 - ALREADY REGISTERED, OVERRIDE
+10-30 04:32:21.851   845   845 E (FPLOG) : 2.0.36.0 DeviceSetClock 0
+10-30 04:32:21.851   845   845 E bauth_FPBAuthServiceStorage: FPBAuthServiceStorage::readCALIBRATIONMetaData SNSR_TYPE file isn't exist
+10-30 04:32:21.923  1224  1224 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gatekeeper.password.key: open failed: ENOENT (No such file or directory)
+10-30 04:32:21.923  1224  1224 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/password.key: open failed: ENOENT (No such file or directory)
+10-30 04:32:21.924  1224  1224 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gatekeeper.pattern.key: open failed: ENOENT (No such file or directory)
+10-30 04:32:21.924  1224  1224 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gatekeeper.gesture.key: open failed: ENOENT (No such file or directory)
+10-30 04:32:21.924  1224  1224 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gesture.key: open failed: ENOENT (No such file or directory)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: Unable to read app idle file for user 0
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: java.io.FileNotFoundException: /data/system/users/0/app_idle_stats.xml: open failed: ENOENT (No such file or directory)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at libcore.io.IoBridge.open(IoBridge.java:496)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at java.io.FileInputStream.<init>(FileInputStream.java:159)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at android.util.AtomicFile.openRead(AtomicFile.java:229)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.usage.AppIdleHistory.readAppIdleTimes(AppIdleHistory.java:525)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.usage.AppIdleHistory.getUserHistory(AppIdleHistory.java:293)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.usage.AppIdleHistory.reportUsage(AppIdleHistory.java:283)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.usage.AppStandbyController.initializeDefaultsForSystemApps(AppStandbyController.java:1454)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.usage.AppStandbyController.onBootPhase(AppStandbyController.java:392)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.usage.UsageStatsService.onBootPhase(UsageStatsService.java:254)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:159)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:1992)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.SystemServer.run(SystemServer.java:529)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.server.SystemServer.main(SystemServer.java:356)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:491)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at libcore.io.Linux.open(Native Method)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:167)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:252)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	at libcore.io.IoBridge.open(IoBridge.java:482)
+10-30 04:32:21.940  1224  1224 E AppIdleHistory: 	... 15 more
+10-30 04:32:22.083  1224  1224 E DisplayPowerController: failed to set up display white-balance: java.lang.IllegalStateException: cannot find light sensor
+10-30 04:32:22.104  1224  1256 E KernelCpuUidFreqTimeReader: Failed to read /proc/uid_time_in_state: java.nio.file.NoSuchFileException: /proc/uid_time_in_state
+10-30 04:32:22.279   425   425 I kworker/5:2: type=1400 audit(0.0:174): avc: denied { read } for name="hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:22.279   425   425 I kworker/5:2: type=1400 audit(0.0:175): avc: denied { open } for path="/sys/devices/virtual/sec/sec_key/hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: PackageNot found: com.google.android.gms
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: android.content.pm.PackageManager$NameNotFoundException: com.google.android.gms
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:193)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:162)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1317)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1308)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.isSystemPackage(DefaultPermissionGrantPolicy.java:963)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:364)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:357)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultSystemHandlerPermissions(DefaultPermissionGrantPolicy.java:637)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultPermissions(DefaultPermissionGrantPolicy.java:296)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.PackageManagerService.systemReady(PackageManagerService.java:22044)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2037)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.run(SystemServer.java:529)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.main(SystemServer.java:356)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:491)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: PackageNot found: com.google.android.gms
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: android.content.pm.PackageManager$NameNotFoundException: com.google.android.gms
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:193)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:162)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1317)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1308)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.isSystemPackage(DefaultPermissionGrantPolicy.java:963)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:364)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantSystemFixedPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:350)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultSystemHandlerPermissions(DefaultPermissionGrantPolicy.java:641)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultPermissions(DefaultPermissionGrantPolicy.java:296)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.PackageManagerService.systemReady(PackageManagerService.java:22044)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2037)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.run(SystemServer.java:529)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.main(SystemServer.java:356)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:491)
+10-30 04:32:22.653  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: PackageNot found: org.microg.nlp
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: android.content.pm.PackageManager$NameNotFoundException: org.microg.nlp
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:193)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:162)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1317)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1308)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.isSystemPackage(DefaultPermissionGrantPolicy.java:963)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:364)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:357)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultSystemHandlerPermissions(DefaultPermissionGrantPolicy.java:637)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultPermissions(DefaultPermissionGrantPolicy.java:296)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.PackageManagerService.systemReady(PackageManagerService.java:22044)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2037)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.run(SystemServer.java:529)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.main(SystemServer.java:356)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:491)
+10-30 04:32:22.654  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: PackageNot found: org.microg.nlp
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: android.content.pm.PackageManager$NameNotFoundException: org.microg.nlp
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:193)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:162)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1317)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.getPackageInfo(DefaultPermissionGrantPolicy.java:1308)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.isSystemPackage(DefaultPermissionGrantPolicy.java:963)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:364)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantSystemFixedPermissionsToSystemPackage(DefaultPermissionGrantPolicy.java:350)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultSystemHandlerPermissions(DefaultPermissionGrantPolicy.java:641)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.permission.DefaultPermissionGrantPolicy.grantDefaultPermissions(DefaultPermissionGrantPolicy.java:296)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.pm.PackageManagerService.systemReady(PackageManagerService.java:22044)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2037)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.run(SystemServer.java:529)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.server.SystemServer.main(SystemServer.java:356)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:491)
+10-30 04:32:22.655  1224  1224 E DefaultPermGrantPolicy: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:918)
+10-30 04:32:22.791  1224  1246 E DisplayModeDirector: Asked about unknown display, returning empty allowed set! (id=0)
+10-30 04:32:22.791  1224  1246 E DisplayModeDirector: Asked about unknown display, returning empty allowed set! (id=0)
+10-30 04:32:22.803  1224  1224 E ThermalHalWrapper: Thermal HAL 2.0 service not connected.
+10-30 04:32:22.804  1224  1224 E ThermalHalWrapper: Thermal HAL 1.1 service not connected.
+10-30 04:32:22.829  1591  1591 I main    : type=1400 audit(0.0:176): avc: denied { write } for name="tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:22.829  1591  1591 I main    : type=1400 audit(0.0:177): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:22.909  1613  1613 I main    : type=1400 audit(0.0:178): avc: denied { write } for name="tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1 app=com.android.systemui
+10-30 04:32:22.909  1613  1613 I main    : type=1400 audit(0.0:179): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1 app=com.android.systemui
+10-30 04:32:23.009  1591  1665 E         : [1029/230223.009228:ERROR:config.cc(74)] config_new: unable to open file '/data/misc/bluedroid/bt_config.conf': No such file or directory
+10-30 04:32:23.009  1591  1665 E         : [1029/230223.009513:ERROR:config.cc(74)] config_new: unable to open file '/data/misc/bluedroid/bt_config.bak': No such file or directory
+10-30 04:32:23.009  1591  1665 E bt_btif_config_transcode: btif_config_transcode unable to load XML file '/data/misc/bluedroid/bt_config.xml': 3
+10-30 04:32:23.009  1591  1665 E bt_btif_config: init unable to transcode legacy file; creating empty config.
+10-30 04:32:23.015  1591  1672 E bt_btif_storage: btif_storage_get_adapter_property: Controller not ready! Unable to return Bluetooth Address
+10-30 04:32:23.015  1591  1672 E BluetoothServiceJni: adapter_properties_callback: Status 1 is incorrect
+10-30 04:32:23.221   802   802 E OMXNodeInstance: getParameter(0xee546284:qcom.decoder.avc, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.222   802   802 E OMXNodeInstance: getParameter(0xee546284:qcom.decoder.avc, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.222   802   802 E OMXNodeInstance: getExtensionIndex(0xee546284:qcom.decoder.avc, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.223   802   802 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.223   802   802 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.223   802   802 E OMXNodeInstance: setParameter(0xee546284:qcom.decoder.avc, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.248   802   802 E OMXNodeInstance: getParameter(0xee5946c4:qcom.decoder.avc.secure, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.248   802   802 E OMXNodeInstance: getParameter(0xee5946c4:qcom.decoder.avc.secure, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.249   802   802 E OMXNodeInstance: getExtensionIndex(0xee5946c4:qcom.decoder.avc.secure, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.249   802   802 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.249   802   802 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.249   802   802 E OMXNodeInstance: setParameter(0xee5946c4:qcom.decoder.avc.secure, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.260   802   802 E OMXNodeInstance: getExtensionIndex(0xf064e840:google.h264.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.261   802   802 E OMXNodeInstance: getExtensionIndex(0xf064e840:google.h264.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.281   802   958 E OMXNodeInstance: getParameter(0xee5946c4:qcom.decoder.h263, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.282   802   958 E OMXNodeInstance: getParameter(0xee5946c4:qcom.decoder.h263, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.283   802   958 E OMXNodeInstance: getExtensionIndex(0xee5946c4:qcom.decoder.h263, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.283   802   958 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.283   802   958 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.283   802   958 E OMXNodeInstance: setParameter(0xee5946c4:qcom.decoder.h263, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.290   845  1578 E (FPLOG) : 2.0.36.0 DeviceSetClock 0
+10-30 04:32:23.293   802   958 E OMXNodeInstance: getExtensionIndex(0xf064e7e0:google.h263.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.293   802   802 E OMXNodeInstance: getExtensionIndex(0xf064e7e0:google.h263.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.315   802   958 E OMXNodeInstance: getParameter(0xee546284:qcom.decoder.hevc, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.315   802   958 E OMXNodeInstance: getParameter(0xee546284:qcom.decoder.hevc, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.316   802   958 E OMXNodeInstance: getExtensionIndex(0xee546284:qcom.decoder.hevc, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.316   802   958 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.316   802   958 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.316   802   958 E OMXNodeInstance: setParameter(0xee546284:qcom.decoder.hevc, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.340   802   958 E OMXNodeInstance: getParameter(0xee5a35c4:qcom.decoder.hevc.secure, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.340   802   958 E OMXNodeInstance: getParameter(0xee5a35c4:qcom.decoder.hevc.secure, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.340   802   958 E OMXNodeInstance: getExtensionIndex(0xee5a35c4:qcom.decoder.hevc.secure, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.341   802   958 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.341   802   958 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.341   802   958 E OMXNodeInstance: setParameter(0xee5a35c4:qcom.decoder.hevc.secure, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.364   802   802 E OMXNodeInstance: getExtensionIndex(0xf064eba0:google.hevc.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.364   802   802 E OMXNodeInstance: getExtensionIndex(0xf064eba0:google.hevc.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.381   802   958 E OMXNodeInstance: getParameter(0xee5bf504:qcom.decoder.mpeg4, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.382   802   958 E OMXNodeInstance: getParameter(0xee5bf504:qcom.decoder.mpeg4, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.382   802   958 E OMXNodeInstance: getExtensionIndex(0xee5bf504:qcom.decoder.mpeg4, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.382   802   958 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.382   802   958 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.382   802   958 E OMXNodeInstance: setParameter(0xee5bf504:qcom.decoder.mpeg4, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.389   802   958 E OMXNodeInstance: getExtensionIndex(0xf064eba0:google.mpeg4.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.390   802   958 E OMXNodeInstance: getExtensionIndex(0xf064eba0:google.mpeg4.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.406   802   802 E OMXNodeInstance: getParameter(0xee5bf504:qcom.decoder.vp8, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.407   802   802 E OMXNodeInstance: getParameter(0xee5bf504:qcom.decoder.vp8, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.407   802   802 E OMXNodeInstance: getExtensionIndex(0xee5bf504:qcom.decoder.vp8, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.407   802   802 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.407   802   802 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.407   802   802 E OMXNodeInstance: setParameter(0xee5bf504:qcom.decoder.vp8, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.412  1224  1476 E WindowManager: App trying to use insecure INPUT_FEATURE_NO_INPUT_CHANNEL flag. Ignoring
+10-30 04:32:23.421   802   958 E OMXNodeInstance: getExtensionIndex(0xf064e900:google.vp8.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.421   802   958 E OMXNodeInstance: getExtensionIndex(0xf064e900:google.vp8.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.439   802   802 E OMXNodeInstance: getParameter(0xee5a35c4:qcom.decoder.vp9, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.439   802   802 E OMXNodeInstance: getParameter(0xee5a35c4:qcom.decoder.vp9, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.440   802   802 E OMXNodeInstance: getExtensionIndex(0xee5a35c4:qcom.decoder.vp9, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.440   802   802 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.440   802   802 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.440   802   802 E OMXNodeInstance: setParameter(0xee5a35c4:qcom.decoder.vp9, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.461   802   958 E OMXNodeInstance: getParameter(0xee5a35c4:qcom.decoder.vp9.secure, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.461   802   958 E OMXNodeInstance: getParameter(0xee5a35c4:qcom.decoder.vp9.secure, ??(0x7f000044)) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.461   802   958 E OMXNodeInstance: getExtensionIndex(0xee5a35c4:qcom.decoder.vp9.secure, OMX.google.android.index.configureVideoTunnelMode) ERROR: NotImplemented(0x80001006)
+10-30 04:32:23.462   802   958 E OMX-VDEC-1080P: Enable/Disable allocate-native-handle allowed only on input port!
+10-30 04:32:23.462   802   958 E OMX-VDEC-1080P: set_parameter: Error: 0x80001019, setting param 0x7f00005d
+10-30 04:32:23.462   802   958 E OMXNodeInstance: setParameter(0xee5a35c4:qcom.decoder.vp9.secure, OMX.google.android.index.allocateNativeHandle(0x7f00005d): Output:1 en=0) ERROR: UnsupportedSetting(0x80001019)
+10-30 04:32:23.470   802   802 E OMXNodeInstance: getExtensionIndex(0xf064e900:google.vp9.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.470   802   802 E OMXNodeInstance: getExtensionIndex(0xf064e900:google.vp9.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.518   802   802 E OMXNodeInstance: getConfig(0xf064eb40:google.h263.encoder, ConfigAndroidIntraRefresh(0x6f60000a)) ERROR: Undefined(0x80001001)
+10-30 04:32:23.519   802   802 E OMXNodeInstance: getParameter(0xf064eb40:google.h263.encoder, ParamVideoIntraRefresh(0x6000006)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.529  1787  1787 I main    : type=1400 audit(0.0:180): avc: denied { write } for name="tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:23.529  1787  1787 I main    : type=1400 audit(0.0:181): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:23.565  1224  1476 E WindowManager: App trying to use insecure INPUT_FEATURE_NO_INPUT_CHANNEL flag. Ignoring
+10-30 04:32:23.578   802   802 E OMXNodeInstance: getConfig(0xf064eb40:google.mpeg4.encoder, ConfigAndroidIntraRefresh(0x6f60000a)) ERROR: Undefined(0x80001001)
+10-30 04:32:23.578   802   802 E OMXNodeInstance: getParameter(0xf064eb40:google.mpeg4.encoder, ParamVideoIntraRefresh(0x6000006)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.612   802   802 E OMXNodeInstance: getConfig(0xf064e960:google.vp8.encoder, ConfigAndroidIntraRefresh(0x6f60000a)) ERROR: Undefined(0x80001001)
+10-30 04:32:23.612   802   802 E OMXNodeInstance: getParameter(0xf064e960:google.vp8.encoder, ParamVideoIntraRefresh(0x6000006)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 04:32:23.629  1823  1823 I main    : type=1400 audit(0.0:182): avc: denied { write } for name="tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:23.629  1823  1823 I main    : type=1400 audit(0.0:183): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:23.698  1224  1224 I PackageWatchdog: Syncing state, reason: health check state enabled
+10-30 04:32:23.698  1224  1224 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+10-30 04:32:23.699  1224  1224 I PackageWatchdog: Cancelling state sync, nothing to sync
+10-30 04:32:23.718  1224  1251 I PackageWatchdog: Saving observer state to file
+10-30 04:32:23.766  1224  1224 E LocationManagerService: no geocoder provider found
+10-30 04:32:23.789   572   572 I HwBinder:572_2: type=1400 audit(0.0:184): avc: denied { read write } for name="mem_boost_mode" dev="sysfs" ino=21105 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:23.789   572   572 I HwBinder:572_2: type=1400 audit(0.0:185): avc: denied { open } for path="/sys/kernel/mm/vmscan/mem_boost_mode" dev="sysfs" ino=21105 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:23.789   572   572 I HwBinder:572_2: type=1400 audit(0.0:186): avc: denied { getattr } for path="/sys/kernel/mm/vmscan/mem_boost_mode" dev="sysfs" ino=21105 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:23.789   572   572 I HwBinder:572_2: type=1400 audit(0.0:187): avc: denied { read write } for name="fd_zero.txt" dev="mmcblk0p46" ino=1572927 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:camera_data_file:s0 tclass=file permissive=1
+10-30 04:32:23.789   572   572 I HwBinder:572_2: type=1400 audit(0.0:188): avc: denied { open } for path="/data/misc/camera/fd_zero.txt" dev="mmcblk0p46" ino=1572927 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:camera_data_file:s0 tclass=file permissive=1
+10-30 04:32:23.795   572  1152 E QCamera : <HAL><ERROR> getCameraInfo: 411: camera id = 0 CAM_REAR_WIDE
+10-30 04:32:23.801   572  1152 I QCamera : <HAL><INFO> openCamera: 2506: [KPI Perf]: E PROFILE_OPEN_CAMERA camera id 0
+10-30 04:32:23.802   572  1152 E QCamera : <HAL><ERROR> lock_acq_timed: 314: failed to acquire lock
+10-30 04:32:23.811   844   867 E LocSvc_IzatApiV02: operator():1116]: Error : st = 3, ind.status = 0
+10-30 04:32:23.811   844  1301 E QMI_FW  : QCCI qmi_cci_xport_recv: txn not found. svc_id: 16
+10-30 04:32:23.811   844   867 E LocSvc_IzatApiV02: operator():1122] setXtraVersionCheck fail
+10-30 04:32:23.816   844  1877 E LocSvc_xtra2: downloadSntpTime:303] DNS resolution on time.izatcloud.net failed with ret code 11 System error returned in errno
+10-30 04:32:23.836   572  1152 E QCamera : <HAL><ERROR> openCamera: 2658: openCamera:  HACK UniPlugin direct Load ++
+10-30 04:32:23.837   572  1867 E QCamera : <HAL><ERROR> setAntibanding: 15575: Invalid AntiBanding value: 
+10-30 04:32:23.844   572  1152 E UniPlugin: get_plugin_handle, Couldn't load the library(libstr_capture_interface.so): dlopen failed: library "libsomp.so" not found
+10-30 04:32:23.844   572  1152 E QCamera : <HAL><ERROR> load_uni_plugin: 18684: [STR_CAPTURE](load_uni_plugin[18684]): STR CAPTURE plugin load failed!!
+10-30 04:32:23.844   572  1152 E QCamera : <HAL><ERROR> openCamera: 2663: openCamera:  HACK UniPlugin direct Load --
+10-30 04:32:23.848   572  1150 I QCamera : <HAL><INFO> stop_preview: 511: [KPI Perf]: E PROFILE_STOP_PREVIEW camera id 0
+10-30 04:32:23.848   572  1150 E QCamera : <HAL><ERROR> stop_preview: 515: [KPI Perf] stop_preview: X, aleady stop
+10-30 04:32:23.848   572  1150 I QCamera : <HAL><INFO> cancel_picture: 1608: [KPI Perf]: E PROFILE_CANCEL_PICTURE camera id 0
+10-30 04:32:23.849   572  1150 I QCamera : <HAL><INFO> close_camera_device: 2122: [KPI Perf]: E camera id 0
+10-30 04:32:23.850   572  1150 E QCamera : <HAL><ERROR> lock_acq: 363: failed to acquire lock
+10-30 04:32:23.852   688   992 E mm-camera: <IMGLIB><ERROR> 303: AllocateBuffers: Invalid dimensions 0x0
+10-30 04:32:23.852   688   992 E mm-camera: <IMGLIB><ERROR> 203: img_algo_preload: Preload: Failed to allocate buffer, rc -4
+10-30 04:32:23.852   688   992 E mm-camera: <IMGLIB><ERROR> 119: module_imgbase_client_preload_exec: IMG_CORE_PRELOAD failed -4
+10-30 04:32:23.871   688  1902 E mm-camera: <PPROC ><ERROR> 2867: pproc_module_stop_session: pproc_module_stop_session:2867, E
+10-30 04:32:23.872   688  1902 E mm-camera: <PPROC ><ERROR> 2897: pproc_module_stop_session: pproc_module_stop_session:2897, X
+10-30 04:32:24.114   572  1150 E QCamera : <MCI><ERROR> mm_camera_close: 456: Closed Dummy FD value :9
+10-30 04:32:24.114   572  1150 E QCamera : <HAL><ERROR> closeCamera: 3190: closeCamera:  HACK UniPlugin direct UnLoad ++
+10-30 04:32:24.116   572  1150 E QCamera : <HAL><ERROR> closeCamera: 3194: closeCamera:  HACK UniPlugin direct UnLoad --
+10-30 04:32:24.189   841   862 E CLD80211: lowi-server: Could not resolve cld80211 familty id
+10-30 04:32:24.279   425   425 I kworker/5:2: type=1400 audit(0.0:191): avc: denied { read } for name="hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:24.279   425   425 I kworker/5:2: type=1400 audit(0.0:192): avc: denied { open } for path="/sys/devices/virtual/sec/sec_key/hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:24.289  1224  1476 E WindowManager: App trying to use insecure INPUT_FEATURE_NO_INPUT_CHANNEL flag. Ignoring
+10-30 04:32:24.309  1971  1971 I main    : type=1400 audit(0.0:193): avc: denied { write } for name="tasks" dev="tmpfs" ino=2296 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:24.309  1971  1971 I main    : type=1400 audit(0.0:194): avc: denied { open } for path="/dev/stune/top-app/tasks" dev="tmpfs" ino=2296 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:24.349  1224  1476 E WindowManager: App trying to use insecure INPUT_FEATURE_NO_INPUT_CHANNEL flag. Ignoring
+10-30 04:32:24.384   593   593 E CLD80211: /vendor/bin/hw/android.hardware.wifi@1.0-service: Could not resolve cld80211 familty id
+10-30 04:32:24.386   593   593 E WifiHAL : acquire_driver_supported_features: requestResponse Error:-3
+10-30 04:32:24.386   593   593 E WifiHAL : get_firmware_bus_max_size_supported: requestResponse Error:-3
+10-30 04:32:24.386   593   593 E WifiHAL : Failed to get supported bus size, error : -3
+10-30 04:32:24.386   593   593 E WifiHAL : wifi_logger_ring_buffers_init: Ring buffer logging feature not supported 0
+10-30 04:32:24.386   593   593 E WifiHAL : Wifi Logger Ring Initialization Failed
+10-30 04:32:24.386   593   593 E WifiHAL : wifi_get_capabilities: GSCAN is not supported by driver
+10-30 04:32:24.386   593   593 E WifiHAL : Failed to get wifi Capabilities, error: -3
+10-30 04:32:24.405   800   800 E wificond: No Offload Service available
+10-30 04:32:24.502  1613  1812 E ActivityThread: Failed to find provider info for com.android.contacts
+10-30 04:32:24.559  2013  2013 I main    : type=1400 audit(0.0:195): avc: denied { write } for name="tasks" dev="tmpfs" ino=2296 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:24.559  2013  2013 I main    : type=1400 audit(0.0:196): avc: denied { open } for path="/dev/stune/top-app/tasks" dev="tmpfs" ino=2296 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:24.618  1224  1224 D PackageWatchdog: Getting all observed packages pending health checks
+10-30 04:32:24.618  1224  1224 I PackageWatchdog: Syncing health check requests for packages: {}
+10-30 04:32:24.629  1591  1665 E         : [1029/230224.629859:ERROR:message_loop_thread.cc(69)] DoInThreadDelayed: message loop is null for thread bt_main_thread(-1), from pc:0xc2bd6a3f
+10-30 04:32:24.630  1591  1665 E         : [1029/230224.630015:ERROR:btu_task.cc(89)] do_in_main_thread: failed from pc:0xc2bd6a3f
+10-30 04:32:24.664  1224  1224 E TrustManagerService: EXTRA_USER_HANDLE missing or invalid, value=0
+10-30 04:32:24.729  1224  1535 E ActivityThread: Failed to find provider info for com.android.calendar
+10-30 04:32:24.730  1224  1535 E ActivityThread: Failed to find provider info for com.android.calendar
+10-30 04:32:24.732  1613  1711 E ActivityThread: Failed to find provider info for com.android.contacts
+10-30 04:32:24.747  1590  1590 E wpa_supplicant: nl80211: Set scan default IEs failed: ret=-524 (Unknown error 524)
+10-30 04:32:24.766  1613  1711 E ActivityThread: Failed to find provider info for com.android.contacts
+10-30 04:32:24.780   593   593 E WifiHAL : wifi_get_gscan_capabilities: GSCAN is not supported by driver
+10-30 04:32:24.811  1590  1590 E wpa_sslib: Unknown driver command received: MACADDR
+10-30 04:32:24.815   593   593 E WifiHAL : wifi_start_pkt_fate_monitoring: packet fate logging feature not supported 0
+10-30 04:32:24.818   593   593 E WifiHAL : wifi_get_ring_buffers_status: Ring buffer logging feature not supported 0
+10-30 04:32:24.820  1590  1590 E wpa_sslib: Unknown driver command received: BTCOEXSCAN-STOP
+10-30 04:32:24.821  1590  1590 E wpa_sslib: Unknown driver command received: RXFILTER-STOP
+10-30 04:32:24.822  1590  1590 E wpa_sslib: Unknown driver command received: RXFILTER-ADD 2
+10-30 04:32:24.822  1590  1590 E wpa_sslib: Unknown driver command received: RXFILTER-START
+10-30 04:32:24.823  1590  1590 E wpa_sslib: Unknown driver command received: RXFILTER-STOP
+10-30 04:32:24.824  1590  1590 E wpa_sslib: Unknown driver command received: RXFILTER-ADD 3
+10-30 04:32:24.824  1590  1590 E wpa_sslib: Unknown driver command received: RXFILTER-START
+10-30 04:32:24.825  1590  1590 E wpa_sslib: Unknown driver command received: SETSUSPENDMODE 0
+10-30 04:32:24.839  2065  2065 I main    : type=1400 audit(0.0:197): avc: denied { write } for name="tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:24.839  2065  2065 I main    : type=1400 audit(0.0:198): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:24.851  1224  1256 E BatteryExternalStatsWorker: no controller energy info supplied for telephony
+10-30 04:32:24.851  1224  1256 E KernelCpuUidFreqTimeReader: Failed to read /proc/uid_time_in_state: java.nio.file.NoSuchFileException: /proc/uid_time_in_state
+10-30 04:32:24.930  2065  2065 E JniUtils: Could not load native library jni_latinimegoogle
+10-30 04:32:24.930  2065  2065 E JniUtils: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file "/system/product/app/LatinIME/LatinIME.apk"],nativeLibraryDirectories=[/system/product/app/LatinIME/lib/arm, /system/product/app/LatinIME/LatinIME.apk!/lib/armeabi-v7a, /system/lib, /system/product/lib, /vendor/lib, /system/lib, /system/product/lib, /vendor/lib]]] couldn't find "libjni_latinimegoogle.so"
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at java.lang.Runtime.loadLibrary0(Runtime.java:1067)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at java.lang.Runtime.loadLibrary0(Runtime.java:1007)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at java.lang.System.loadLibrary(System.java:1667)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at com.android.inputmethod.latin.utils.JniUtils.<clinit>(JniUtils.java:29)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at com.android.inputmethod.latin.utils.JniUtils.loadNativeLibrary(Unknown Source:0)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at com.android.inputmethod.latin.LatinIME.<clinit>(LatinIME.java:584)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at java.lang.Class.newInstance(Native Method)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at android.app.AppComponentFactory.instantiateService(AppComponentFactory.java:129)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at androidx.core.app.CoreComponentFactory.instantiateService(CoreComponentFactory.java:66)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:3935)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at android.app.ActivityThread.access$1500(ActivityThread.java:219)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1875)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at android.os.Looper.loop(Looper.java:214)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at android.app.ActivityThread.main(ActivityThread.java:7356)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:491)
+10-30 04:32:24.930  2065  2065 E JniUtils: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:940)
+10-30 04:32:25.022  2065  2089 E ActivityThread: Failed to find provider info for user_dictionary
+10-30 04:32:25.289   589   589 I sensors@1.0-ser: type=1400 audit(0.0:199): avc: denied { read write } for name="poll_delay" dev="sysfs" ino=33358 scontext=u:r:hal_sensors_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:25.289   589   589 I sensors@1.0-ser: type=1400 audit(0.0:200): avc: denied { open } for path="/sys/devices/virtual/input/input4/poll_delay" dev="sysfs" ino=33358 scontext=u:r:hal_sensors_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:25.418  1224  1476 E WindowManager: App trying to use insecure INPUT_FEATURE_NO_INPUT_CHANNEL flag. Ignoring
+10-30 04:32:26.029   584   584 I health@2.0-serv: type=1400 audit(0.0:201): avc: denied { read } for name="present" dev="sysfs" ino=37372 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:26.029   584   584 I health@2.0-serv: type=1400 audit(0.0:202): avc: denied { open } for path="/sys/devices/battery/power_supply/battery/present" dev="sysfs" ino=37372 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:26.029   584   584 I health@2.0-serv: type=1400 audit(0.0:203): avc: denied { getattr } for path="/sys/devices/battery/power_supply/battery/present" dev="sysfs" ino=37372 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:26.029   570   570 I healthd : type=1400 audit(0.0:204): avc: denied { read } for name="present" dev="sysfs" ino=37372 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:26.029   570   570 I healthd : type=1400 audit(0.0:205): avc: denied { open } for path="/sys/devices/battery/power_supply/battery/present" dev="sysfs" ino=37372 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:26.029   570   570 I healthd : type=1400 audit(0.0:206): avc: denied { getattr } for path="/sys/devices/battery/power_supply/battery/present" dev="sysfs" ino=37372 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:26.029   584   584 I health@2.0-serv: type=1400 audit(0.0:207): avc: denied { search } for name="FactoryApp" dev="mmcblk0p16" ino=28 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:app_efs_file:s0 tclass=dir permissive=1
+10-30 04:32:26.029   584   584 I health@2.0-serv: type=1400 audit(0.0:208): avc: denied { read } for name="cisd_data" dev="mmcblk0p16" ino=59 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:app_efs_file:s0 tclass=file permissive=1
+10-30 04:32:26.029   584   584 I health@2.0-serv: type=1400 audit(0.0:209): avc: denied { open } for path="/efs/FactoryApp/cisd_data" dev="mmcblk0p16" ino=59 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:app_efs_file:s0 tclass=file permissive=1
+10-30 04:32:26.029   584   584 I health@2.0-serv: type=1400 audit(0.0:210): avc: denied { getattr } for path="/efs/FactoryApp/cisd_data" dev="mmcblk0p16" ino=59 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:app_efs_file:s0 tclass=file permissive=1
+10-30 04:32:26.279   425   425 I kworker/5:2: type=1400 audit(0.0:211): avc: denied { read } for name="hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:26.279   425   425 I kworker/5:2: type=1400 audit(0.0:212): avc: denied { open } for path="/sys/devices/virtual/sec/sec_key/hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:28.550  1927  1927 E SystemConfig: SystemConfig is being accessed by a process other than system_server.
+10-30 04:32:28.648  1927  2162 E ActivityThread: Failed to find provider info for com.android.contacts
+10-30 04:32:28.909  2164  2164 I main    : type=1400 audit(0.0:222): avc: denied { write } for name="tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:28.909  2164  2164 I main    : type=1400 audit(0.0:223): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+10-30 04:32:30.279   425   425 I kworker/5:2: type=1400 audit(0.0:224): avc: denied { read } for name="hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:30.279   425   425 I kworker/5:2: type=1400 audit(0.0:225): avc: denied { open } for path="/sys/devices/virtual/sec/sec_key/hall_detect" dev="sysfs" ino=36671 scontext=u:r:kernel:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-30 04:32:30.511   499   499 E apexd   : Rollback failed : Rollback requested, when there are no active sessions.
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:511): avc: denied { getattr } for path="/dev/__properties__/u:object_r:vendor_vm_bms_prop:s0" dev="tmpfs" ino=14585 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_vm_bms_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:512): avc: denied { open } for path="/dev/__properties__/u:object_r:vendor_wifi_ftmd_prop:s0" dev="tmpfs" ino=14586 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wifi_ftmd_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:513): avc: denied { getattr } for path="/dev/__properties__/u:object_r:vendor_wifi_ftmd_prop:s0" dev="tmpfs" ino=14586 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wifi_ftmd_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:514): avc: denied { open } for path="/dev/__properties__/u:object_r:vendor_wifi_version:s0" dev="tmpfs" ino=14587 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wifi_version:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:515): avc: denied { getattr } for path="/dev/__properties__/u:object_r:vendor_wifi_version:s0" dev="tmpfs" ino=14587 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wifi_version:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:516): avc: denied { open } for path="/dev/__properties__/u:object_r:vendor_wlbtd_prop:s0" dev="tmpfs" ino=14588 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wlbtd_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:517): avc: denied { getattr } for path="/dev/__properties__/u:object_r:vendor_wlbtd_prop:s0" dev="tmpfs" ino=14588 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wlbtd_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:518): avc: denied { open } for path="/dev/__properties__/u:object_r:vendor_wlc_prop:s0" dev="tmpfs" ino=14589 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wlc_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:519): avc: denied { getattr } for path="/dev/__properties__/u:object_r:vendor_wlc_prop:s0" dev="tmpfs" ino=14589 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_wlc_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:520): avc: denied { open } for path="/dev/__properties__/u:object_r:vendor_xlat_prop:s0" dev="tmpfs" ino=14590 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_xlat_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:521): avc: denied { getattr } for path="/dev/__properties__/u:object_r:vendor_xlat_prop:s0" dev="tmpfs" ino=14590 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:vendor_xlat_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:522): avc: denied { open } for path="/dev/__properties__/u:object_r:wfd_debug_prop:s0" dev="tmpfs" ino=14592 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wfd_debug_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:523): avc: denied { getattr } for path="/dev/__properties__/u:object_r:wfd_debug_prop:s0" dev="tmpfs" ino=14592 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wfd_debug_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:524): avc: denied { open } for path="/dev/__properties__/u:object_r:wfd_service_prop:s0" dev="tmpfs" ino=14593 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wfd_service_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:525): avc: denied { getattr } for path="/dev/__properties__/u:object_r:wfd_service_prop:s0" dev="tmpfs" ino=14593 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wfd_service_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:526): avc: denied { open } for path="/dev/__properties__/u:object_r:wifi_prop:s0" dev="tmpfs" ino=14595 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wifi_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:527): avc: denied { getattr } for path="/dev/__properties__/u:object_r:wifi_prop:s0" dev="tmpfs" ino=14595 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wifi_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:528): avc: denied { open } for path="/dev/__properties__/u:object_r:wigig_core_prop:s0" dev="tmpfs" ino=14596 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wigig_core_prop:s0 tclass=file permissive=1
+10-30 04:32:30.529  2251  2251 I flags_health_ch: type=1400 audit(0.0:529): avc: denied { getattr } for path="/dev/__properties__/u:object_r:wigig_core_prop:s0" dev="tmpfs" ino=14596 scontext=u:r:flags_health_check:s0 tcontext=u:object_r:wigig_core_prop:s0 tclass=file permissive=1
+10-30 04:32:30.902   440  1582 E vold    : Failed to chmod /data/system_ce/0: No such file or directory
+10-30 04:32:30.903   440  1582 E vold    : Failed to chmod /data/misc_ce/0: No such file or directory
+10-30 04:32:30.979  2259  2259 I main    : type=1400 audit(0.0:530): avc: denied { write } for name="tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1 app=android.ext.services
+10-30 04:32:30.979  2259  2259 I main    : type=1400 audit(0.0:531): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=14265 scontext=u:r:zygote:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1 app=android.ext.services
+10-30 04:32:31.071  2305  2305 E bootstat: Failed to read /data/misc/bootstat/last_boot_time_utc: No such file or directory
+10-30 04:32:31.071  2305  2305 E bootstat: Failed to parse boot time record: /data/misc/bootstat/last_boot_time_utc
